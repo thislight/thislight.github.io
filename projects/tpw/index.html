@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>旅行计划 - 香港</title>
+    <link rel="stylesheet" href="./res/mdl/material.css">
+    <link rel="stylesheet" href="./res/mdl/mdi.css">
+    <link rel="stylesheet" href="./res/style.css">
+</head>
+<body>
+<style>
+            .has-background {
+                background: url('./res/img/cover3.jpg') center / cover;
+            }
+            </style>
+    <div id="app">
+        
+                    <div class="has-background mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
+                      <div class="mdl-layout__drawer">
+                        <span class="mdl-layout-title">:)</span>
+                        <nav class="mdl-navigation">
+                          <a class="mdl-navigation__link" href="#/">行程</a>
+                          <a class="mdl-navigation__link" href="#/about">关于</a>
+                        </nav>
+                      </div>
+                      <main class="mdl-layout__content">
+                          <router-view></router-view>
+                      </main>
+                    </div>
+                    
+    </div>
+    
+    <!-- With JS -->
+    <script src="./res/mdl/material.js"></script>
+    <script src="./res/js/vue.js"></script>
+    <script src="./res/js/vue-router.js"></script>
+    <script src="./res/js/app.js"></script>
+</body>
+</html>
