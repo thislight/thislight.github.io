@@ -1,104 +1,76 @@
-<!DOCTYPE html>
-<html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="zh-cn,en,default">
 <head>
-  <meta charset="utf-8">
-  
-  
-  <title>使用Makru和makru_langc管理现代C项目编译：引入&amp;目录 | Rubicon&#39;s Rubicon</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Makru是一个用Python编写的全新编译工具。它的目的不是提供更多的编译逻辑，而是提供一个统一的平台方便开发和引入新的编译逻辑。Makru和目前主流的make-like编译系统最大的不同点再于：它没有使用类似宏语法之类的东西为配置文件提供超高的灵活性，而是直接选择了很多现代包管理工具正在使用的结构化数据配置文件（Makru使用的是yaml）。makru_langc就是在它之上构建的C语言项目编">
-<meta property="og:type" content="article">
-<meta property="og:title" content="使用Makru和makru_langc管理现代C项目编译：引入&amp;目录">
-<meta property="og:url" content="https://rubicon.lightstands.xyz/2020/12/26/makru-tutor-1/index.html">
-<meta property="og:site_name" content="Rubicon&#39;s Rubicon">
-<meta property="og:description" content="Makru是一个用Python编写的全新编译工具。它的目的不是提供更多的编译逻辑，而是提供一个统一的平台方便开发和引入新的编译逻辑。Makru和目前主流的make-like编译系统最大的不同点再于：它没有使用类似宏语法之类的东西为配置文件提供超高的灵活性，而是直接选择了很多现代包管理工具正在使用的结构化数据配置文件（Makru使用的是yaml）。makru_langc就是在它之上构建的C语言项目编">
-<meta property="og:locale">
-<meta property="article:published_time" content="2020-12-26T21:21:13.000Z">
-<meta property="article:modified_time" content="2020-12-26T13:59:51.975Z">
-<meta property="article:author" content="Rubicon">
-<meta property="article:tag" content="Makru">
-<meta property="article:tag" content="C">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="Rubicon's Rubicon" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
-    
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
-
-  
-  
-<link rel="stylesheet" href="/css/style.css">
+  <meta charset="UTF-8">
+  <title>使用Makru和makru_langc管理现代C项目编译：引入&目录</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
   
     
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+    
+      <link rel="stylesheet" href="/css/cmd.css">
+    
+      <link rel="stylesheet" href="/materialize/css/materialize.css">
+    
+      <link rel="stylesheet" href="/css/materialdesignicons.min.css">
+    
+  
 
   
+
 <meta name="generator" content="Hexo 5.3.0"></head>
-
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Rubicon&#39;s Rubicon</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://rubicon.lightstands.xyz"></form>
+<ul id="nav-mobile" class="sidenav">
+          
+            <li><a href="/">Home</a></li>
+          
+            <li><a href="/archives">Archives</a></li>
+          
+</ul>
+  <nav class="light-blue lighten-1" role="navigation">
+        <a href="#" data-target="nav-mobile" class="sidenav-trigger"><div class="mdi mdi-menu"></div></a>
+      <div class="nav-wrapper">
+        <ul class="right hide-on-med-and-down">
+          
+            <li><a href="/">Home</a></li>
+          
+            <li><a href="/archives">Archives</a></li>
+          
+        </ul>
       </div>
-    </div>
-  </div>
-</header>
+    </nav>
 
-      <div class="outer">
-        <section id="main"><article id="post-makru-tutor-1" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2020/12/26/makru-tutor-1/" class="article-date">
-  <time class="dt-published" datetime="2020-12-26T21:21:13.000Z" itemprop="datePublished">2020-12-26</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="p-name article-title" itemprop="headline name">
-      使用Makru和makru_langc管理现代C项目编译：引入&amp;目录
-    </h1>
-  
+<main id="content" class="container xscontainer">
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
+  <article id="post">
+    <div class="card">
+    <div class="card-content">
+      <span class="card-title">使用Makru和makru_langc管理现代C项目编译：引入&目录</span>
+      <div class="row">
+        <div class="col" style="padding-left:0;"><span class="mdi mdi-account">Rubicon</span></div>
+        <div class="col"><span class="mdi mdi-clock">2020/12/26</span></div>
+      </div>
       
-        <p><a target="_blank" rel="noopener" href="https://gitlab.com/jinwa/makru">Makru</a>是一个用Python编写的全新编译工具。它的目的不是提供更多的编译逻辑，而是提供一个统一的平台方便开发和引入新的编译逻辑。Makru和目前主流的make-like编译系统最大的不同点再于：它没有使用类似宏语法之类的东西为配置文件提供超高的灵活性，而是直接选择了很多现代包管理工具正在使用的结构化数据配置文件（Makru使用的是yaml）。<a target="_blank" rel="noopener" href="https://gitlab.com/jinwa/makru_langc">makru_langc</a>就是在它之上构建的C语言项目编译插件。<br>得益于这样的选择，makru_langc提供了非常流畅的编译管理体验。你可以快速理解并编辑配置文件，而不是在配置文件的海洋里晕头转向。另外，makru_langc还支持高自由度的自定义，你甚至可以利用它提供的工具编写自己的编译逻辑。</p>
+      <div class="flow-text">
+      <p><a target="_blank" rel="noopener" href="https://gitlab.com/jinwa/makru">Makru</a>是一个用Python编写的全新编译工具。它的目的不是提供更多的编译逻辑，而是提供一个统一的平台方便开发和引入新的编译逻辑。Makru和目前主流的make-like编译系统最大的不同点再于：它没有使用类似宏语法之类的东西为配置文件提供超高的灵活性，而是直接选择了很多现代包管理工具正在使用的结构化数据配置文件（Makru使用的是yaml）。<a target="_blank" rel="noopener" href="https://gitlab.com/jinwa/makru_langc">makru_langc</a>就是在它之上构建的C语言项目编译插件。<br>得益于这样的选择，makru_langc提供了非常流畅的编译管理体验。你可以快速理解并编辑配置文件，而不是在配置文件的海洋里晕头转向。另外，makru_langc还支持高自由度的自定义，你甚至可以利用它提供的工具编写自己的编译逻辑。</p>
 <p>这个文章系列将会介绍一个用makru_langc来管理编译的小演示项目scat，它接收标准输入然后输出到标准输出。为了演示makru_langc的功能，scat会有一个子项目叫libcopy。这个子项目里只有一个函数：从第一个File输入，输出到第二个File。</p>
+<a id="more"></a>
+
 <p>makru_langc还自带直接从本地pkgconfig查询第三方库的功能，最后一篇文章会覆盖到这个特性，并以此说明如何为makru_langc编写自己的库查询逻辑。</p>
 <h2 id="环境说明"><a href="#环境说明" class="headerlink" title="环境说明"></a>环境说明</h2><p>文章中的开发环境是运行于Linux 5.9.15 x86_64之上的Fedora 33。</p>
 <h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
@@ -111,129 +83,62 @@
 <li>makru_langc代码阅读指引</li>
 </ul>
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://rubicon.lightstands.xyz/2020/12/26/makru-tutor-1/" data-id="ckj5rtt8u00011hplgln89am7" data-title="使用Makru和makru_langc管理现代C项目编译：引入&amp;目录" class="article-share-link">Teilen</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Makru/" rel="tag">Makru</a></li></ul>
-
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-  
-    <a href="/2020/12/26/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Älter</strong>
-      <div class="article-nav-title">早上好,欢迎来到世界!</div>
-    </a>
-  
-</nav>
-
-  
-</article>
-
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Makru/" rel="tag">Makru</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/Makru/" style="font-size: 10px;">Makru</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archiv</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">letzter Beitrag</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2020/12/26/makru-tutor-1/">使用Makru和makru_langc管理现代C项目编译：引入&amp;目录</a>
-          </li>
-        
-          <li>
-            <a href="/2020/12/26/hello-world/">早上好,欢迎来到世界!</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
       </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
+    </div>
+    </div>
+  </article>
+
+  <div id="paginator">
+    
+  </div>
+
+</main>
+
+
+<footer class="page-footer light-blue darken-4">
+  <div class="container">
+    <div class="row">
       
-      &copy; 2020 Rubicon<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+        <div class="col s12 m4">
+          <h5 class="white-text">About Rubicon's Rubicon</h5>
+          <p>这里是Rubicon's Rubicon。我在无界之点的偏安之地。</p>
+        </div>
+      
+      
+        <div class="col s6 m4">
+          <h5 class="white-text"> Links </h5>
+          <ul>
+            
+            <li><a class="grey-text text-lighten-3" target="_blank" rel="noopener" href="https://github.com/thislight">GitHub</a></li>
+            
+            <li><a class="grey-text text-lighten-3" target="_blank" rel="noopener" href="https://gitlab.com/thislight">GitLab</a></li>
+            
+          </ul>
+        </div>
+      
+      
+        <div class="col s6 m4">
+        <p>This blog uses Classical Material Design theme.</p>
+        </div>
+      
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container truncate">
+      © Copyright 2020-2021 Rubicon. Most original contents are public under CC BY-NC-ND 4.0 or GNU Affero General Public License version 3.
     </div>
   </div>
 </footer>
 
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-
-<script src="/js/jquery-3.4.1.min.js"></script>
-
-
 
   
-<script src="/fancybox/jquery.fancybox.min.js"></script>
+  
+    <script src="/js/cmd.js"></script>
+  
+    <script src="/materialize/js/materialize.js"></script>
+  
 
 
 
-
-<script src="/js/script.js"></script>
-
-
-
-
-
-  </div>
 </body>
 </html>
