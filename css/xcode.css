@@ -1,0 +1,106 @@
+/*
+
+XCode style (c) Angel Garcia <angelgarcia.mail@gmail.com>
+
+Ported to Hexo highlight.js system by Rubicon <l1589002388@gmail.com>
+
+*/
+
+.highlight {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #fff;
+  color: black;
+}
+
+/* Gray DOCTYPE selectors like WebKit */
+.code .xml .meta {
+  color: #c0c0c0;
+}
+
+.code .comment,
+.code .quote {
+  color: #007400;
+}
+
+.code .tag,
+.code .attribute,
+.code .keyword,
+.code .selector-tag,
+.code .literal,
+.code .name {
+  color: #aa0d91;
+}
+
+.code .variable,
+.code .template-variable {
+  color: #3F6E74;
+}
+
+.code .code,
+.code .string,
+.code .meta-string {
+  color: #c41a16;
+}
+
+.code .regexp,
+.code .link {
+  color: #0E0EFF;
+}
+
+.code .title,
+.code .symbol,
+.code .bullet,
+.code .number {
+  color: #1c00cf;
+}
+
+.code .section,
+.code .meta {
+  color: #643820;
+}
+
+
+.code .class .title,
+.code .type,
+.code .built_in,
+.code .builtin-name,
+.code .params {
+  color: #5c2699;
+}
+
+.code .attr {
+  color: #836C28;
+}
+
+.code .subst {
+  color: #000;
+}
+
+.code .formula {
+  background-color: #eee;
+  font-style: italic;
+}
+
+.code .addition {
+  background-color: #baeeba;
+}
+
+.code .deletion {
+  background-color: #ffc8bd;
+}
+
+.code .selector-id,
+.code .selector-class {
+  color: #9b703f;
+}
+
+.code .doctag,
+.code .strong {
+  font-weight: bold;
+}
+
+.code .emphasis {
+  font-style: italic;
+}
