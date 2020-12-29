@@ -22,3 +22,7 @@ main {
     padding: 12px;
   }
 }
+.collapsible .small-padding {
+  padding: 1rem !important;
+  padding-bottom: 0 !important;
+}
