@@ -66,13 +66,32 @@
 
 <main id="content" class="container xscontainer">
 
-    <h2 style="margin-left: 1rem">C</h2>
+    <h2 style="margin-left: 1rem">C<i class="mdi mdi-tag" style="font-size: 2rem; color: #ee6e73;"></i></h2>
     <ul class="collapsible popout">
     
     <li>
-      <div class="collapsible-header">使用Makru和makru_langc管理现代C项目编译：引入&目录</div>
+      <div class="collapsible-header">
+      <div class="row" style="margin: 0;">
+        <div class="row" style="margin-left: 4px; margin-bottom: 0.5rem;"><div class="col s12"><h3 style="font-size: 1.2rem; margin: 0; margin-top: 8px;">使用Makru和makru_langc管理现代C项目编译：引入&目录</h3></div></div>
+        <div class="row" style="margin-left: 0; margin-bottom: 0;"><div class="col s12">
+<div>
+
+  <a href="/tags/Makru/"><div class="chip">
+    Makru
+  </div></a>
+  
+  <a href="/tags/C/"><div class="chip">
+    C
+  </div></a>
+  
+</div>
+</div></div>
+      </div>
+      </div>
       <div class="collapsible-body small-padding">
-        <div class="mdi mdi-clock" style="padding-left: 1rem; padding-bottom: 8px;">2020-12-26</div>
+        <div style="padding-left: 1rem">
+          <div class="mdi mdi-clock" style="padding-bottom: 8px">2020-12-26</div>
+        </div>
         <div class="entry"><p><a target="_blank" rel="noopener" href="https://gitlab.com/jinwa/makru">Makru</a>是一个用Python编写的全新编译工具。它的目的不是提供更多的编译逻辑，而是提供一个统一的平台方便开发和引入新的编译逻辑。Makru和目前主流的make-like编译系统最大的不同点再于：它没有使用类似宏语法之类的东西为配置文件提供超高的灵活性，而是直接选择了很多现代包管理工具正在使用的结构化数据配置文件（Makru使用的是yaml）。<a target="_blank" rel="noopener" href="https://gitlab.com/jinwa/makru_langc">makru_langc</a>就是在它之上构建的C语言项目编译插件。<br>得益于这样的选择，makru_langc提供了非常流畅的编译管理体验。你可以快速理解并编辑配置文件，而不是在配置文件的海洋里晕头转向。另外，makru_langc还支持高自由度的自定义，你甚至可以利用它提供的工具编写自己的编译逻辑。</p>
 <p>这个文章系列将会介绍一个用makru_langc来管理编译的小演示项目scat，它接收标准输入然后输出到标准输出。为了演示makru_langc的功能，scat会有一个子项目叫libcopy。这个子项目里只有一个函数：从第一个File输入，输出到第二个File。</p></div>
         <div class="card z-depth-0">

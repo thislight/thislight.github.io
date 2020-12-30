@@ -12,12 +12,12 @@ main {
 .card-small-margin {
   margin: 0.1rem 0 0 0 !important;
 }
-@media only screen and (max-width: 450px) {
+@media (max-width: 450px) {
   .xscontainer {
     width: 100% !important;
   }
 }
-@media only screen and (min-width: 992px) {
+@media (min-width: 992px) {
   .card .card-content {
     padding: 12px;
   }
@@ -25,4 +25,13 @@ main {
 .collapsible .small-padding {
   padding: 1rem !important;
   padding-bottom: 0 !important;
+}
+@media (max-width: 600px) {
+  .collapsible .small-padding {
+    padding: 4px !important;
+    padding-bottom: 0 !important;
+  }
+}
+.entry ul li {
+  list-style-type: square !important;
 }
