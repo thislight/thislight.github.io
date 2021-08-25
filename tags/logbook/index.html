@@ -96,7 +96,9 @@
         <div style="padding-left: 1rem">
           <div class="mdi mdi-clock" style="padding-bottom: 8px">2021-07-10</div>
         </div>
-        <div class="entry"></div>
+        <div class="entry"><p>今天晚上折腾了一个小时，终于把 Howdy 折腾出来了，写篇博文作笔记以备查。</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/boltgolt/howdy">Howdy</a> 是一个为 Linux 提供 Windows Hello 风格验证的软件，它作为一个 PAM 模块为其它软件提供人脸验证服务。不像 Windows Hello 需要认证过的IR摄像头， Howdy 基本上只要是个摄像头都可以使用。当然，如果没有 IR ，低光环境下的识别率就很拼摄像头的素质了。</p>
+<p>这篇博文主要内容是给 sudo 弄 Howdy：sudo 老是让人输密码着实令人烦躁，但是我又不想取消所有认证，正好 Howdy 的需求很低（只需要一个摄像头）。</p></div>
         <div class="card z-depth-0">
           <div class="card-action" style="padding-bottom: 0; padding-left: 14px;">
             <a href="/2021/07/10/set-up-sudo-with-howdy-on-fedora-34-for-faical-authenticating/">Go To "在Fedora 34上通过Howdy为sudo增加人脸识别认证"</a>
