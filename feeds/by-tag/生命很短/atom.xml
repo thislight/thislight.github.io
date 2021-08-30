@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://rubicon.lightstands.xyz</id>
+    <title>Rubicon&#39;s Rubicon • Posts by &#34;生命很短&#34; tag</title>
+    <link href="https://rubicon.lightstands.xyz" />
+    <updated>2021-07-10T22:34:29.000Z</updated>
+    <category term="Makru" />
+    <category term="C" />
+    <category term="系列文章" />
+    <category term="Linux记" />
+    <category term="生命很短" />
+    <category term="logbook" />
+    <entry>
+        <id>https://rubicon.lightstands.xyz/2021/07/10/set-up-sudo-with-howdy-on-fedora-34-for-faical-authenticating/</id>
+        <title>在Fedora 34上通过Howdy为sudo增加人脸识别认证</title>
+        <link rel="alternate" href="https://rubicon.lightstands.xyz/2021/07/10/set-up-sudo-with-howdy-on-fedora-34-for-faical-authenticating/"/>
+        <content type="html">&lt;p&gt;今天晚上折腾了一个小时，终于把 Howdy 折腾出来了，写篇博文作笔记以备查。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/boltgolt/howdy&#34;&gt;Howdy&lt;/a&gt; 是一个为 Linux 提供 Windows Hello 风格验证的软件，它作为一个 PAM 模块为其它软件提供人脸验证服务。不像 Windows Hello 需要认证过的IR摄像头， Howdy 基本上只要是个摄像头都可以使用。当然，如果没有 IR ，低光环境下的识别率就很拼摄像头的素质了。&lt;/p&gt;
+&lt;p&gt;这篇博文主要内容是给 sudo 弄 Howdy：sudo 老是让人输密码着实令人烦躁，但是我又不想取消所有认证，正好 Howdy 的需求很低（只需要一个摄像头）。&lt;/p&gt;
+&lt;a id=&#34;more&#34;&gt;&lt;/a&gt;
+
+&lt;p&gt;我机器上使用的发行版是 Fedora 34，64 位。&lt;/p&gt;
+&lt;h2 id=&#34;安装Howdy&#34;&gt;&lt;a href=&#34;#安装Howdy&#34; class=&#34;headerlink&#34; title=&#34;安装Howdy&#34;&gt;&lt;/a&gt;安装Howdy&lt;/h2&gt;&lt;p&gt;只需要跟随 Howdy 项目的 README 里的步骤就可以安装 Howdy 了：&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sudo dnf copr enable luya/howdy&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;sudo dnf install howdy&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;然后就按照 README 上面的说法执行 &lt;code&gt;sudo howdy add&lt;/code&gt; 添加面孔，然后就看见显示 &lt;code&gt;pip3 show dlib&lt;/code&gt; 之类的错误信息，意思是找不到 dlib 。这个 copr 仓库里的包没有把 dlib 作为依赖，得自己安装。&lt;/p&gt;
+&lt;p&gt;可以用 &lt;code&gt;sudo dnf install python-dlib&lt;/code&gt; 安装dlib。也可以用pip安装： &lt;code&gt;sudo pip install dlib&lt;/code&gt; ，但是编译的时候肯定会卡几分钟，并且大概会占用 2-3GB 左右的内存。&lt;/p&gt;
+&lt;p&gt;接下来再次运行 &lt;code&gt;sudo howdy add&lt;/code&gt; ，它会抱怨摄像头路径还没配置好：&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;[sudo] password for ***: &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Adding face model for the user ***&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Enter a label for this new model [Initial model] (max 24 characters): &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Camera path is not configured correctly, please edit the &amp;#39;device_path&amp;#39; config value.&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Exception ignored in: &amp;lt;function VideoCapture.__del__ at 0x7f855eeb1b80&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Traceback (most recent call last):&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  File &amp;quot;&amp;#x2F;usr&amp;#x2F;lib64&amp;#x2F;security&amp;#x2F;howdy&amp;#x2F;recorders&amp;#x2F;video_capture.py&amp;quot;, line 55, in __del__&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    self.internal.release()&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;AttributeError: &amp;#39;VideoCapture&amp;#39; object has no attribute &amp;#39;internal&amp;#39;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;运行 &lt;code&gt;sudo howdy config&lt;/code&gt; 来打开配置，默认情况下会使用 GNU nano 作为编辑器。找到 &lt;code&gt;device_path = &lt;/code&gt; 这一行，我们要设置的就是这个值。但是怎么知道是哪个路径呢？我用的是VLC里面的”Open Capture Device…”：将”Capture mode”设为”Video camera”，在”Video device name”的下拉菜单里面的选项选择一个，点”Play”。一个一个地尝试不同的选项，哪个有画面就是哪个路径。在我的机器上，这个路径是 &lt;code&gt;/dev/video0&lt;/code&gt; ，最后就是 &lt;code&gt;device_path = /dev/video0&lt;/code&gt; 。&lt;/p&gt;
+&lt;img src=&#34;/img/set-up-sudo-with-howdy-on-fedora-34-for-faical-authenticating/vlc-open-capture-device.png&#34; class=&#34;&#34; title=&#34;图片里的最后一个选项：Open Capture Device...，点击之后会打开一个窗口&#34;&gt;
+
+&lt;p&gt;配置好之后运行 &lt;code&gt;sudo howdy add&lt;/code&gt;增 加面孔，这下能够顺利增加了！增加完面孔可以用 &lt;code&gt;sudo howdy test&lt;/code&gt; 打开测试窗口进行测试。&lt;/p&gt;
+&lt;h2 id=&#34;配置PAM&#34;&gt;&lt;a href=&#34;#配置PAM&#34; class=&#34;headerlink&#34; title=&#34;配置PAM&#34;&gt;&lt;/a&gt;配置PAM&lt;/h2&gt;&lt;p&gt;PAM ，或者叫 Pluggable Authentication Module ，是一个中心化的身份验证服务。&lt;a href=&#34;https://www.redhat.com/sysadmin/pluggable-authentication-modules-pam&#34;&gt;这里有一篇对PAM的介绍&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;参考 &lt;a href=&#34;https://wiki.archlinux.org/title/Howdy&#34;&gt;Arch Wiki上的Howdy词条&lt;/a&gt;，要配置 sudo 的验证时行为，只需要修改 &lt;code&gt;/etc/pam.d/sudo&lt;/code&gt; ，在原先的第二行前面再加一行：&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;auth sufficient pam_python.so &amp;#x2F;lib64&amp;#x2F;security&amp;#x2F;howdy&amp;#x2F;pam.py&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;这里用&lt;code&gt;/lib64&lt;/code&gt;替换了 Arch Wiki 词条上的&lt;code&gt;/lib&lt;/code&gt;，是因为提供给 Fedora 的这个包把这些文件安装到&lt;code&gt;/lib64&lt;/code&gt;而不是&lt;code&gt;/lib&lt;/code&gt;，这个地方各个发行版可能都有不同的规则。&lt;/p&gt;
+&lt;p&gt;PAM 的配置在修改后会自动应用。现在我们可以试试使用&lt;code&gt;sudo -i&lt;/code&gt;看看有没有调用人脸识别：&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;[sudo] password for ***:&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;事情变得奇妙了起来……Howdy 并没有被调用。这说明 PAM 配置哪里出了问题，读一读跟 PAM 有关的日志：&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sudo journalctl -g pam -r&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;然后发现了奇妙的错误：&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;PAM adding faulty module: &amp;#x2F;lib&amp;#x2F;security&amp;#x2F;pam_python.so&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;PAM unable to dlopen(&amp;#x2F;lib&amp;#x2F;security&amp;#x2F;pam_python.so): &amp;#x2F;lib&amp;#x2F;security&amp;#x2F;pam_python.so: cannot open shared object file: No such file or directory&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;原来是找不到指定的 pam_python.so 这个 PAM 模块（用来调用 Howdy 的 pam.py ，Howdy 提供的 pam.py 是一个 Python 文件）。&lt;/p&gt;
+&lt;p&gt;还好 &lt;a href=&#34;https://copr.fedorainfracloud.org/coprs/luya/howdy/&#34;&gt;luya/howdy Copr仓库&lt;/a&gt; 下的评论给我找到了一个简单的出路：根据 [RPM Sphere网站] 上的流程安装了 RPM Fusion 和 RPM Sphere 这两个第三方软件源之后，可以在 RPM Sphere 这个软件源上找到&lt;code&gt;pam_python&lt;/code&gt;这个包：&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sudo dnf install pam_python&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;然后就可以愉悦地使用了！&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sudo -i&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&#34;使用pamtester测试&#34;&gt;&lt;a href=&#34;#使用pamtester测试&#34; class=&#34;headerlink&#34; title=&#34;使用pamtester测试&#34;&gt;&lt;/a&gt;使用pamtester测试&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;http://pamtester.sourceforge.net/&#34;&gt;Pamtester&lt;/a&gt; 可以测试 PAM 的指定验证服务，这样要检查 Howdy 是否生效或者单纯享受人脸识别（大雾）就很简单啦。&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sudo dnf install pamtester&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;在这篇文章的例子里只需要（用要验证的用户的用户名代替&lt;code&gt;&amp;lt;用户名&amp;gt;&lt;/code&gt;）&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;pamtester sudo &amp;lt;用户名&amp;gt; authenticate&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;就可以触发 PAM 的验证了。&lt;/p&gt;
+</content>
+        <category term="Linux记" />
+        <category term="生命很短" />
+        <category term="logbook" />
+        <updated>2021-07-10T22:34:29.000Z</updated>
+    </entry>
+</feed>

@@ -41,6 +41,15 @@
   <link rel="stylesheet" href="/materialize/css/materialize.css">
 
   
+    
+      <link rel="alternate" type="application/rss+xml" title="Rubicon's Rubicon" href="https://rubicon.lightstands.xyz/rss.xml" />
+    
+    
+      <link rel="alternate" type="application/atom+xml" title="Rubicon's Rubicon" href="https://rubicon.lightstands.xyz/atom.xml" />
+    
+  
+
+  
 
 <meta name="generator" content="Hexo 5.3.0"></head>
 <body>
@@ -71,30 +80,104 @@
 <main id="content" class="container xscontainer">
 
   <div id="category">
-    <h1>代码农场</h1>
+    <div class="card z-depth-0">
+      <h2 style="margin-left: 1rem; margin-bottom: 0;">代码农场<i class="mdi mdi-tag" style="font-size: 2rem; color: #ee6e73;"></i></h2>
+      
+        
+        
+        <div class="card-action">
+          
+            <a href="https://rubicon.lightstands.xyz/feeds/by-category/true/atom.xml">Feed (Atom)</a>
+          
+          
+            <a href="https://rubicon.lightstands.xyz/rss.xmltrue/rss.xml">Feed (RSS)</a>
+          
+        </div>
+      
+    </div>
+    <ul class="collapsible popout">
     
-      <div class="category-item">
-        <a href="/2021/01/04/makru-tutor-2/">
-          使用Makru和makru_langc管理现代C项目编译： 配置Makru和makru_langc
-        </a>
-        <time datetime="2021-01-04T18:49:20.000Z">
-          2021-01-04
-        </time>
-      </div>
-    
-      <div class="category-item">
-        <a href="/2020/12/26/makru-tutor-1/">
-          使用Makru和makru_langc管理现代C项目编译：引入&目录
-        </a>
-        <time datetime="2020-12-26T21:21:13.000Z">
-          2020-12-26
-        </time>
-      </div>
-    
-  </div>
+    <li>
+      <div class="collapsible-header">
+      <div class="row" style="margin: 0;">
+        <div class="row" style="margin-left: 4px; margin-bottom: 0.5rem;"><div class="col s12"><h3 style="font-size: 1.2rem; margin: 0; margin-top: 8px;">使用Makru和makru_langc管理现代C项目编译： 配置Makru和makru_langc</h3></div></div>
+        <div class="row" style="margin-left: 0; margin-bottom: 0;"><div class="col s12">
+<div>
 
-  <div id="paginator">
-    <span class="page-number current">1</span>
+  <a href="/tags/Makru/"><div class="chip">
+    Makru
+  </div></a>
+  
+  <a href="/tags/C/"><div class="chip">
+    C
+  </div></a>
+  
+</div>
+</div></div>
+      </div>
+      </div>
+      <div class="collapsible-body small-padding">
+        <div style="padding-left: 1rem">
+          <div class="mdi mdi-clock" style="padding-bottom: 8px">2021-01-04</div>
+        </div>
+        <div class="entry"><p>在这一篇文章中，我会介绍makru_langc的安装。和普通的编译工具不同，makru_langc是作为Makru的一个插件安装的，而Makru的插件只能安装到项目上随项目源代码附带。这会带来一些不方便，但是能够保证每一个项目都能选择最适合的插件和插件版本而无需担心兼容成本。其实类似的方法在make和cmake的项目中也能经常看见，很多项目都会带有一些脚本或者预定义宏来帮助编译，只是Makru将它变成强制行为了。</p></div>
+        <div class="card z-depth-0">
+          <div class="card-action" style="padding-bottom: 0; padding-left: 14px;">
+            <a href="/2021/01/04/makru-tutor-2/">Go To "使用Makru和makru_langc管理现代C项目编译： 配置Makru和makru_langc"</a>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="collapsible-header">
+      <div class="row" style="margin: 0;">
+        <div class="row" style="margin-left: 4px; margin-bottom: 0.5rem;"><div class="col s12"><h3 style="font-size: 1.2rem; margin: 0; margin-top: 8px;">使用Makru和makru_langc管理现代C项目编译：引入&目录</h3></div></div>
+        <div class="row" style="margin-left: 0; margin-bottom: 0;"><div class="col s12">
+<div>
+
+  <a href="/tags/Makru/"><div class="chip">
+    Makru
+  </div></a>
+  
+  <a href="/tags/C/"><div class="chip">
+    C
+  </div></a>
+  
+  <a href="/tags/%E7%B3%BB%E5%88%97%E6%96%87%E7%AB%A0/"><div class="chip">
+    系列文章
+  </div></a>
+  
+</div>
+</div></div>
+      </div>
+      </div>
+      <div class="collapsible-body small-padding">
+        <div style="padding-left: 1rem">
+          <div class="mdi mdi-clock" style="padding-bottom: 8px">2020-12-26</div>
+        </div>
+        <div class="entry"><p><a target="_blank" rel="noopener" href="https://gitlab.com/jinwa/makru">Makru</a>是一个用Python编写的全新编译工具。它的目的不是提供更多的编译逻辑，而是提供一个统一的平台方便开发和引入新的编译逻辑。Makru和目前主流的make-like编译系统最大的不同点再于：它没有使用类似宏语法之类的东西为配置文件提供超高的灵活性，而是直接选择了很多现代包管理工具正在使用的结构化数据配置文件（Makru使用的是yaml）。<a target="_blank" rel="noopener" href="https://gitlab.com/jinwa/makru_langc">makru_langc</a>就是在它之上构建的C语言项目编译插件。<br>得益于这样的选择，makru_langc提供了非常流畅的编译管理体验。你可以快速理解并编辑配置文件，而不是在配置文件的海洋里晕头转向。另外，makru_langc还支持高自由度的自定义，你甚至可以利用它提供的工具编写自己的编译逻辑。</p>
+<p>这个文章系列将会介绍一个用makru_langc来管理编译的小演示项目scat，它接收标准输入然后输出到标准输出。为了演示makru_langc的功能，scat会有一个子项目叫libcopy。这个子项目里只有一个函数：从第一个File输入，输出到第二个File。</p></div>
+        <div class="card z-depth-0">
+          <div class="card-action" style="padding-bottom: 0; padding-left: 14px;">
+            <a href="/2020/12/26/makru-tutor-1/">Go To "使用Makru和makru_langc管理现代C项目编译：引入&目录"</a>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+  </ul>
+
+  <div id="center">
+    
+  <ul class="pagination center">
+    <li class="disabled"><a href=""><i class="mdi mdi-chevron-left"></i></a></li>
+    <li class="active"><a href="/">1</a></li>
+    
+    <li class="disabled"><a href=""><i class="mdi mdi-chevron-right"></i></a></li>
+  </ul>
+
+  </div>
   </div>
 
 </main>
@@ -117,6 +200,10 @@
             <li><a class="grey-text text-lighten-3" target="_blank" rel="noopener" href="https://github.com/thislight">GitHub</a></li>
             
             <li><a class="grey-text text-lighten-3" target="_blank" rel="noopener" href="https://gitlab.com/thislight">GitLab</a></li>
+            
+            <li><a class="grey-text text-lighten-3" href="/atom.xml">Feed (Atom)</a></li>
+            
+            <li><a class="grey-text text-lighten-3" href="/rss.xml">Feed (RSS)</a></li>
             
             
             <li><a class="grey-text text-lighten-3" rel="me noopener" target="_blank" href="https://mastodon.social/@thislight">My Mastodon</a></li>
