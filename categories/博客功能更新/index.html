@@ -4,9 +4,9 @@
 
 
 
+
+
   
-
-
 
 
 
@@ -19,7 +19,7 @@
 <html lang="zh-cn,en,default">
 <head>
   <meta charset="UTF-8">
-  <title>Tag: C</title>
+  <title>Category: 博客功能更新</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
   
@@ -79,8 +79,9 @@
 
 <main id="content" class="container xscontainer">
 
+  <div id="category">
     <div class="card z-depth-0">
-      <h2 style="margin-left: 1rem; margin-bottom: 0;">C<i class="mdi mdi-tag" style="font-size: 2rem; color: #ee6e73;"></i></h2>
+      <h2 style="margin-left: 1rem; margin-bottom: 0;">博客功能更新<i class="mdi mdi-tag" style="font-size: 2rem; color: #ee6e73;"></i></h2>
       
         
         
@@ -88,10 +89,10 @@
         
         <div class="card-action">
           
-            <a href="https://rubicon.lightstands.xyz/feeds/by-tag/c/atom.xml">Feed (Atom)</a>
+            <a href="https://rubicon.lightstands.xyz/feeds/by-category/%E5%8D%9A%E5%AE%A2%E5%8A%9F%E8%83%BD%E6%9B%B4%E6%96%B0/atom.xml">Feed (Atom)</a>
           
           
-            <a href="https://rubicon.lightstands.xyz/feeds/by-tag/c/rss.xml">Feed (RSS)</a>
+            <a href="https://rubicon.lightstands.xyz/feeds/by-category/%E5%8D%9A%E5%AE%A2%E5%8A%9F%E8%83%BD%E6%9B%B4%E6%96%B0/rss.xml">Feed (RSS)</a>
           
         </div>
       
@@ -101,16 +102,16 @@
     <li>
       <div class="collapsible-header">
       <div class="row" style="margin: 0;">
-        <div class="row" style="margin-left: 4px; margin-bottom: 0.5rem;"><div class="col s12"><h3 style="font-size: 1.2rem; margin: 0; margin-top: 8px;">使用Makru和makru_langc管理现代C项目编译： 配置Makru和makru_langc</h3></div></div>
+        <div class="row" style="margin-left: 4px; margin-bottom: 0.5rem;"><div class="col s12"><h3 style="font-size: 1.2rem; margin: 0; margin-top: 8px;">Rubicon's Rubicon的RSS订阅功能介绍和技术细节</h3></div></div>
         <div class="row" style="margin-left: 0; margin-bottom: 0;"><div class="col s12">
 <div>
 
-  <a href="/tags/Makru/"><div class="chip">
-    Makru
+  <a href="/tags/Hexo/"><div class="chip">
+    Hexo
   </div></a>
   
-  <a href="/tags/C/"><div class="chip">
-    C
+  <a href="/tags/RSS/"><div class="chip">
+    RSS
   </div></a>
   
 </div>
@@ -119,49 +120,15 @@
       </div>
       <div class="collapsible-body small-padding">
         <div style="padding-left: 1rem">
-          <div class="mdi mdi-clock" style="padding-bottom: 8px">2021-01-04</div>
+          <div class="mdi mdi-clock" style="padding-bottom: 8px">2021-10-13</div>
         </div>
-        <div class="entry"><p>在这一篇文章中，我会介绍makru_langc的安装。和普通的编译工具不同，makru_langc是作为Makru的一个插件安装的，而Makru的插件只能安装到项目上随项目源代码附带。这会带来一些不方便，但是能够保证每一个项目都能选择最适合的插件和插件版本而无需担心兼容成本。其实类似的方法在make和cmake的项目中也能经常看见，很多项目都会带有一些脚本或者预定义宏来帮助编译，只是Makru将它变成强制行为了。</p></div>
+        <div class="entry"><blockquote>
+<p>RSS（英文全称：RDF Site Summary 或 Really Simple Syndication[2]），中文译作簡易資訊聚合[3]，也称聚合内容[4]，是一種消息來源格式規範，用以聚合多個網站更新的內容並自動通知網站訂閱者。使用 RSS 後，網站訂閱者便無需再手動查看網站是否有新的內容，同時 RSS 可將多個網站更新的內容進行整合，以摘要的形式呈現，有助於訂閱者快速獲取重要信息，並選擇性地點閱查看。 ———— <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/RSS">RSS - Wikipedia</a></p>
+</blockquote>
+<p>之前花了两天时间完成了这个功能，后来心血来潮在网站上看看时发现有bug。修好bug之后我觉得还是水一篇文章吧，否则博客开了一年都没什么内容。这篇文章主要就是介绍RSS订阅功能以及实现时的一些技术细节，如果想要扒我（包含这个功能）的主题或者借以参考的话，我过一段时间会把这个主题整理开源出来。</p></div>
         <div class="card z-depth-0">
           <div class="card-action" style="padding-bottom: 0; padding-left: 14px;">
-            <a href="/2021/01/04/makru-tutor-2/">Go To "使用Makru和makru_langc管理现代C项目编译： 配置Makru和makru_langc"</a>
-          </div>
-        </div>
-      </div>
-    </li>
-    
-    <li>
-      <div class="collapsible-header">
-      <div class="row" style="margin: 0;">
-        <div class="row" style="margin-left: 4px; margin-bottom: 0.5rem;"><div class="col s12"><h3 style="font-size: 1.2rem; margin: 0; margin-top: 8px;">使用Makru和makru_langc管理现代C项目编译：引入&目录</h3></div></div>
-        <div class="row" style="margin-left: 0; margin-bottom: 0;"><div class="col s12">
-<div>
-
-  <a href="/tags/Makru/"><div class="chip">
-    Makru
-  </div></a>
-  
-  <a href="/tags/C/"><div class="chip">
-    C
-  </div></a>
-  
-  <a href="/tags/%E7%B3%BB%E5%88%97%E6%96%87%E7%AB%A0/"><div class="chip">
-    系列文章
-  </div></a>
-  
-</div>
-</div></div>
-      </div>
-      </div>
-      <div class="collapsible-body small-padding">
-        <div style="padding-left: 1rem">
-          <div class="mdi mdi-clock" style="padding-bottom: 8px">2020-12-26</div>
-        </div>
-        <div class="entry"><p><a target="_blank" rel="noopener" href="https://gitlab.com/jinwa/makru">Makru</a>是一个用Python编写的全新编译工具。它的目的不是提供更多的编译逻辑，而是提供一个统一的平台方便开发和引入新的编译逻辑。Makru和目前主流的make-like编译系统最大的不同点再于：它没有使用类似宏语法之类的东西为配置文件提供超高的灵活性，而是直接选择了很多现代包管理工具正在使用的结构化数据配置文件（Makru使用的是yaml）。<a target="_blank" rel="noopener" href="https://gitlab.com/jinwa/makru_langc">makru_langc</a>就是在它之上构建的C语言项目编译插件。<br>得益于这样的选择，makru_langc提供了非常流畅的编译管理体验。你可以快速理解并编辑配置文件，而不是在配置文件的海洋里晕头转向。另外，makru_langc还支持高自由度的自定义，你甚至可以利用它提供的工具编写自己的编译逻辑。</p>
-<p>这个文章系列将会介绍一个用makru_langc来管理编译的小演示项目scat，它接收标准输入然后输出到标准输出。为了演示makru_langc的功能，scat会有一个子项目叫libcopy。这个子项目里只有一个函数：从第一个File输入，输出到第二个File。</p></div>
-        <div class="card z-depth-0">
-          <div class="card-action" style="padding-bottom: 0; padding-left: 14px;">
-            <a href="/2020/12/26/makru-tutor-1/">Go To "使用Makru和makru_langc管理现代C项目编译：引入&目录"</a>
+            <a href="/2021/10/13/hexo-topic-feeds/">Go To "Rubicon's Rubicon的RSS订阅功能介绍和技术细节"</a>
           </div>
         </div>
       </div>
@@ -178,6 +145,7 @@
     <li class="disabled"><a href=""><i class="mdi mdi-chevron-right"></i></a></li>
   </ul>
 
+  </div>
   </div>
 
 </main>

@@ -17,7 +17,7 @@
 <html lang="zh-cn,en,default">
 <head>
   <meta charset="UTF-8">
-  <title>随想集（2020 & 2021）</title>
+  <title>Rubicon's Rubicon的RSS订阅功能介绍和技术细节</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
   
@@ -80,7 +80,7 @@
   <article id="post">
     <div class="card">
     <div class="card-content">
-      <span class="card-title">随想集（2020 & 2021）</span>
+      <span class="card-title">Rubicon's Rubicon的RSS订阅功能介绍和技术细节</span>
       <div class="row">
         <div class="col" style="padding-left:0;"><span class="mdi mdi-account">Rubicon</span></div>
         <div class="col"><span class="mdi mdi-clock">2021/10/13</span></div>
@@ -88,8 +88,12 @@
       
 <div>
 
-  <a href="/tags/%E8%AF%97%E9%9B%86/"><div class="chip">
-    诗集
+  <a href="/tags/Hexo/"><div class="chip">
+    Hexo
+  </div></a>
+  
+  <a href="/tags/RSS/"><div class="chip">
+    RSS
   </div></a>
   
 </div>
@@ -97,19 +101,19 @@
       
       <div class="entry">
       <blockquote>
-<p>谨以此集纪念我自己的“20年代初”。拙作几篇，仅作备查。</p>
+<p>RSS（英文全称：RDF Site Summary 或 Really Simple Syndication[2]），中文译作簡易資訊聚合[3]，也称聚合内容[4]，是一種消息來源格式規範，用以聚合多個網站更新的內容並自動通知網站訂閱者。使用 RSS 後，網站訂閱者便無需再手動查看網站是否有新的內容，同時 RSS 可將多個網站更新的內容進行整合，以摘要的形式呈現，有助於訂閱者快速獲取重要信息，並選擇性地點閱查看。 ———— <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/RSS">RSS - Wikipedia</a></p>
 </blockquote>
+<p>之前花了两天时间完成了这个功能，后来心血来潮在网站上看看时发现有bug。修好bug之后我觉得还是水一篇文章吧，否则博客开了一年都没什么内容。这篇文章主要就是介绍RSS订阅功能以及实现时的一些技术细节，如果想要扒我（包含这个功能）的主题或者借以参考的话，我过一段时间会把这个主题整理开源出来。</p>
 <span id="more"></span>
 
-<h2 id="浪（2020年5月）"><a href="#浪（2020年5月）" class="headerlink" title="浪（2020年5月）"></a>浪（2020年5月）</h2><p>桃花树站在海岸上<br>前浪刚刚拍碎<br>后浪还在路上<br>桃花树上有着人影<br>并着电喇叭</p>
-<h2 id="末代帝国（2020年5月）"><a href="#末代帝国（2020年5月）" class="headerlink" title="末代帝国（2020年5月）"></a>末代帝国（2020年5月）</h2><p>万岁一声酒，朽木何时朽？屋漏偏灭花烛，灯下无影踪。黄琉红璃映斜阳，山川早覆众生口。还剩鸦叫几声，花落人瘦，不敢问西东。</p>
-<h2 id="山川（2020年9月）"><a href="#山川（2020年9月）" class="headerlink" title="山川（2020年9月）"></a>山川（2020年9月）</h2><p>山川<br>静悄悄地绿<br>沉没在不语的早餐旁边<br><br /><br>旅人的手指<br>唱赞歌<br>伴随着星星似的闪光<br>活泼地跳舞<br><br /><br>千年以后<br>一样地燃烧过<br>一样地曾在空气中飞舞</p>
-<h2 id="无题（2020年11月）"><a href="#无题（2020年11月）" class="headerlink" title="无题（2020年11月）"></a>无题（2020年11月）</h2><p>风推浮萍随身灭，冰冻三尺一日寒。<br>铁马残破二十年，孤烟垂尽寻常家。</p>
-<h2 id="自题（2020年）"><a href="#自题（2020年）" class="headerlink" title="自题（2020年）"></a>自题（2020年）</h2><p>浮萍逐波十八年，竹节伶仃醉道虚。<br>莫教长歌独对月，孤灯下磨影敲门。</p>
-<h2 id="中国（2020年）"><a href="#中国（2020年）" class="headerlink" title="中国（2020年）"></a>中国（2020年）</h2><p>还剩多少山川在唱自由的歌<br>红色愤怒地指责黑色<br>透明的字词传出江南<br>水箱在笑</p>
-<h2 id="除夕（2021年2月）"><a href="#除夕（2021年2月）" class="headerlink" title="除夕（2021年2月）"></a>除夕（2021年2月）</h2><p>爆竹声声慢，灯火璀璨，星空从地面升到天上<br>飞机正常的争吵，不同的眼睛不会说话<br>也像沉积在水底的夜晚<br>画着不同人的漫画</p>
-<h2 id="断代（2021年6月）"><a href="#断代（2021年6月）" class="headerlink" title="断代（2021年6月）"></a>断代（2021年6月）</h2><p>一朵樱花<br>流进干涸的河道<br>发出铁锈的声音<br>和泠冽的味道<br><br /><br>我是否需要呼吸<br>在极蓝的火焰里<br>烧个彻底<br>露出棕色的核心<br>也不知道远方的幻影<br>踏碎我的妄想<br>剩下什么可描述之物<br><br /><br>没有这样一种魔法<br>把水面停下<br>浮萍不再追逐波浪<br><br /><br>有没有许多种可能<br>自由呼吸<br>毋需等上许多光阴</p>
-<h2 id="国（2021年9月）"><a href="#国（2021年9月）" class="headerlink" title="国（2021年9月）"></a>国（2021年9月）</h2><p>苍生难万载，灯火千年梦。曾有士人念天下，如今字里还。清风不识字？何故乱翻书。斜阳下，屋檐乱。热血终有恨，鬼怪在人间。</p>
+<p>Rubicon’s Rubicon同时支持全站订阅和按标签或目录订阅。全站订阅就在每个页面最下方的“Links”里面。</p>
+<img src="/img/hexo-topic-feeds/site-feeds.png" class="" title="Feed (Atom) 和 Feed (RSS)">
+
+<p>目前为止，对于Rubicon’s Rubicon来说RSS和Atom订阅没有差别。</p>
+<h2 id="按标签或目录订阅"><a href="#按标签或目录订阅" class="headerlink" title="按标签或目录订阅"></a>按标签或目录订阅</h2><p>通过菜单栏里的”Archives”或右边的”Tags”进入任意标签或目录的页面，在标题下面就有“FEED (Atom)”和“FEED (RSS)”。</p>
+<img src="/img/hexo-topic-feeds/topic-feeds.png" class="" title="标题“诗集”下面有“FEED (Atom)”和“FEED (RSS)”">
+
+<h2 id="技术细节"><a href="#技术细节" class="headerlink" title="技术细节"></a>技术细节</h2><p>Rubicon’s Rubicon基于静态博客生成器<a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>构建，所以当然没法根据参数动态生成订阅文件。不过<a target="_blank" rel="noopener" href="https://github.com/sergeyzwezdin/hexo-feed">hexo-feed</a>这个插件支持按照标签或者目录生成订阅。我做了一些配置，然后在相应的页面引用（拼链接）就可以使用了。</p>
 
       </div>
     </div>

@@ -49,7 +49,7 @@
 
   
 
-<meta name="generator" content="Hexo 5.3.0"></head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 <body>
 <ul id="nav-mobile" class="sidenav">
           
@@ -107,38 +107,47 @@
       <p>今天晚上折腾了一个小时，终于把 Howdy 折腾出来了，写篇博文作笔记以备查。</p>
 <p><a target="_blank" rel="noopener" href="https://github.com/boltgolt/howdy">Howdy</a> 是一个为 Linux 提供 Windows Hello 风格验证的软件，它作为一个 PAM 模块为其它软件提供人脸验证服务。不像 Windows Hello 需要认证过的IR摄像头， Howdy 基本上只要是个摄像头都可以使用。当然，如果没有 IR ，低光环境下的识别率就很拼摄像头的素质了。</p>
 <p>这篇博文主要内容是给 sudo 弄 Howdy：sudo 老是让人输密码着实令人烦躁，但是我又不想取消所有认证，正好 Howdy 的需求很低（只需要一个摄像头）。</p>
-<a id="more"></a>
+<span id="more"></span>
 
 <p>我机器上使用的发行版是 Fedora 34，64 位。</p>
 <h2 id="安装Howdy"><a href="#安装Howdy" class="headerlink" title="安装Howdy"></a>安装Howdy</h2><p>只需要跟随 Howdy 项目的 README 里的步骤就可以安装 Howdy 了：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo dnf copr enable luya/howdy</span><br><span class="line">sudo dnf install howdy</span><br></pre></td></tr></table></figure>
+
 <p>然后就按照 README 上面的说法执行 <code>sudo howdy add</code> 添加面孔，然后就看见显示 <code>pip3 show dlib</code> 之类的错误信息，意思是找不到 dlib 。这个 copr 仓库里的包没有把 dlib 作为依赖，得自己安装。</p>
 <p>可以用 <code>sudo dnf install python-dlib</code> 安装dlib。也可以用pip安装： <code>sudo pip install dlib</code> ，但是编译的时候肯定会卡几分钟，并且大概会占用 2-3GB 左右的内存。</p>
 <p>接下来再次运行 <code>sudo howdy add</code> ，它会抱怨摄像头路径还没配置好：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[sudo] password for ***: </span><br><span class="line">Adding face model for the user ***</span><br><span class="line">Enter a label for this new model [Initial model] (max 24 characters): </span><br><span class="line">Camera path is not configured correctly, please edit the &#39;device_path&#39; config value.</span><br><span class="line">Exception ignored in: &lt;function VideoCapture.__del__ at 0x7f855eeb1b80&gt;</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File &quot;&#x2F;usr&#x2F;lib64&#x2F;security&#x2F;howdy&#x2F;recorders&#x2F;video_capture.py&quot;, line 55, in __del__</span><br><span class="line">    self.internal.release()</span><br><span class="line">AttributeError: &#39;VideoCapture&#39; object has no attribute &#39;internal&#39;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[sudo] password for ***: </span><br><span class="line">Adding face model for the user ***</span><br><span class="line">Enter a label for this new model [Initial model] (max 24 characters): </span><br><span class="line">Camera path is not configured correctly, please edit the &#x27;device_path&#x27; config value.</span><br><span class="line">Exception ignored in: &lt;function VideoCapture.__del__ at 0x7f855eeb1b80&gt;</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File &quot;/usr/lib64/security/howdy/recorders/video_capture.py&quot;, line 55, in __del__</span><br><span class="line">    self.internal.release()</span><br><span class="line">AttributeError: &#x27;VideoCapture&#x27; object has no attribute &#x27;internal&#x27;</span><br></pre></td></tr></table></figure>
+
 <p>运行 <code>sudo howdy config</code> 来打开配置，默认情况下会使用 GNU nano 作为编辑器。找到 <code>device_path = </code> 这一行，我们要设置的就是这个值。但是怎么知道是哪个路径呢？我用的是VLC里面的”Open Capture Device…”：将”Capture mode”设为”Video camera”，在”Video device name”的下拉菜单里面的选项选择一个，点”Play”。一个一个地尝试不同的选项，哪个有画面就是哪个路径。在我的机器上，这个路径是 <code>/dev/video0</code> ，最后就是 <code>device_path = /dev/video0</code> 。</p>
 <img src="/img/set-up-sudo-with-howdy-on-fedora-34-for-faical-authenticating/vlc-open-capture-device.png" class="" title="图片里的最后一个选项：Open Capture Device...，点击之后会打开一个窗口">
 
 <p>配置好之后运行 <code>sudo howdy add</code>增 加面孔，这下能够顺利增加了！增加完面孔可以用 <code>sudo howdy test</code> 打开测试窗口进行测试。</p>
 <h2 id="配置PAM"><a href="#配置PAM" class="headerlink" title="配置PAM"></a>配置PAM</h2><p>PAM ，或者叫 Pluggable Authentication Module ，是一个中心化的身份验证服务。<a target="_blank" rel="noopener" href="https://www.redhat.com/sysadmin/pluggable-authentication-modules-pam">这里有一篇对PAM的介绍</a>。</p>
 <p>参考 <a target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/Howdy">Arch Wiki上的Howdy词条</a>，要配置 sudo 的验证时行为，只需要修改 <code>/etc/pam.d/sudo</code> ，在原先的第二行前面再加一行：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">auth sufficient pam_python.so &#x2F;lib64&#x2F;security&#x2F;howdy&#x2F;pam.py</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">auth sufficient pam_python.so /lib64/security/howdy/pam.py</span><br></pre></td></tr></table></figure>
 <p>这里用<code>/lib64</code>替换了 Arch Wiki 词条上的<code>/lib</code>，是因为提供给 Fedora 的这个包把这些文件安装到<code>/lib64</code>而不是<code>/lib</code>，这个地方各个发行版可能都有不同的规则。</p>
 <p>PAM 的配置在修改后会自动应用。现在我们可以试试使用<code>sudo -i</code>看看有没有调用人脸识别：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[sudo] password for ***:</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[sudo] password for ***:</span><br></pre></td></tr></table></figure>
+
 <p>事情变得奇妙了起来……Howdy 并没有被调用。这说明 PAM 配置哪里出了问题，读一读跟 PAM 有关的日志：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo journalctl -g pam -r</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo journalctl -g pam -r</span><br></pre></td></tr></table></figure>
+
 <p>然后发现了奇妙的错误：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">PAM adding faulty module: &#x2F;lib&#x2F;security&#x2F;pam_python.so</span><br><span class="line">PAM unable to dlopen(&#x2F;lib&#x2F;security&#x2F;pam_python.so): &#x2F;lib&#x2F;security&#x2F;pam_python.so: cannot open shared object file: No such file or directory</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">PAM adding faulty module: /lib/security/pam_python.so</span><br><span class="line">PAM unable to dlopen(/lib/security/pam_python.so): /lib/security/pam_python.so: cannot open shared object file: No such file or directory</span><br></pre></td></tr></table></figure>
+
 <p>原来是找不到指定的 pam_python.so 这个 PAM 模块（用来调用 Howdy 的 pam.py ，Howdy 提供的 pam.py 是一个 Python 文件）。</p>
 <p>还好 <a target="_blank" rel="noopener" href="https://copr.fedorainfracloud.org/coprs/luya/howdy/">luya/howdy Copr仓库</a> 下的评论给我找到了一个简单的出路：根据 [RPM Sphere网站] 上的流程安装了 RPM Fusion 和 RPM Sphere 这两个第三方软件源之后，可以在 RPM Sphere 这个软件源上找到<code>pam_python</code>这个包：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dnf install pam_python</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dnf install pam_python</span><br></pre></td></tr></table></figure>
+
 <p>然后就可以愉悦地使用了！</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo -i</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo -i</span><br></pre></td></tr></table></figure>
+
 <h2 id="使用pamtester测试"><a href="#使用pamtester测试" class="headerlink" title="使用pamtester测试"></a>使用pamtester测试</h2><p><a target="_blank" rel="noopener" href="http://pamtester.sourceforge.net/">Pamtester</a> 可以测试 PAM 的指定验证服务，这样要检查 Howdy 是否生效或者单纯享受人脸识别（大雾）就很简单啦。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dnf install pamtester</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dnf install pamtester</span><br></pre></td></tr></table></figure>
+
 <p>在这篇文章的例子里只需要（用要验证的用户的用户名代替<code>&lt;用户名&gt;</code>）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pamtester sudo &lt;用户名&gt; authenticate</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pamtester sudo &lt;用户名&gt; authenticate</span><br></pre></td></tr></table></figure>
+
 <p>就可以触发 PAM 的验证了。</p>
 
       </div>

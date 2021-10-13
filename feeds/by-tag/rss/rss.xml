@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>Rubicon&#39;s Rubicon • Posts by &#34;rss&#34; tag</title>
+        <link>https://rubicon.lightstands.xyz</link>
+        <description></description>
+        <language>zh-cn,en,default</language>
+        <pubDate>Wed, 13 Oct 2021 18:36:53 +0000</pubDate>
+        <lastBuildDate>Wed, 13 Oct 2021 18:36:53 +0000</lastBuildDate>
+        <category>Hexo</category>
+        <category>RSS</category>
+        <category>Makru</category>
+        <category>C</category>
+        <category>系列文章</category>
+        <category>诗集</category>
+        <category>Linux记</category>
+        <category>生命很短</category>
+        <category>logbook</category>
+        <item>
+            <guid isPermalink="true">https://rubicon.lightstands.xyz/2021/10/13/hexo-topic-feeds/</guid>
+            <title>Rubicon&#39;s Rubicon的RSS订阅功能介绍和技术细节</title>
+            <link>https://rubicon.lightstands.xyz/2021/10/13/hexo-topic-feeds/</link>
+            <category>Hexo</category>
+            <category>RSS</category>
+            <pubDate>Wed, 13 Oct 2021 18:36:53 +0000</pubDate>
+            <description><![CDATA[ &lt;blockquote&gt;
+&lt;p&gt;RSS（英文全称：RDF Site Summary 或 Really Simple Syndication[2]），中文译作簡易資訊聚合[3]，也称聚合内容[4]，是一種消息來源格式規範，用以聚合多個網站更新的內容並自動通知網站訂閱者。使用 RSS 後，網站訂閱者便無需再手動查看網站是否有新的內容，同時 RSS 可將多個網站更新的內容進行整合，以摘要的形式呈現，有助於訂閱者快速獲取重要信息，並選擇性地點閱查看。 ———— &lt;a href=&#34;https://zh.wikipedia.org/wiki/RSS&#34;&gt;RSS - Wikipedia&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;之前花了两天时间完成了这个功能，后来心血来潮在网站上看看时发现有bug。修好bug之后我觉得还是水一篇文章吧，否则博客开了一年都没什么内容。这篇文章主要就是介绍RSS订阅功能以及实现时的一些技术细节，如果想要扒我（包含这个功能）的主题或者借以参考的话，我过一段时间会把这个主题整理开源出来。&lt;/p&gt;
+&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
+
+&lt;p&gt;Rubicon’s Rubicon同时支持全站订阅和按标签或目录订阅。全站订阅就在每个页面最下方的“Links”里面。&lt;/p&gt;
+&lt;img src=&#34;/img/hexo-topic-feeds/site-feeds.png&#34; class=&#34;&#34; title=&#34;Feed (Atom) 和 Feed (RSS)&#34;&gt;
+
+&lt;p&gt;目前为止，对于Rubicon’s Rubicon来说RSS和Atom订阅没有差别。&lt;/p&gt;
+&lt;h2 id=&#34;按标签或目录订阅&#34;&gt;&lt;a href=&#34;#按标签或目录订阅&#34; class=&#34;headerlink&#34; title=&#34;按标签或目录订阅&#34;&gt;&lt;/a&gt;按标签或目录订阅&lt;/h2&gt;&lt;p&gt;通过菜单栏里的”Archives”或右边的”Tags”进入任意标签或目录的页面，在标题下面就有“FEED (Atom)”和“FEED (RSS)”。&lt;/p&gt;
+&lt;img src=&#34;/img/hexo-topic-feeds/topic-feeds.png&#34; class=&#34;&#34; title=&#34;标题“诗集”下面有“FEED (Atom)”和“FEED (RSS)”&#34;&gt;
+
+&lt;h2 id=&#34;技术细节&#34;&gt;&lt;a href=&#34;#技术细节&#34; class=&#34;headerlink&#34; title=&#34;技术细节&#34;&gt;&lt;/a&gt;技术细节&lt;/h2&gt;&lt;p&gt;Rubicon’s Rubicon基于静态博客生成器&lt;a href=&#34;https://hexo.io/&#34;&gt;Hexo&lt;/a&gt;构建，所以当然没法根据参数动态生成订阅文件。不过&lt;a href=&#34;https://github.com/sergeyzwezdin/hexo-feed&#34;&gt;hexo-feed&lt;/a&gt;这个插件支持按照标签或者目录生成订阅。我做了一些配置，然后在相应的页面引用（拼链接）就可以使用了。&lt;/p&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>
