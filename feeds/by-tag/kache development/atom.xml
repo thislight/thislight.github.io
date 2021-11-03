@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://rubicon.lightstands.xyz</id>
+    <title>Rubicon&#39;s Rubicon • Posts by &#34;kache development&#34; tag</title>
+    <link href="https://rubicon.lightstands.xyz" />
+    <updated>2021-11-02T16:00:00.000Z</updated>
+    <category term="Hexo" />
+    <category term="RSS" />
+    <category term="Makru" />
+    <category term="C" />
+    <category term="系列文章" />
+    <category term="Kache Development" />
+    <category term="Kache" />
+    <category term="网络" />
+    <category term="诗集" />
+    <category term="Linux记" />
+    <category term="生命很短" />
+    <category term="logbook" />
+    <entry>
+        <id>https://rubicon.lightstands.xyz/2021/11/02/measure-peer-reachability/</id>
+        <title>在Rope中测量&#34;可达&#34;</title>
+        <link rel="alternate" href="https://rubicon.lightstands.xyz/2021/11/02/measure-peer-reachability/"/>
+        <content type="html">&lt;p&gt;观测你的猫的生死可不是件易事。&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;当太阳明晃晃地照在可爱的Mudy身上时，它身上蓬松的毛反射了光线。光线经过许多介质进入你的眼中。哪怕不研究我们的身体如何处理这些莫名奇妙的光线，光从皮毛到你眼前的过程也需要时间。只不过这个时间太短：当你（在真空中）距离Mudy 299792458米时，这个时间是1秒。换句话说，当你在南极时，你看到北极的Mudy至少是0.05秒前的Mudy；当你在中国时，你看到北美的Mudy至少是0.1秒前的Mudy。&lt;/p&gt;
+&lt;img src=&#34;/img/measure-peer-reachability/you-mudy-sun.png&#34; class=&#34;&#34;&gt;
+
+&lt;p&gt;Rope是为分布式应用框架Kache设计的抽象网络层。作为一个分布式应用框架，网络是最必要也是最麻烦的事情。在分布式网络里，知道一个Peer是否活着和能否连接上是重中之重。但是，在网络上观测一个Peer就如观测北极的Mudy或数千光年外的恒星一样麻烦。因为：1)你的朋友总是很麻烦，哪怕他们本意并不是想给你捣乱；2)你没办法不花时间就知道他们的情况，哪怕你和他们的延时只有1ms，你知道的也只是他们1ms前的情况，更别说我们不可能持续去监控他们的状况。&lt;/p&gt;
+&lt;p&gt;在描述一个Peer是否“可达”时，我们会变得混乱：我们事实上有无限多种方法“达”一个Peer。就像我们可以不用“看”就可以“听”到Mudy还活着。&lt;/p&gt;
+&lt;img src=&#34;/img/measure-peer-reachability/you-mudy-sound.png&#34; class=&#34;&#34;&gt;
+
+&lt;p&gt;尽管我们有很多方法跟一个Peer交换信息，但却不是所有方法在所有时刻都有效。所以在描述一个Peer是否“可达”时，我们还需要描述其中一个方法是否“可达”目的地。&lt;/p&gt;
+&lt;img src=&#34;/img/measure-peer-reachability/multiple-transports-to-peer.png&#34; class=&#34;&#34;&gt;
+
+&lt;p&gt;Rope使用PhysicalAddress和Peer分别描述路径和Peer的“可达”性。对于Peer而言，我们只需要知道它是否“活着”，即我们能否在网络上找到它。但对于PhysicalAddress而言，除了我们能否找到它，我们还需要知道我们是否能通过这条路径连接到Peer。&lt;/p&gt;
+&lt;h2 id=&#34;Peer&#34;&gt;&lt;a href=&#34;#Peer&#34; class=&#34;headerlink&#34; title=&#34;Peer&#34;&gt;&lt;/a&gt;Peer&lt;/h2&gt;&lt;p&gt;Peer，在中文中经常被翻译成“对等端”，我们对它的唯一要求就是活着。&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;pub const Peer = struct &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    ...&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    aliveUntil: u64 = 0,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    aliveOffest: u64 = 0,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    ...&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;这里我们采用了一种租期风格的方法来测量Peer是否活着：Peer会通过“租期”承诺自己在多少时间前会活着，Peer在租期过期前需要不停地续期，过期后我们就认为Peer已经死了。&lt;code&gt;aliveUntil&lt;/code&gt;是这个租期的最后期限，&lt;code&gt;aliveOffest&lt;/code&gt;则是Peer设置的租期时长。租期虽然被广泛使用（大部分的协议的心跳算法也使用租期），但它是一个很令人头疼的算法。&lt;/p&gt;
+&lt;h3 id=&#34;租期不定&#34;&gt;&lt;a href=&#34;#租期不定&#34; class=&#34;headerlink&#34; title=&#34;租期不定&#34;&gt;&lt;/a&gt;租期不定&lt;/h3&gt;&lt;p&gt;租期的令人头疼之处在于：租期时长可以是一个随意的值，但算法的表现跟租期时长有关，我们需要根据情况确定租期的值。较长的租期会使得Peer被错认为能连接上的时间会更长，它使得我们要测量的可达性变为“可能可达性”；较短的租期促使Peer更经常地续期，降低容错能力并且使用更多网络流量。&lt;/p&gt;
+&lt;p&gt;Google在它的Google Play Service中与服务器的心跳部分采取了自适应租期：随着连接上的时长增加，租期会逐渐变长。这种自适应租期的前提是，长期的“能连接上”可以预测接下来不太可能出现一段时间无法连接上的情况。自适应租期确实是个不错的方法，不过Rope中租期由Peer设置。Peer可以根据实际情况确定租期，目前这个数字还是固定值10秒。&lt;/p&gt;
+&lt;h2 id=&#34;PhysicalAddress&#34;&gt;&lt;a href=&#34;#PhysicalAddress&#34; class=&#34;headerlink&#34; title=&#34;PhysicalAddress&#34;&gt;&lt;/a&gt;PhysicalAddress&lt;/h2&gt;&lt;p&gt;能被找到和能连接上是有区别的。当我们通过&lt;code&gt;bind(2)&lt;/code&gt;、&lt;code&gt;listen(2)&lt;/code&gt;和&lt;code&gt;accept(2)&lt;/code&gt;监听一个端口时，其他人哪怕有我们的地址和端口号也不一定能连上。我们经常需要一些特殊的技巧才能在现实中连接上其它人的机器。比如，如果我们和目标机器之间有NAT的话，我们必须要穿透NAT才能连上。尽管它确实存在，但是我们确实不一定能连接上。&lt;/p&gt;
+&lt;p&gt;所以，Rope的PhysicalAddress里面的可达性被分成了两个维度：Existence和Reachability。Existence指的是这个PhysicalAddress是否存在，Reachability指示这个PhysicalAddress是否有可能连接上。&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;const PhysicalAddress = struct &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    ...&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    lastReachable: u64 = 0,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    lastFound: u64 = 0,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    lastDismiss: u64 = 0,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    promiseReachable: u64 = 0,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    ...&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;上面lastFound和lastDismiss就是用来标识Existence维度的值，lastReachable和promiseReachable用来标识Reachability维度。它们都是Unix时间戳。&lt;/p&gt;
+&lt;h3 id=&#34;Existence&#34;&gt;&lt;a href=&#34;#Existence&#34; class=&#34;headerlink&#34; title=&#34;Existence&#34;&gt;&lt;/a&gt;Existence&lt;/h3&gt;&lt;p&gt;&lt;code&gt;lastFound&lt;/code&gt;和&lt;code&gt;lastDismiss&lt;/code&gt;用于标识Existence维度，这两个值分别跟两个事件有关：&lt;code&gt;_wire.found&lt;/code&gt;和&lt;code&gt;_wire.down&lt;/code&gt;。前一个在发现新的PhysicalAddress后发送，后一个在发现PhysicalAddress所代表的路径断开之后发送。它们会通过EventPub发送到网络上的其它Peer。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;_wire.found&lt;/code&gt;事件会更新&lt;code&gt;lastFound&lt;/code&gt;到一个时间，&lt;code&gt;_wire.down&lt;/code&gt;事件会更新&lt;code&gt;lastDismiss&lt;/code&gt;。当&lt;code&gt;lastFound&lt;/code&gt;大于&lt;code&gt;lastDismiss&lt;/code&gt;时，我们认为这个PhysicalAddress还存在于网络上。&lt;/p&gt;
+&lt;p&gt;我们是否可以用一个值标识这个维度，比如说单一个&lt;code&gt;lastFound&lt;/code&gt;？最开始我也是只设计了&lt;code&gt;lastFound&lt;/code&gt;。问题在于，如果我们这样做，这个Existence会变成一个租期风格的维度。但是这个事情明明我们已知，使用租期会出现“可能”。&lt;br&gt;或者我们可以使用一个布尔值来代替这两个值，但是这样时间信息就会丢失。丢失时间信息会让程序在这两个事件频繁发生时变得混乱，特别是当发送该事件到接受该事件存在时间差时（EventPub使用泛洪法广播消息，在我们测量可达性的这个位置不保证事件能按照全局发送顺序收到）。考虑这个例子：两个Peer分别发送某个PhysicalAddress的found和down事件，found先发送但是最后收到，down后发送但是先收到。如果不分别保存两个时间我们只能简单地覆盖之前的结果，这时候状态就会变得奇怪。&lt;/p&gt;
+&lt;h3 id=&#34;Reachability&#34;&gt;&lt;a href=&#34;#Reachability&#34; class=&#34;headerlink&#34; title=&#34;Reachability&#34;&gt;&lt;/a&gt;Reachability&lt;/h3&gt;&lt;p&gt;Reachability是一个完全独立的维度，它与Existence无关，跟这个PhysicalAddress是否连接上或是否正在传输数据有关。这是一个租期风格的维度。&lt;/p&gt;
+&lt;h3 id=&#34;理解”Reachable-but-not-exists”&#34;&gt;&lt;a href=&#34;#理解”Reachable-but-not-exists”&#34; class=&#34;headerlink&#34; title=&#34;理解”Reachable but not exists”&#34;&gt;&lt;/a&gt;理解”Reachable but not exists”&lt;/h3&gt;&lt;p&gt;在Reachability里我强调这两个维度是独立的。这样看起来会存在一种奇特的情况：Reachable but not exists（可达但不存在）。&lt;/p&gt;
+&lt;p&gt;既然可达为何不存在呢？这里的不存在不是真的不存在，而是在网络上不存在。试试考虑下面的情景：目前网络上存在A和B，它们互相是认为对方Reachable and exists的。现在有一个新节点C要加入，他连接A并开始广播&lt;code&gt;_ticktock&lt;/code&gt;事件让大家知道它的存在。在这时候A和C互相之间可达，但在A的视角看这个PhysicalAddress的lastFound仍然是初始值0，即这个PhysicalAddress还不存在（not exists）。现在A因为发现了新的PhysicalAddress就会广播一条&lt;code&gt;_wire.found&lt;/code&gt;事件。然后B、C收到这个事件后就会更新它们的&lt;code&gt;lastFound&lt;/code&gt;，然后分别将该消息转发给A、C和A、B。这时A就会收到它自己发出的这条消息，虽然这条消息不会被转发给别的Peer或应用，但是A仍然会用这条消息更新&lt;code&gt;lastFound&lt;/code&gt;。这时在A处这个PhysicalAddress就会变成Reachable and exists（可达并存在）。&lt;/p&gt;
+</content>
+        <category term="Kache Development" />
+        <category term="Kache" />
+        <category term="网络" />
+        <updated>2021-11-02T16:00:00.000Z</updated>
+    </entry>
+</feed>
