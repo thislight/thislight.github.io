@@ -5,6 +5,7 @@
     <link href="https://rubicon.lightstands.xyz" />
     <updated>2021-10-13T18:36:53.000Z</updated>
     <category term="Hexo" />
+    <category term="logbook" />
     <category term="RSS" />
     <category term="Makru" />
     <category term="C" />
@@ -15,7 +16,6 @@
     <category term="诗集" />
     <category term="Linux记" />
     <category term="生命很短" />
-    <category term="logbook" />
     <entry>
         <id>https://rubicon.lightstands.xyz/2021/10/13/hexo-topic-feeds/</id>
         <title>Rubicon&#39;s Rubicon的RSS订阅功能介绍和技术细节</title>

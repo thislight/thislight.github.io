@@ -8,6 +8,7 @@
         <pubDate>Wed, 13 Oct 2021 18:36:53 +0000</pubDate>
         <lastBuildDate>Wed, 13 Oct 2021 18:36:53 +0000</lastBuildDate>
         <category>Hexo</category>
+        <category>logbook</category>
         <category>RSS</category>
         <category>Makru</category>
         <category>C</category>
@@ -18,7 +19,6 @@
         <category>诗集</category>
         <category>Linux记</category>
         <category>生命很短</category>
-        <category>logbook</category>
         <item>
             <guid isPermalink="true">https://rubicon.lightstands.xyz/2021/10/13/hexo-topic-feeds/</guid>
             <title>Rubicon&#39;s Rubicon的RSS订阅功能介绍和技术细节</title>

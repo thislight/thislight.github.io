@@ -5,6 +5,7 @@
     <link href="https://rubicon.lightstands.xyz" />
     <updated>2021-11-02T16:00:00.000Z</updated>
     <category term="Hexo" />
+    <category term="logbook" />
     <category term="RSS" />
     <category term="Makru" />
     <category term="C" />
@@ -15,7 +16,6 @@
     <category term="诗集" />
     <category term="Linux记" />
     <category term="生命很短" />
-    <category term="logbook" />
     <entry>
         <id>https://rubicon.lightstands.xyz/2021/11/02/measure-peer-reachability/</id>
         <title>在Rope中测量&#34;可达&#34;</title>

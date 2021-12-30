@@ -8,6 +8,7 @@
         <pubDate>Tue, 02 Nov 2021 16:00:00 +0000</pubDate>
         <lastBuildDate>Tue, 02 Nov 2021 16:00:00 +0000</lastBuildDate>
         <category>Hexo</category>
+        <category>logbook</category>
         <category>RSS</category>
         <category>Makru</category>
         <category>C</category>
@@ -18,7 +19,6 @@
         <category>诗集</category>
         <category>Linux记</category>
         <category>生命很短</category>
-        <category>logbook</category>
         <item>
             <guid isPermalink="true">https://rubicon.lightstands.xyz/2021/11/02/measure-peer-reachability/</guid>
             <title>在Rope中测量&#34;可达&#34;</title>
