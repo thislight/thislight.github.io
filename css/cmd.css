@@ -35,3 +35,10 @@ main {
 .entry ul li {
   list-style-type: square !important;
 }
+/* Override code block */
+figure.highlight > table > tbody > tr > td {
+  padding: 0;
+}
+figure.highlight table tbody tr:last-child td {
+  padding-bottom: 0;
+}
