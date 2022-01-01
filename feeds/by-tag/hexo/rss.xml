@@ -9,6 +9,7 @@
         <lastBuildDate>Thu, 30 Dec 2021 21:26:06 +0000</lastBuildDate>
         <category>Hexo</category>
         <category>logbook</category>
+        <category>博客功能更新</category>
         <category>RSS</category>
         <category>Makru</category>
         <category>C</category>
@@ -25,6 +26,7 @@
             <link>https://rubicon.lightstands.xyz/2021/12/30/Blog-2021-Final-Update/</link>
             <category>Hexo</category>
             <category>logbook</category>
+            <category>博客功能更新</category>
             <pubDate>Thu, 30 Dec 2021 21:26:06 +0000</pubDate>
             <description><![CDATA[ &lt;p&gt;我对博客功能的要求是拒绝花里胡哨，一切为阅读服务。现在是2021年年底，正好我要为我对年终总结的一些设想给博客更新一些功能：快速引用素材、Steam游戏卡片、引用Wikipedia条目。&lt;/p&gt;
 &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
@@ -37,9 +39,9 @@
 &lt;iframe src=&#34;https://store.steampowered.com/widget/412020/?t=《地铁：离乡》确实是非常不错的半开放世界线性流程FPS。&#34; frameborder=&#34;0&#34; width=&#34;100%&#34; height=&#34;190&#34;&gt;&lt;/iframe&gt;
 
 &lt;p&gt;搜刮到&lt;a href=&#34;https://github.com/HCLonely/hexo-tag-steamgame&#34;&gt;hexo-tag-steamgames&lt;/a&gt;可以实现这个。&lt;/p&gt;
-&lt;h2 id=&#34;引用Wikipedia条目&#34;&gt;&lt;a href=&#34;#引用Wikipedia条目&#34; class=&#34;headerlink&#34; title=&#34;引用Wikipedia条目&#34;&gt;&lt;/a&gt;引用Wikipedia条目&lt;/h2&gt;&lt;blockquote id=&#39;wikipedia-44173&#39;&gt;&lt;script&gt;
+&lt;h2 id=&#34;引用Wikipedia条目&#34;&gt;&lt;a href=&#34;#引用Wikipedia条目&#34; class=&#34;headerlink&#34; title=&#34;引用Wikipedia条目&#34;&gt;&lt;/a&gt;引用Wikipedia条目&lt;/h2&gt;&lt;blockquote id=&#39;wikipedia-70787&#39;&gt;&lt;script&gt;
       window.addEventListener(&#39;load&#39;, function() {
-        var element = document.getElementById(&#39;wikipedia-44173&#39;);
+        var element = document.getElementById(&#39;wikipedia-70787&#39;);
         var req = new XMLHttpRequest();
         req.addEventListener(&#34;load&#34;, function() {
           var result = this.response;
