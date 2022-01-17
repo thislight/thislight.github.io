@@ -17,6 +17,7 @@
     <category term="诗集" />
     <category term="Linux记" />
     <category term="生命很短" />
+    <category term="年终总结" />
     <entry>
         <id>https://rubicon.lightstands.xyz/2021/07/10/set-up-sudo-with-howdy-on-fedora-34-for-faical-authenticating/</id>
         <title>在Fedora 34上通过Howdy为sudo增加人脸识别认证</title>

@@ -20,6 +20,7 @@
         <category>诗集</category>
         <category>Linux记</category>
         <category>生命很短</category>
+        <category>年终总结</category>
         <item>
             <guid isPermalink="true">https://rubicon.lightstands.xyz/2021/01/04/makru-tutor-2/</guid>
             <title>使用Makru和makru_langc管理现代C项目编译： 配置Makru和makru_langc</title>

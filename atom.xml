@@ -3,7 +3,7 @@
     <id>https://rubicon.lightstands.xyz</id>
     <title>Rubicon&#39;s Rubicon</title>
     <link href="https://rubicon.lightstands.xyz" />
-    <updated>2021-12-30T21:26:06.000Z</updated>
+    <updated>2022-01-18T00:00:00.000Z</updated>
     <category term="Hexo" />
     <category term="logbook" />
     <category term="博客功能更新" />
@@ -17,6 +17,61 @@
     <category term="诗集" />
     <category term="Linux记" />
     <category term="生命很短" />
+    <category term="年终总结" />
+    <entry>
+        <id>https://rubicon.lightstands.xyz/2022/01/18/yearly-report-2021/</id>
+        <title>2021年终总结：书、游戏和Kache的进展</title>
+        <link rel="alternate" href="https://rubicon.lightstands.xyz/2022/01/18/yearly-report-2021/"/>
+        <content type="html">&lt;p&gt;又过了一年。受到Mastodon时间线上的博主们启发，我想写一篇博文总结一下一年来做的事情。但是我发现我不知道该怎么组织起这样一篇博文。想了想，决定以今年看过的书、玩过的游戏和一些项目为脉络，聊聊今年的感想。减少尴尬，先以小作文经典开头问声好。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;人的脆弱和坚强都超乎自己的想象。有时，我们可能脆弱得一句话就泪流满面；有时，也发现自己咬着牙走了很长的路。 —— 莫泊桑《一生》&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
+
+&lt;h2 id=&#34;书&#34;&gt;&lt;a href=&#34;#书&#34; class=&#34;headerlink&#34; title=&#34;书&#34;&gt;&lt;/a&gt;书&lt;/h2&gt;&lt;p&gt;2021年其实可以说是我精神状态最差的一年。问题大概来源于无根浮萍的那种漂浮感——往大了说，政治、经济形势的恶化；往小了说，未来发展和学业……但这只是环境上的变化。而个人因素大概就是因为我就是那么个人吧。这一年，我读书的重点大概在于理解我的恐惧和我的社会。从端传媒两本关于香港的会员赠书、《香港第一课》到哈耶克的《个人主义与经济秩序》、《理性之谜》、两本关于美国政治体制的科普书，它们从不同角度展示社会图景。而《最好的告别》是我直面我所恐惧之一的机会：直面这从未有人回头过的旅途。&lt;/p&gt;
+&lt;p&gt;2021年我还看了不少书，但能让我挤出一些感想的大概也就这些。&lt;/p&gt;
+&lt;h3 id=&#34;《黑暗时代，在香港点灯的人》-amp-《香港喺度》&#34;&gt;&lt;a href=&#34;#《黑暗时代，在香港点灯的人》-amp-《香港喺度》&#34; class=&#34;headerlink&#34; title=&#34;《黑暗时代，在香港点灯的人》&amp;amp;《香港喺度》&#34;&gt;&lt;/a&gt;《黑暗时代，在香港点灯的人》&amp;amp;《香港喺度》&lt;/h3&gt;&lt;p&gt;这两本是端传媒的会员赠书。端传媒先后免费赠过几本关于香港的书，都让我印象深刻。它们为我脑海中平面的香港多画了几笔阴影，有了更多的景深和面向。最让我印象深刻的是《香港喺度》中有一篇文章讲述逃离城市到离岛上的故事，我觉得有些居于宁静、繁华不远的暧昧感觉。&lt;/p&gt;
+&lt;h3 id=&#34;《香港第一课》梁启智&#34;&gt;&lt;a href=&#34;#《香港第一课》梁启智&#34; class=&#34;headerlink&#34; title=&#34;《香港第一课》梁启智&#34;&gt;&lt;/a&gt;《香港第一课》梁启智&lt;/h3&gt;&lt;p&gt;这一本也是关于香港的书，而且是一门关于“香港问题”的书。这本书用更客观的视角（相比中国官媒和我们自己）询问了一些“香港问题”并给出一种回答。它并非香港问题的唯一答案，但是确实是了解香港问题和民主制度不能避开的小册子。&lt;/p&gt;
+&lt;h3 id=&#34;《打开一颗心》斯蒂芬·韦斯塔比&#34;&gt;&lt;a href=&#34;#《打开一颗心》斯蒂芬·韦斯塔比&#34; class=&#34;headerlink&#34; title=&#34;《打开一颗心》斯蒂芬·韦斯塔比&#34;&gt;&lt;/a&gt;《打开一颗心》斯蒂芬·韦斯塔比&lt;/h3&gt;&lt;p&gt;奇幻的现实旅程。韦斯塔比是一位英国著名的“心脏外科”医生，这本书讲述的就是他从医经历中的一些片段：“打开一颗心”。书中提到了很多奇妙的治疗方案，我印象最深刻的就是人工心脏：使用人工心脏的人没有脉搏但还是可以正常生活，“让我感到了科技的进步”。&lt;/p&gt;
+&lt;h3 id=&#34;《个人主义与经济秩序》Friedrich-August-von-Hayek&#34;&gt;&lt;a href=&#34;#《个人主义与经济秩序》Friedrich-August-von-Hayek&#34; class=&#34;headerlink&#34; title=&#34;《个人主义与经济秩序》Friedrich August von Hayek&#34;&gt;&lt;/a&gt;《个人主义与经济秩序》Friedrich August von Hayek&lt;/h3&gt;&lt;p&gt;哈耶克的观点可谓超越时代。有些人可能会将哈耶克的观点简单归类为“新自由主义”，然而我觉得这并不准确。我认为，哈耶克既不坚持古典自由主义，也并不提倡所谓“新自由主义”。在这本书里，我看到了他对“个人主义”研究导向的追求。&lt;/p&gt;
+&lt;h3 id=&#34;《理性之谜》雨果·梅西耶和丹·斯珀伯&#34;&gt;&lt;a href=&#34;#《理性之谜》雨果·梅西耶和丹·斯珀伯&#34; class=&#34;headerlink&#34; title=&#34;《理性之谜》雨果·梅西耶和丹·斯珀伯&#34;&gt;&lt;/a&gt;《理性之谜》雨果·梅西耶和丹·斯珀伯&lt;/h3&gt;&lt;p&gt;这本书以心理学的角度综述了一个我们尚未完全理解的事实：个体理性工具的不可靠。很有趣的是：哈耶克很早就在上面的《个人主义与经济秩序》中提出了类似的问题，这就是为什么我说哈耶克的观点可以说超越时代。&lt;/p&gt;
+&lt;h3 id=&#34;《美国最高法院》（牛津通识读本）琳达•格林豪斯&#34;&gt;&lt;a href=&#34;#《美国最高法院》（牛津通识读本）琳达•格林豪斯&#34; class=&#34;headerlink&#34; title=&#34;《美国最高法院》（牛津通识读本）琳达•格林豪斯&#34;&gt;&lt;/a&gt;《美国最高法院》（牛津通识读本）琳达•格林豪斯&lt;/h3&gt;&lt;p&gt;一本一百多页的小册子，包含了美国最高法院的历史、运转甚至宪法的工作方式。给我留下了一些关于法律的问题和思考：法律究竟如何运作？为何运作？怎样运作更好？&lt;/p&gt;
+&lt;h3 id=&#34;《言论的边界：美国宪法第一修正案简史》安东尼·刘易斯&#34;&gt;&lt;a href=&#34;#《言论的边界：美国宪法第一修正案简史》安东尼·刘易斯&#34; class=&#34;headerlink&#34; title=&#34;《言论的边界：美国宪法第一修正案简史》安东尼·刘易斯&#34;&gt;&lt;/a&gt;《言论的边界：美国宪法第一修正案简史》安东尼·刘易斯&lt;/h3&gt;&lt;p&gt;简介：“本书作者以理性客观的视角和深入浅出的文笔，向读者介绍了美国宪法第一修正案产生的历史背景，及其对美国社会的过去、现在和可预计的将来所产生的深刻影响。”这简介远远无法包含这本小书的内容。“言论的边界”在实践中如此复杂，我们尚未有万能的解决之道。中国当下的情况，在美国历史上早有影子。&lt;/p&gt;
+&lt;h3 id=&#34;《破云》《破云2：吞海》淮上&#34;&gt;&lt;a href=&#34;#《破云》《破云2：吞海》淮上&#34; class=&#34;headerlink&#34; title=&#34;《破云》《破云2：吞海》淮上&#34;&gt;&lt;/a&gt;《破云》《破云2：吞海》淮上&lt;/h3&gt;&lt;p&gt;《破云》系列的故事背景是很少见的缉毒，单是题材就令人感到很新鲜。《破云》的反派描写实在是出彩，那句“六亿美金……你看，尘世的快乐就是如此值钱”实在是让我记忆犹新。《破云2：吞海》和《破云》的节奏、套路相似，但不是简单的换皮。&lt;br&gt;把这两本书写在这里是想感慨一下这个作者的作品好几部都有一些想探索的议题，比如更早的《银河帝国之刃》甚至涉及到了民主和独裁的话题。《破云2：吞海》涉及到了自由的话题，不过我觉得作者对于自由的理解写得稍微有点浅薄，单独放在最后一章的时候其实力度有点不够。&lt;/p&gt;
+&lt;h3 id=&#34;《最好的告别：关于衰老和死亡，你必须知道的常识》Atul-Gawande和彭小华&#34;&gt;&lt;a href=&#34;#《最好的告别：关于衰老和死亡，你必须知道的常识》Atul-Gawande和彭小华&#34; class=&#34;headerlink&#34; title=&#34;《最好的告别：关于衰老和死亡，你必须知道的常识》Atul Gawande和彭小华&#34;&gt;&lt;/a&gt;《最好的告别：关于衰老和死亡，你必须知道的常识》Atul Gawande和彭小华&lt;/h3&gt;&lt;p&gt;“如果说人生是一场盛大的史诗，那么这一定来自于既定的出生与既定的死亡。”面对与世界的告别，是所有人不得不学习却又终究觉得差一些的事情。作为仍有时间的人，我们所能做的也就是“偶尔治愈”“常常帮助”“总是安慰”，像这本书的主题一样，停下来思考：怎样让这种告别更有尊严一些？&lt;/p&gt;
+&lt;p&gt;若不是人们害怕那遥远的风之旅国，害怕未知的远方……我们也只是车站上的过客。伊甸园外，唯有故事隽永流芳。&lt;/p&gt;
+&lt;h2 id=&#34;文章和演讲&#34;&gt;&lt;a href=&#34;#文章和演讲&#34; class=&#34;headerlink&#34; title=&#34;文章和演讲&#34;&gt;&lt;/a&gt;文章和演讲&lt;/h2&gt;&lt;p&gt;今年让我印象深刻主要有演讲《User level threads.. with threads》、文章《Go Does Not Need a Java Style GC》《Locking in Webkit》。前两篇是今年我性能观念大转变的来源，后面一篇是因为这个锁的实现真的很有意思。&lt;/p&gt;
+&lt;h3 id=&#34;User-level-threads-with-threads-Paul-Turner&#34;&gt;&lt;a href=&#34;#User-level-threads-with-threads-Paul-Turner&#34; class=&#34;headerlink&#34; title=&#34;User level threads.. with threads, Paul Turner&#34;&gt;&lt;/a&gt;User level threads.. with threads, Paul Turner&lt;/h3&gt;&lt;p&gt;系统线程跟高性能I/O并没有冲突。这个演讲的主要内容就是：上下文切换时的开销主要来自计算下一个要排期的线程，而不是陷入ring0的开销，他们做到低切换开销的方法。在前面介绍了几种并行编程的常用模型。&lt;/p&gt;
+&lt;p&gt;P.S. 得益于Linux Kernel默认打开的Overcommit，创建线程的内存成本并不高。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://web.archive.org/web/20210212205254/http://pdxplumbers.osuosl.org/2013/ocw//system/presentations/1653/original/LPC%20-%20User%20Threading.pdf&#34;&gt;互联网博物馆的Slides存档&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;Go-Does-Not-Need-a-Java-Style-GC-Erik-Engheim&#34;&gt;&lt;a href=&#34;#Go-Does-Not-Need-a-Java-Style-GC-Erik-Engheim&#34; class=&#34;headerlink&#34; title=&#34;Go Does Not Need a Java Style GC, Erik Engheim&#34;&gt;&lt;/a&gt;Go Does Not Need a Java Style GC, Erik Engheim&lt;/h3&gt;&lt;p&gt;Go同时拥有超高的性能和……由GC驱动的自动内存管理。但是在Java看来，这完全不可能。但现实就是如此奇妙，Go通过支持“值”加上Escape Analysis来自动确定值是否需要放在堆上，大幅降低GC的压力，使得Go不需要一个像Java那种运行得很快的GC，反而可以使用传统的标记-清除算法，这种传统算法的优势是没有“Stop The World!”修改指针的过程，可以并行运行。&lt;br&gt;Java所需的“现代”“高速”GC反而会成为并行运行的性能瓶颈（在Android上一样适用！），为了保证locality和降低开销，Oracle JVM使用了分代标记-清除-合并算法。其它JVM实现也有些会选择类似的方法，因为这个算法可以说是GC领域里最“好”的一个。但是，这个算法的致命缺陷在于：在升代或是合并时需要移动值的位置，在移动值的过程中需要修改指针。而唯一能又快又安全地修改指针的前提条件就是让程序停止，Stop The World！&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://erik-engheim.medium.com/go-does-not-need-a-java-style-gc-ac99b8d26c60&#34;&gt;Erik Engheim: Go Does Not Need a Java Style GC&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;Locking-in-Webkit-Filip-Pizlo&#34;&gt;&lt;a href=&#34;#Locking-in-Webkit-Filip-Pizlo&#34; class=&#34;headerlink&#34; title=&#34;Locking in Webkit, Filip Pizlo&#34;&gt;&lt;/a&gt;Locking in Webkit, Filip Pizlo&lt;/h3&gt;&lt;p&gt;这篇文章介绍了Webkit使用的用户空间锁，相对于庞大的OS Mutex（至少64 bytes）来说，Webkit使用的这种锁大小不到1 byte。它通过一个在进程中共享的并发HashMap实现等待队列，叫做Parkinglot（停车场）。&lt;/p&gt;
+&lt;p&gt;Webkit将这个锁实现成自适应情况的：刚开始时表现得像SpinLock，过一段时间后用system call将自己放到系统的schedule队列末尾。开发者不用考虑到底该用SpinLock还是OS Mutex，最终性能非常漂亮：WebKit的JavaScript跑分增加了5%。&lt;/p&gt;
+&lt;p&gt;我写过一个在Zig里的简单实现： &lt;a href=&#34;https://gist.github.com/thislight/e9c7335932a7139910c441d2770c33c5&#34;&gt;https://gist.github.com/thislight/e9c7335932a7139910c441d2770c33c5&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://webkit.org/blog/6161/locking-in-webkit/&#34;&gt;Webkit Blog: Locking in Webkit&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;游戏&#34;&gt;&lt;a href=&#34;#游戏&#34; class=&#34;headerlink&#34; title=&#34;游戏&#34;&gt;&lt;/a&gt;游戏&lt;/h2&gt;&lt;p&gt;其实今年我玩了十多款游戏，但是让我有些想法想分享的游戏也就寥寥：将网状叙事、非线性流程、开放世界拉到极致的《辐射：新维加斯》、《地铁》游戏新作《离乡》。&lt;/p&gt;
+&lt;h3 id=&#34;《辐射：新维加斯》&#34;&gt;&lt;a href=&#34;#《辐射：新维加斯》&#34; class=&#34;headerlink&#34; title=&#34;《辐射：新维加斯》&#34;&gt;&lt;/a&gt;《辐射：新维加斯》&lt;/h3&gt;&lt;iframe src=&#34;https://store.steampowered.com/widget/22380/&#34; frameborder=&#34;0&#34; width=&#34;100%&#34; height=&#34;190&#34;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;迄今为止无人超越的，最有野心也最令人感到遗憾的RPG（Role-Playing Game）作品。很多人都说GTA系列（3、4、5）或《塞尔达：旷野之息》是开放世界神作，但对我来说《辐射：新维加斯》才是真正的“开放世界”：在大多数开放世界作品中你只是体验到开放的表象，但在《辐射：新维加斯》中，&lt;strong&gt;你能改变世界&lt;/strong&gt;。《辐射：新维加斯》的故事构建和网状叙事至今无人超越，这款游戏真正地踏入了那片没有敌手的黄沙。&lt;/p&gt;
+&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube-nocookie.com/embed/gzF7aHxk4Y4&#34; title=&#34;YouTube video player&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;跟优秀的游戏设计相对的，就是非常恐怖的bug数量，这款游戏的bug修到结束支持都没修完。我在玩之前按照&lt;a href=&#34;https://vivanewvegas.github.io/&#34;&gt;Viva New Vegas&lt;/a&gt;的列表打了一遍MOD，这个modlist里面已经包含了很多由玩家社区提供的修复和改进，至少bug基本都修好了。&lt;/p&gt;
+&lt;p&gt;愿那狂野的灵魂，在宁静的黄沙中安息。&lt;/p&gt;
+&lt;h3 id=&#34;《地铁：离乡》&#34;&gt;&lt;a href=&#34;#《地铁：离乡》&#34; class=&#34;headerlink&#34; title=&#34;《地铁：离乡》&#34;&gt;&lt;/a&gt;《地铁：离乡》&lt;/h3&gt;&lt;iframe src=&#34;https://store.steampowered.com/widget/412020/&#34; frameborder=&#34;0&#34; width=&#34;100%&#34; height=&#34;190&#34;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;《地铁》系列与《辐射》一样，使用后末世启示录作为背景，但少几分黑色幽默，多几分认真。作为《地铁》系列游戏的第三部，《地铁：离乡》在系统和玩法上已经非常成熟，唯一改变的是从过去的封闭场景线性流程变为沙盒式世界半开放流程。我个人很喜欢这种改变，特别是这种改变也意味剧情背景的改变——从地铁隧道里走出来，走出莫斯科，火车行驶于俄罗斯大地，寻找宜居之地。大概《离乡（Exodus）》的副标题就是来自于类似的犹大神话。&lt;/p&gt;
+&lt;h2 id=&#34;Kache和Rope的进展&#34;&gt;&lt;a href=&#34;#Kache和Rope的进展&#34; class=&#34;headerlink&#34; title=&#34;Kache和Rope的进展&#34;&gt;&lt;/a&gt;Kache和Rope的进展&lt;/h2&gt;&lt;p&gt;过去一年我重新设计了4次Kache，终于在去年下半年正式开始实现。其网络层Rope的设计也曾改过几次，最终放弃使用ZeroMQ/libnng和Zig。前者是因为缺少对加密和UDP的支持，虽然libnng支持自定义Transport，但是我们本来大多数时候都要绕过它们定义的协议，使用专门点对点的socket来实现我们自己的链路管理。我们要取的只是它们基于消息的传输协议和跨平台的网络I/O，自定义transport显然完全丢弃了这两点。后者是因为作为一门语言，它每个版本间的改动仍然太多、太大，语言复杂使得编译器bug很多、修得慢，作为写一个要用的东西的语言不合适。最后我为Rope选择了Rust，正好Cloudflare正在维护一个Wireguard实现叫boringtun。&lt;/p&gt;
+&lt;p&gt;Rope在Wireguard之上运行Rope Protocol而不是Internet Protocol，RP是一个基于消息的协议，并且可以带有控制消息。相对于直接使用Internet Protocol再在它上弄一个额外的协议，我更倾向于使用一个集成的协议。&lt;/p&gt;
+&lt;h2 id=&#34;新项目：Mooncake&#34;&gt;&lt;a href=&#34;#新项目：Mooncake&#34; class=&#34;headerlink&#34; title=&#34;新项目：Mooncake&#34;&gt;&lt;/a&gt;新项目：Mooncake&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;/2022/01/18/yearly-report-2021/mooncake_logo.png&#34; alt=&#34;Mooncake Logo&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Go通过值类型和Escape Analysis显著降低了标记-清除系GC算法对高并发I/O的影响。Mooncake最初的主旨就是为Lisp引入值类型和Escape Analysis，降低GC对I/O的影响。个人认为CLOS这种在Lisp的括号里面实现起来太憋屈，所以我觉得Mooncake的类型系统类似Haskell和Rust会更好。&lt;/p&gt;
+&lt;figure class=&#34;highlight lisp&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;(&lt;span class=&#34;name&#34;&gt;in-package&lt;/span&gt; &lt;span class=&#34;symbol&#34;&gt;:my-hello-server&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;(@import &lt;span class=&#34;symbol&#34;&gt;:std/http&lt;/span&gt; h)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;(&lt;span class=&#34;name&#34;&gt;dconst&lt;/span&gt; math (@import &lt;span class=&#34;symbol&#34;&gt;:std/math&lt;/span&gt;))&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;(&lt;span class=&#34;name&#34;&gt;dfn&lt;/span&gt; (&lt;span class=&#34;name&#34;&gt;handler&lt;/span&gt; (&lt;span class=&#34;name&#34;&gt;*&lt;/span&gt; h:&lt;span class=&#34;symbol&#34;&gt;:Request&lt;/span&gt;) h:&lt;span class=&#34;symbol&#34;&gt;:Response&lt;/span&gt;) (&lt;span class=&#34;name&#34;&gt;_request&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    (&lt;span class=&#34;name&#34;&gt;if&lt;/span&gt; (&lt;span class=&#34;name&#34;&gt;&amp;gt;&lt;/span&gt; (&lt;span class=&#34;name&#34;&gt;math&lt;/span&gt;:&lt;span class=&#34;symbol&#34;&gt;:random&lt;/span&gt;) &lt;span class=&#34;number&#34;&gt;0.5&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        (&lt;span class=&#34;name&#34;&gt;h&lt;/span&gt;:&lt;span class=&#34;symbol&#34;&gt;:respond&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&amp;quot;Hello, World&amp;quot;&lt;/span&gt;) &lt;span class=&#34;comment&#34;&gt;;; Actually call ((std/http::ResponseSource String)::respond std/core::String std/http::Response)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        (&lt;span class=&#34;name&#34;&gt;h&lt;/span&gt;:&lt;span class=&#34;symbol&#34;&gt;:respond&lt;/span&gt; (&lt;span class=&#34;name&#34;&gt;h&lt;/span&gt;:&lt;span class=&#34;symbol&#34;&gt;:error&lt;/span&gt; &lt;span class=&#34;number&#34;&gt;400&lt;/span&gt; Bad Request&lt;span class=&#34;string&#34;&gt;&amp;quot;))))&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;(http::quick-serve 8080 handler)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;;; (http::quick-serve 8080 (\ (_request) (h::respond &amp;quot;&lt;/span&gt;Hello, Word&lt;span class=&#34;string&#34;&gt;&amp;quot;)))&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;当然，这还只是画饼而已……现在还在写完括号解析器正在写LLVM binding的状态。&lt;/p&gt;
+</content>
+        <category term="年终总结" />
+        <updated>2022-01-18T00:00:00.000Z</updated>
+    </entry>
     <entry>
         <id>https://rubicon.lightstands.xyz/2021/12/30/Blog-2021-Final-Update/</id>
         <title>博客2021年最终功能更新</title>
@@ -32,9 +87,9 @@
 &lt;iframe src=&#34;https://store.steampowered.com/widget/412020/?t=《地铁：离乡》确实是非常不错的半开放世界线性流程FPS。&#34; frameborder=&#34;0&#34; width=&#34;100%&#34; height=&#34;190&#34;&gt;&lt;/iframe&gt;
 
 &lt;p&gt;搜刮到&lt;a href=&#34;https://github.com/HCLonely/hexo-tag-steamgame&#34;&gt;hexo-tag-steamgames&lt;/a&gt;可以实现这个。&lt;/p&gt;
-&lt;h2 id=&#34;引用Wikipedia条目&#34;&gt;&lt;a href=&#34;#引用Wikipedia条目&#34; class=&#34;headerlink&#34; title=&#34;引用Wikipedia条目&#34;&gt;&lt;/a&gt;引用Wikipedia条目&lt;/h2&gt;&lt;blockquote id=&#39;wikipedia-70787&#39;&gt;&lt;script&gt;
+&lt;h2 id=&#34;引用Wikipedia条目&#34;&gt;&lt;a href=&#34;#引用Wikipedia条目&#34; class=&#34;headerlink&#34; title=&#34;引用Wikipedia条目&#34;&gt;&lt;/a&gt;引用Wikipedia条目&lt;/h2&gt;&lt;blockquote id=&#39;wikipedia-99762&#39;&gt;&lt;script&gt;
       window.addEventListener(&#39;load&#39;, function() {
-        var element = document.getElementById(&#39;wikipedia-70787&#39;);
+        var element = document.getElementById(&#39;wikipedia-99762&#39;);
         var req = new XMLHttpRequest();
         req.addEventListener(&#34;load&#34;, function() {
           var result = this.response;
