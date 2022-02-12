@@ -42,9 +42,9 @@
 &lt;iframe src=&#34;https://store.steampowered.com/widget/412020/?t=《地铁：离乡》确实是非常不错的半开放世界线性流程FPS。&#34; frameborder=&#34;0&#34; width=&#34;100%&#34; height=&#34;190&#34;&gt;&lt;/iframe&gt;
 
 &lt;p&gt;搜刮到&lt;a href=&#34;https://github.com/HCLonely/hexo-tag-steamgame&#34;&gt;hexo-tag-steamgames&lt;/a&gt;可以实现这个。&lt;/p&gt;
-&lt;h2 id=&#34;引用Wikipedia条目&#34;&gt;&lt;a href=&#34;#引用Wikipedia条目&#34; class=&#34;headerlink&#34; title=&#34;引用Wikipedia条目&#34;&gt;&lt;/a&gt;引用Wikipedia条目&lt;/h2&gt;&lt;blockquote id=&#39;wikipedia-38318&#39;&gt;&lt;script&gt;
+&lt;h2 id=&#34;引用Wikipedia条目&#34;&gt;&lt;a href=&#34;#引用Wikipedia条目&#34; class=&#34;headerlink&#34; title=&#34;引用Wikipedia条目&#34;&gt;&lt;/a&gt;引用Wikipedia条目&lt;/h2&gt;&lt;blockquote id=&#39;wikipedia-77236&#39;&gt;&lt;script&gt;
       window.addEventListener(&#39;load&#39;, function() {
-        var element = document.getElementById(&#39;wikipedia-38318&#39;);
+        var element = document.getElementById(&#39;wikipedia-77236&#39;);
         var req = new XMLHttpRequest();
         req.addEventListener(&#34;load&#34;, function() {
           var result = this.response;
