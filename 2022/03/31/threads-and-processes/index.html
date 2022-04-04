@@ -1,0 +1,246 @@
+
+
+
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="zh-cn,en,default">
+  <head>
+    <meta charset="UTF-8">
+    <title>进程、线程、协程</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+      
+      
+        <link rel="stylesheet" href="/css/cmd.css" media="print" onload="this.media='all'; this.onload=null;">
+        <noscript><link rel="stylesheet" href="/css/cmd.css"></noscript>
+      
+        <link rel="stylesheet" href="/css/materialdesignicons.min.css" media="print" onload="this.media='all'; this.onload=null;">
+        <noscript><link rel="stylesheet" href="/css/materialdesignicons.min.css"></noscript>
+      
+        <link rel="stylesheet" href="/css/entry.css" media="print" onload="this.media='all'; this.onload=null;">
+        <noscript><link rel="stylesheet" href="/css/entry.css"></noscript>
+      
+        <link rel="stylesheet" href="/css/xcode.css" media="print" onload="this.media='all'; this.onload=null;">
+        <noscript><link rel="stylesheet" href="/css/xcode.css"></noscript>
+      
+    
+    <link rel="stylesheet" href="/materialize/css/materialize.css"/>
+    
+    <meta name="generator" content="Hexo 6.1.0"></head>
+
+    <body>
+      <ul id="nav-mobile" class="sidenav">
+        
+          <li>
+            <a href="/">Home</a>
+          </li>
+        
+          <li>
+            <a href="/archives">Archives</a>
+          </li>
+        
+      </ul>
+      <nav class="light-blue lighten-1" role="navigation">
+        <a href="#" data-target="nav-mobile" class="sidenav-trigger">
+          <div class="mdi mdi-menu"></div>
+        </a>
+        <div class="nav-wrapper">
+          <ul class="right hide-on-med-and-down">
+            
+              <li>
+                <a href="/">Home</a>
+              </li>
+            
+              <li>
+                <a href="/archives">Archives</a>
+              </li>
+            
+          </ul>
+        </div>
+      </nav>
+
+      <main id="content" class="container xscontainer">
+        
+  <article id="post">
+    <div class="card">
+    <div class="card-content">
+      <span class="card-title">进程、线程、协程</span>
+      <div class="row">
+        <div class="col" style="padding-left:0;"><span class="mdi mdi-account">Rubicon</span></div>
+        <div class="col"><span class="mdi mdi-clock">2022/3/31</span></div>
+      </div>
+      
+  <div>
+  
+    <a href="/tags/%E9%AB%98%E6%80%A7%E8%83%BDI-O/"><div class="chip">
+      高性能I/O
+    </div></a>
+  
+  </div>
+
+      
+      <div class="entry">
+      <p>程序运行时，最重要的便是Program Counter（PC）和Stack。Program Counter（程序计数器）记录程序运行的位置，Stack（栈）保存当前的数据。</p>
+<figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">+-------+ |<span class="string">Stack Address</span></span><br><span class="line"><span class="string"></span>|<span class="string">  v1   </span>|<span class="string"> </span>|</span><br><span class="line">+-------+ |<span class="string"></span></span><br><span class="line"><span class="string"></span>|<span class="string">  v2   </span>|<span class="string"> </span>|</span><br><span class="line">+-------+ |<span class="string"></span></span><br><span class="line"><span class="string"></span>|<span class="string">  v3   </span>|<span class="string"> </span>|</span><br><span class="line">+-------+ |<span class="string"></span></span><br><span class="line"><span class="string"></span>|<span class="string">  v4   </span>|<span class="string"> </span>|</span><br><span class="line">+-------+ v <span class="variable">&lt;-- top</span></span><br><span class="line"><span class="variable">Stack 示意图</span></span><br></pre></td></tr></table></figure>
+
+<p>这是一个Thread（线程）。本文主要是为了说明人们是怎么把这么简单的东西玩出各种花样的，完完全全是一篇走马观花的介绍。本文会解释关于线程的一些概念，并展示一些新的有意思的东西。</p>
+<span id="more"></span>
+
+<h2 id="系统线程和用户空间线程"><a href="#系统线程和用户空间线程" class="headerlink" title="系统线程和用户空间线程"></a>系统线程和用户空间线程</h2><p>操作系统管理硬件，向应用提供简单的API。大部分操作系统都包含线程管理。通常，一个系统进程包含一个或多个系统线程（OS Threads），这些线程共享进程资源——内存、file descriptors，被隔离在同一个环境中。Linux Kernel也是这么做的，比如说，可以用于限制资源访问的<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Cgroups">cgroups</a>以进程（组）为单位管理资源。操作系统内核通常在内核里对系统线程进行排程（scheduling）。内核会跟踪线程的状态，通过算法确定下一个运行的线程。进行这个操作的的部分叫做排程器（scheduler）。</p>
+<p>用户空间（userspace）是指虚拟内存（virtual memory）里内核空间以外的空间，现在也用来表示内核以外跟内核交互的代码（userland），在大部分情况下userspace和userland这两个词是混用的。用户空间线程也需要排程，有时也有排程器，但是它们都实现在用户空间里。在用户空间里实现，可以免去切换到特权模式（supervisor mode，或内核模式：kernel mode）时切换上下文（context switching）的损耗。</p>
+<figure class="highlight xl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Linux切换系统线程的流程示意：</span><br><span class="line">T<span class="function"><span class="title">hread0</span> -&gt;</span> [保存T<span class="function"><span class="title">hread0</span>的上下文（PC和Stack）] -&gt;</span> [恢复内核的上下文] -&gt; L<span class="function"><span class="title">inux</span> Kernel -&gt;</span> [排程] -&gt; [保存内核的上下文] -&gt; [恢复T<span class="function"><span class="title">hread1</span>的上下文（PC和Stack）] -&gt;</span> Thread1</span><br><span class="line">                                               ^进入特权模式                                                               ^离开特权模式</span><br><span class="line"></span><br><span class="line">用户空间线程的通常切换流程：</span><br><span class="line">T<span class="function"><span class="title">hread0</span> -&gt;</span> [排程] -&gt; Thread1</span><br></pre></td></tr></table></figure>
+
+<h3 id="系统线程没有那么沉重"><a href="#系统线程没有那么沉重" class="headerlink" title="系统线程没有那么沉重"></a>系统线程没有那么沉重</h3><p>通常，使用用户空间线程的理由是“系统线程很重”：需要的内存更多、切换速度更慢……但至少在Linux上，系统线程没有那么“重”。</p>
+<p>首先，创建系统线程的栈空间在实际使用前并不占用内存空间。这是因为Linux默认启用过度提交（Overcommit），在虚拟内存中申请的内存并不会在实际内存中预留。你可以创建上千个2MB栈的线程，但是每个线程实际只占用8KB。</p>
+<p>系统线程切换速度慢的问题并不在于我们通常认为的上下文切换，它虽然仍然消耗时间但没有我们想像的慢（在Google工程师的测试中切换来回只要&lt;50ns）。消耗时间更多的是排程算法，排程算法是计算密集的工作，占用的时间比上下文切换多。</p>
+<p>解决方法是使用计算简单甚至不需要计算的算法，这类算法经常是非公平算法。Google的工程师设计了一组叫做SwitchTo的系统调用，可以让应用告诉系统接下来切换到指定线程。这组系统调用将线程之间上下文切换的性能提升了三十倍。（尚未合并到上游）</p>
+<iframe width="auto" height="auto" src="https://www.youtube-nocookie.com/embed/KXuZi9aeGTw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<p><a href="./user_threading.pdf">User threads…with Threads slides 下载</a></p>
+<h2 id="抢占式线程和协同式线程"><a href="#抢占式线程和协同式线程" class="headerlink" title="抢占式线程和协同式线程"></a>抢占式线程和协同式线程</h2><p>我们知道，我们不可能在寥寥几个CPU核之上同时运行数量多于其数量的线程，我们需要一些算法决定：</p>
+<ul>
+<li>线程何时运行</li>
+<li>线程能运行多久（何时结束）</li>
+</ul>
+<p>抢占式和协同式是两个类型，描述了算法解决后者时选择的方向。抢占式算法有可能强制暂停线程，协同式算法只有线程显式或隐式让出时才暂停线程。</p>
+<p>Linux默认情况下使用抢占式算法：内核在每次线程运行时都会指定时间片，线程让出或时间片到期时内核会取回控制权，重新排程。抢占式线程很难在用户空间中实现，但并非不可能。不过抢占式线程不符合用户空间线程的普遍目的，所以用户空间线程一般是协同式线程。</p>
+<p>抢占式算法保证了公平性，但对性能有负面影响；协同式线程保证了本地性，性能更好。不是所有系统默认提供的都是抢占式线程，比如FreeRTOS这类面向实时应用的操作系统提供甚至默认提供协同式线程。</p>
+<h2 id="无栈线程（Stackless-Threads）"><a href="#无栈线程（Stackless-Threads）" class="headerlink" title="无栈线程（Stackless Threads）"></a>无栈线程（Stackless Threads）</h2><p>“无栈”的意思不是“没有栈”，而是“不使用栈”。其状态的大小已经确定，可以直接放在栈上而不需要使用栈。Rust和Zig的异步函数、<a target="_blank" rel="noopener" href="https://github.com/naasking/async.h">async.h</a>、protothread就属于这种类型。</p>
+<p>前面的Rust和Zig通过编译器将代码翻译成状态机；后两者使用宏实现状态机，并且要求用户用一个固定的数据结构在让出之间保存状态。需要注意的是：状态可以直接放在栈上不意味着其运行过程不使用栈，只代表它可以不需要一个单独的栈。</p>
+<h2 id="在线程中同步"><a href="#在线程中同步" class="headerlink" title="在线程中同步"></a>在线程中同步</h2><p>无论你使用的是抢占式线程还是协同式线程，你都有可能需要在线程中进行同步。当然，协同式多线程在一些状况下不需要同步。线程安全是说在多线程环境下能够正常工作。</p>
+<p>哪怕只是简单的加法，只要它涉及到多线程并且不是原子操作，你都应该仔细考虑它的副作用。在很多在指令集上，加法包含取值、加法、保存等多个操作，参照下列LLVM IR：</p>
+<figure class="highlight llvm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">;;void spam() &#123;</span></span><br><span class="line"><span class="comment">;;    int b = 6;</span></span><br><span class="line"><span class="comment">;;    int c = 4;</span></span><br><span class="line"><span class="comment">;;    int a = b + c;</span></span><br><span class="line"><span class="comment">;;&#125;</span></span><br><span class="line"><span class="keyword">define</span> dso_local <span class="type">i32</span> <span class="title">@spam</span>() <span class="variable">#0</span>&#123;</span><br><span class="line">  <span class="variable">%2</span> <span class="operator">=</span> <span class="keyword">alloca</span> <span class="type">i32</span><span class="punctuation">,</span> <span class="keyword">align</span> <span class="number">4</span></span><br><span class="line">  <span class="variable">%3</span> <span class="operator">=</span> <span class="keyword">alloca</span> <span class="type">i32</span><span class="punctuation">,</span> <span class="keyword">align</span> <span class="number">4</span></span><br><span class="line">  <span class="variable">%4</span> <span class="operator">=</span> <span class="keyword">alloca</span> <span class="type">i32</span><span class="punctuation">,</span> <span class="keyword">align</span> <span class="number">4</span></span><br><span class="line">  <span class="keyword">store</span> <span class="type">i32</span> <span class="number">6</span><span class="punctuation">,</span> <span class="type">i32</span>* <span class="variable">%2</span><span class="punctuation">,</span> <span class="keyword">align</span> <span class="number">4</span></span><br><span class="line">  <span class="keyword">store</span> <span class="type">i32</span> <span class="number">4</span><span class="punctuation">,</span> <span class="type">i32</span>* <span class="variable">%3</span><span class="punctuation">,</span> <span class="keyword">align</span> <span class="number">4</span></span><br><span class="line">  <span class="variable">%5</span> <span class="operator">=</span> <span class="keyword">load</span> <span class="type">i32</span><span class="punctuation">,</span> <span class="type">i32</span>* <span class="variable">%2</span><span class="punctuation">,</span> <span class="keyword">align</span> <span class="number">4</span> <span class="comment">;; * a = b + c</span></span><br><span class="line">  <span class="variable">%6</span> <span class="operator">=</span> <span class="keyword">load</span> <span class="type">i32</span><span class="punctuation">,</span> <span class="type">i32</span>* <span class="variable">%3</span><span class="punctuation">,</span> <span class="keyword">align</span> <span class="number">4</span> <span class="comment">;; |</span></span><br><span class="line">  <span class="variable">%7</span> <span class="operator">=</span> <span class="keyword">add</span> <span class="keyword">nsw</span> <span class="type">i32</span> <span class="variable">%5</span><span class="punctuation">,</span> <span class="variable">%6</span>         <span class="comment">;; |</span></span><br><span class="line">  <span class="keyword">store</span> <span class="type">i32</span> <span class="variable">%7</span><span class="punctuation">,</span> <span class="type">i32</span>* <span class="variable">%4</span><span class="punctuation">,</span> <span class="keyword">align</span> <span class="number">4</span>  <span class="comment">;; *</span></span><br><span class="line">  <span class="variable">%8</span> <span class="operator">=</span> <span class="keyword">load</span> <span class="type">i32</span><span class="punctuation">,</span> <span class="type">i32</span>* <span class="variable">%1</span><span class="punctuation">,</span> <span class="keyword">align</span> <span class="number">4</span></span><br><span class="line">  <span class="keyword">ret</span> void</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>非原子操作可以帮助CPU进行指令级并行（intrustion-level paralism），同时执行几条不相干的指令。这可以显著提高流水线性能。但是非原子操作在多线程同时访问一个值的情况下可能导致奇怪的行为。</p>
+<p>考虑线程th0和th1：th0获取b=2时th1将b修改为b=4，th0获取c=3时th1将c修改为c=5，这时th0拿到的是b=2和c=3，a=b+c=5，而th1会认为a=b+c=4+5=9。你可以使用原子操作指令进行原子操作。另外，在抢占式线程的情况下，CPU的控制权随时都有可能被取回，你应该按照“在任何指令执行后线程就会被挂起”考虑你的代码。</p>
+<p>现在还有一个比较重要的优化叫做非序执行（Out-of-order execution），也可以叫做代码重排（code reorder），就是当你的代码满足一定条件时，编译器或者CPU会将你的代码重新排列以满足优化要求。但是这不一定是你需要的：它会把你的代码打乱，影响到你代码的副作用。你可以使用内存围栏（memory barrier）要求特定的顺序。</p>
+<p>任何同步最后都有可能成为性能瓶颈，优化你的代码架构可以帮助减少同步技术的使用范围。</p>
+<h3 id="同步的基本技术：Lock和Condition"><a href="#同步的基本技术：Lock和Condition" class="headerlink" title="同步的基本技术：Lock和Condition"></a>同步的基本技术：Lock和Condition</h3><p><a target="_blank" rel="noopener" href="https://webkit.org/blog/6161/locking-in-webkit/">推荐阅读：Locking in WebKit</a></p>
+<h3 id="其它技术"><a href="#其它技术" class="headerlink" title="其它技术"></a>其它技术</h3><ul>
+<li>事务性内存（Transactional Memory）</li>
+<li>信号量（Semaphore）、读写锁（Read-write Lock）</li>
+<li>Compare-And-Swap（CAS）、原子操作指令</li>
+</ul>
+<h3 id="无锁（Lock-less）、无死锁（Deadlock-free）和无等待（Wait-less）数据结构"><a href="#无锁（Lock-less）、无死锁（Deadlock-free）和无等待（Wait-less）数据结构" class="headerlink" title="无锁（Lock-less）、无死锁（Deadlock-free）和无等待（Wait-less）数据结构"></a>无锁（Lock-less）、无死锁（Deadlock-free）和无等待（Wait-less）数据结构</h3><p>通常，无锁数据结构在频繁操作时性能表现比使用锁的数据结构更好，常见的无锁数据结构有：</p>
+<ul>
+<li>Lock-less Ring Buffer</li>
+<li>无锁队列</li>
+</ul>
+<p>无锁的意思并非是“无等待”，无锁结构的内部经常使用某种形式的自旋锁来重复执行操作直到成功。但是，这个锁的影响范围比单独的锁要小得多，对整体性能的影响更小。无锁数据结构的操作本身一般是非阻塞（non-blocking）无等待的，通过类似自旋锁的操作可以确保操作成功，但是会造成阻塞。</p>
+<p>使用自旋锁的实现在大量参与者同时操作同时阻塞时会影响性能，虽然通常需要非常非常多的参与者才会影响性能：自旋锁会让这些线程保持活跃。使用混合线程（稍后在“事件驱动编程和协同式多线程”中讨论）时会使相应的协同式线程无法从活跃线程中离开，在某些情况下会造成问题。</p>
+<p>无死锁数据结构保证操作数据结构的线程不会死锁。最典型的是双锁队列（Two-Lock Queue）：一个头锁一个尾锁，修改相应部分时就持有相应的锁。</p>
+<h2 id="事件驱动编程和协同式多线程"><a href="#事件驱动编程和协同式多线程" class="headerlink" title="事件驱动编程和协同式多线程"></a>事件驱动编程和协同式多线程</h2><p>阻塞线程等待I/O操作完成从并发角度而言并不是什么好主意：I/O操作通常需要花费一些时间来完成。幸运的是：Linux内核内部的I/O操作其实都是异步的，线程阻塞会被看作是一次隐式让出，给其它线程一个运行的机会。但是！这个机会为什么不给我们自己的代码呢？我们只需要在完成或者错误的时候调用一下回调函数就好了，这样剩下的时间我们可以运行别的代码。</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 随便乱写的伪代码</span></span><br><span class="line"><span class="keyword">local</span> uv = <span class="built_in">require</span> <span class="string">&quot;uv&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">local</span> file = uv.open_file(<span class="string">&quot;./echo.txt&quot;</span>, <span class="string">&quot;a+&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">local</span> run = <span class="literal">true</span></span><br><span class="line"><span class="keyword">while</span> run <span class="keyword">do</span> <span class="comment">-- 这写法其实不对，千万别学，只是为了展示一下回调地狱</span></span><br><span class="line">  file:<span class="built_in">read</span>(<span class="number">256</span>, <span class="function"><span class="keyword">function</span><span class="params">(fail, result)</span></span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> fail <span class="keyword">then</span></span><br><span class="line">      file:<span class="built_in">write</span>(result, <span class="function"><span class="keyword">function</span><span class="params">(fail)</span></span></span><br><span class="line">        <span class="keyword">if</span> fail <span class="keyword">then</span></span><br><span class="line">          <span class="built_in">print</span>(<span class="string">&quot;fail:&quot;</span>..fail)</span><br><span class="line">          run = <span class="literal">false</span></span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">      <span class="keyword">end</span>)</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">      run = <span class="literal">false</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">end</span>) <span class="comment">-- file:read file:write 都是非阻塞的函数，可以想象内存很快就爆炸了</span></span><br><span class="line">  <span class="built_in">print</span>(<span class="string">&quot;Going to echo 256 bytes&quot;</span>) <span class="comment">-- 你的stdout将会塞满这玩意，因为读和写没完成就可以来到这行了</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+<p>真是糟糕的味道。所幸我们后来使用了一个叫做Promise（或者Future）的东西，它代表一个在未来完成的操作。</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 仍然是乱写的伪代码</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">local</span> uv = <span class="built_in">require</span> <span class="string">&quot;uv&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">local</span> file = uv.open_file(<span class="string">&quot;./echo.txt&quot;</span>, <span class="string">&quot;a+&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">local</span> run = <span class="literal">true</span></span><br><span class="line"><span class="keyword">while</span> run <span class="keyword">do</span></span><br><span class="line">  file:<span class="built_in">read</span>(<span class="number">256</span>)</span><br><span class="line">  :on_ok(<span class="function"><span class="keyword">function</span><span class="params">(result)</span></span></span><br><span class="line">    <span class="keyword">return</span> file:<span class="built_in">write</span>(result)</span><br><span class="line">  <span class="keyword">end</span>)</span><br><span class="line">  :on_err(<span class="function"><span class="keyword">function</span><span class="params">(err)</span></span></span><br><span class="line">    <span class="built_in">print</span>(err)</span><br><span class="line">    run = <span class="literal">false</span></span><br><span class="line">  <span class="keyword">end</span>)</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">&quot;Going to echo 256 bytes&quot;</span>)</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+<p>好吧，干净了点，但是现在我们还可以弄得更干净。</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 也是乱写的伪代码，不过确实可以在Lua里实现</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">local</span> uv = <span class="built_in">require</span> <span class="string">&quot;uv&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">local</span> file = uv.open_file(<span class="string">&quot;./echo.txt&quot;</span>, <span class="string">&quot;a+&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="literal">true</span> <span class="keyword">do</span> <span class="comment">-- 这次逻辑上是没错的</span></span><br><span class="line">  <span class="keyword">local</span> <span class="built_in">status</span>, blk = pawait(file:<span class="built_in">read</span>(<span class="number">256</span>))</span><br><span class="line">  <span class="keyword">if</span> <span class="keyword">not</span> <span class="built_in">status</span> <span class="keyword">then</span></span><br><span class="line">    <span class="keyword">break</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">local</span> <span class="built_in">status</span>, err = pawait(file:<span class="built_in">write</span>(blk))</span><br><span class="line">  <span class="keyword">if</span> <span class="keyword">not</span> <span class="built_in">status</span> <span class="keyword">then</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;fail:&quot;</span>..err)</span><br><span class="line">    <span class="keyword">break</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line">  <span class="built_in">print</span>(<span class="string">&quot;Going to echo 256 bytes&quot;</span>) <span class="comment">-- 它不会塞满你的stdout了，因为它在上面两个操作确实完成的时候才输出</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+<p>发现了吗？最后一个版本几乎和同步代码一模一样：</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 也是乱写的伪代码，不过确实可以在Lua里实现</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">local</span> file = <span class="built_in">io</span>.<span class="built_in">open</span>(<span class="string">&quot;./echo.txt&quot;</span>, <span class="string">&quot;a+&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="literal">true</span> <span class="keyword">do</span> <span class="comment">-- 这次逻辑上是没错的</span></span><br><span class="line">  <span class="keyword">local</span> <span class="built_in">status</span>, blk = file:<span class="built_in">read</span>(<span class="number">256</span>)</span><br><span class="line">  <span class="keyword">if</span> <span class="keyword">not</span> <span class="built_in">status</span> <span class="keyword">then</span></span><br><span class="line">    <span class="keyword">break</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">local</span> <span class="built_in">status</span>, err = file:<span class="built_in">write</span>(blk)</span><br><span class="line">  <span class="keyword">if</span> <span class="keyword">not</span> <span class="built_in">status</span> <span class="keyword">then</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;fail:&quot;</span>..err)</span><br><span class="line">    <span class="keyword">break</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line">  <span class="built_in">print</span>(<span class="string">&quot;Going to echo 256 bytes&quot;</span>) <span class="comment">-- 它不会塞满你的stdout了，因为它在上面两个操作确实完成的时候才输出</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+<p>但是问题在于：它在什么地方“运行别的代码”呢？答案就是里面的<code>pawait(xxx)</code>。把整段代码看作一个协同式线程，这个线程将在<code>pawait</code>的时候让出，在里面的操作<code>xxx</code>完成之后返回值、继续运行这个线程。在线程让出的时候就可以运行别的线程。</p>
+<p>进行I/O的过程可以被分为两个事件：请求I/O操作、I/O操作完成。但是事件驱动的代码并不不好写：事件带有上下文，显式处理上下文会很麻烦。通过线程，我们可以在保存上下文的同时利用这段空白时间执行别的代码。要达到这个目的只需要协同式线程，尽管使用线程会对性能带来一些负面影响，但是我相信你并不想用那么多的回调或者Promise。</p>
+<figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">Thread0</span><span class="operator">:</span> <span class="punctuation">[</span><span class="built_in">I</span><span class="operator">/</span><span class="built_in">O</span>请求<span class="punctuation">]</span> <span class="operator">---------</span>阻塞<span class="operator">-----------------&gt;</span> <span class="punctuation">[</span><span class="built_in">I</span><span class="operator">/</span><span class="built_in">O</span>响应<span class="punctuation">]</span></span><br><span class="line">                   <span class="variable">v</span> 排程                                  <span class="operator">^</span> 排程</span><br><span class="line"><span class="variable">Thread1</span><span class="operator">:</span>            <span class="punctuation">[</span><span class="built_in">I</span><span class="operator">/</span><span class="built_in">O</span>请求<span class="punctuation">]</span> <span class="operator">--------</span>阻塞<span class="operator">------------------&gt;</span> <span class="punctuation">[</span><span class="built_in">I</span><span class="operator">/</span><span class="built_in">O</span>响应<span class="punctuation">]</span></span><br><span class="line">                                   <span class="variable">v</span> 排程                             <span class="operator">^</span> 排程</span><br><span class="line"><span class="variable">Thread2</span><span class="operator">:</span>                            <span class="punctuation">[</span><span class="built_in">I</span><span class="operator">/</span><span class="built_in">O</span>请求<span class="punctuation">]</span> <span class="operator">--------</span>阻塞<span class="operator">------------------&gt;</span> <span class="punctuation">[</span><span class="built_in">I</span><span class="operator">/</span><span class="built_in">O</span>响应<span class="punctuation">]</span></span><br></pre></td></tr></table></figure>
+
+<p>这里的线程经常使用用户空间线程。由于一些限制，很多实现只在一个系统线程中运行所有的用户空间线程，在应对I/O密集的的环境时不会有很大影响。但我们总不希望“一核有难，N核围观”……</p>
+<h3 id="混合线程"><a href="#混合线程" class="headerlink" title="混合线程"></a>混合线程</h3><p>我们可以在多个系统线程中运行用户空间线程。<a target="_blank" rel="noopener" href="https://go.dev/">Go</a>、<a target="_blank" rel="noopener" href="https://tokio.rs/">Rust的Tokio</a>和<a target="_blank" rel="noopener" href="https://kotlinlang.org/docs/coroutines-overview.html">Kotlin的Coroutine</a>就采取了这种方法。这种方法让用户空间的协同式线程可以并行执行，更快地处理I/O密集之余的计算部分。</p>
+<p>简单地说，这些实现会维护一个线程池——线程的数量通常根据CPU的核心数确定——来运行用户空间线程。但是需要注意，虽然现在用户空间线程可以并行运行，但它们还是协同式线程：只有在显式或隐式让出时才挂起。如果你有一个用户空间线程一直活跃，它不会挂起并且一直占用你线程池的一个线程。许多实现提供了手动让出的方法，你可以使用这些方法显式让出。</p>
+<p>特别值得注意的是自旋锁——自旋锁不会让你的线程休息，你必须要确保自旋锁不会长时间卡在那。但是你可以用别的锁，而且这些实现一般都会提供合适的锁，开销会比自旋锁略微大一些。</p>
+<p>因为现在你的线程可以并行运行了，你还可以考虑更多地使用基于消息传递的并发模型，比如说Actor模型：</p>
+<blockquote>The actor model in computer science is a mathematical model of concurrent computation that treats actor as the universal primitive of concurrent computation. In response to a message it receives, an actor can: make local decisions, create more actors, send more messages, and determine how to respond to the next message received. Actors may modify their own private state, but can only affect each other indirectly through messaging.<p><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Actor_model">Wikipedia:Actor_model</a></p></blockquote>
+
+<h2 id="扩展阅读"><a href="#扩展阅读" class="headerlink" title="扩展阅读"></a>扩展阅读</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://www.cs.rochester.edu/~scott/papers/1996_PODC_queues.pdf">Simple, Fast, and Practical Non-Blocking and Blocking Concurrent Queue Algorithms. Michael &amp; Scott (1996)</a></li>
+<li><a target="_blank" rel="noopener" href="https://docs.kernel.org/">The Linux Kernel Documentation</a></li>
+<li><a target="_blank" rel="noopener" href="http://docs.libuv.org/en/v1.x/design.html">Design Overview - libuv documentation</a></li>
+<li><a target="_blank" rel="noopener" href="https://tokio.rs/tokio/tutorial/async">Async in depth | Tokio - An asynchronous Rust runtime</a></li>
+<li><a target="_blank" rel="noopener" href="https://medium.com/dartlang/dart-asynchronous-programming-isolates-and-event-loops-bffc3e296a6a">Dart asynchronous programming: Isolates and event loops</a></li>
+<li><a target="_blank" rel="noopener" href="http://dunkels.com/adam/pt/expansion.html">How protothread really work</a></li>
+</ul>
+
+      </div>
+    </div>
+    </div>
+  </article>
+
+  <div id="paginator">
+    
+  </div>
+
+      </main>
+
+        <footer class="page-footer light-blue darken-4">
+          <div class="container">
+            <div class="row">
+              
+                <div class="col s12 m4">
+                  <h5 class="white-text">About Rubicon's Rubicon</h5>
+                  <p>这里是Rubicon's Rubicon。我在无界之点的偏安之地。</p>
+                </div>
+              
+              
+                <div class="col s6 m4">
+                  <h5 class="white-text">
+                    Links
+                  </h5>
+                  <ul>
+                    
+                      <li>
+                        <a class="grey-text text-lighten-3" target="_blank" rel="noopener" href="https://github.com/thislight">GitHub</a>
+                      </li>
+                    
+                      <li>
+                        <a class="grey-text text-lighten-3" target="_blank" rel="noopener" href="https://gitlab.com/thislight">GitLab</a>
+                      </li>
+                    
+                      <li>
+                        <a class="grey-text text-lighten-3" href="/atom.xml">Feed (Atom)</a>
+                      </li>
+                    
+                      <li>
+                        <a class="grey-text text-lighten-3" href="/rss.xml">Feed (RSS)</a>
+                      </li>
+                    
+                    
+                      <li>
+                        <a class="grey-text text-lighten-3" rel="me noopener" target="_blank" href="https://mastodon.social/@thislight">My Mastodon</a>
+                      </li>
+                    
+                  </ul>
+                </div>
+              
+              
+                <div class="col s6 m4">
+                  <p>This blog uses Classical Material Design theme.</p>
+                </div>
+              
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container truncate">
+              © Copyright 2020-2022
+              Rubicon.
+              
+            </div>
+          </div>
+        </footer>
+        
+          
+          
+            <script src="/js/cmd.js"></script>
+          
+            <script src="/materialize/js/materialize.js"></script>
+          
+        
+        
+      <!-- hexo injector body_end start --><!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "05f36e0cb3b74781a5755bd4224e252a"}'></script><!-- End Cloudflare Web Analytics --><!-- hexo injector body_end end --></body>
+    </html>
