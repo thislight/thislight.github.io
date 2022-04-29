@@ -84,7 +84,7 @@
                   
                 </span>
               </a>
-              <p class="entry"><p>在这一篇文章中，我会介绍makru_langc的安装。和普通的编译工具不同，makru_langc是作为Makru的一个插件安装的，而Makru的插件只能安装到项目上随项目源代码附带。这会带来一些不方便，但是能够保证每一个项目都能选择最适合的插件和插件版本而无需担心兼容成本。其实类似的方法在make和cmake的项目中也能经常看见，很多项目都会带有一些脚本或者预定义宏来帮助编译，只是Makru将它变成强制行为了。</p></p>
+              <div class="entry"><p>在这一篇文章中，我会介绍makru_langc的安装。和普通的编译工具不同，makru_langc是作为Makru的一个插件安装的，而Makru的插件只能安装到项目上随项目源代码附带。这会带来一些不方便，但是能够保证每一个项目都能选择最适合的插件和插件版本而无需担心兼容成本。其实类似的方法在make和cmake的项目中也能经常看见，很多项目都会带有一些脚本或者预定义宏来帮助编译，只是Makru将它变成强制行为了。</p></div>
               
   <div>
   
@@ -114,8 +114,8 @@
                   
                 </span>
               </a>
-              <p class="entry"><p><a target="_blank" rel="noopener" href="https://gitlab.com/jinwa/makru">Makru</a>是一个用Python编写的全新编译工具。它的目的不是提供更多的编译逻辑，而是提供一个统一的平台方便开发和引入新的编译逻辑。Makru和目前主流的make-like编译系统最大的不同点再于：它没有使用类似宏语法之类的东西为配置文件提供超高的灵活性，而是直接选择了很多现代包管理工具正在使用的结构化数据配置文件（Makru使用的是yaml）。<a target="_blank" rel="noopener" href="https://gitlab.com/jinwa/makru_langc">makru_langc</a>就是在它之上构建的C语言项目编译插件。<br>得益于这样的选择，makru_langc提供了非常流畅的编译管理体验。你可以快速理解并编辑配置文件，而不是在配置文件的海洋里晕头转向。另外，makru_langc还支持高自由度的自定义，你甚至可以利用它提供的工具编写自己的编译逻辑。</p>
-<p>这个文章系列将会介绍一个用makru_langc来管理编译的小演示项目scat，它接收标准输入然后输出到标准输出。为了演示makru_langc的功能，scat会有一个子项目叫libcopy。这个子项目里只有一个函数：从第一个File输入，输出到第二个File。</p></p>
+              <div class="entry"><p><a target="_blank" rel="noopener" href="https://gitlab.com/jinwa/makru">Makru</a>是一个用Python编写的全新编译工具。它的目的不是提供更多的编译逻辑，而是提供一个统一的平台方便开发和引入新的编译逻辑。Makru和目前主流的make-like编译系统最大的不同点再于：它没有使用类似宏语法之类的东西为配置文件提供超高的灵活性，而是直接选择了很多现代包管理工具正在使用的结构化数据配置文件（Makru使用的是yaml）。<a target="_blank" rel="noopener" href="https://gitlab.com/jinwa/makru_langc">makru_langc</a>就是在它之上构建的C语言项目编译插件。<br>得益于这样的选择，makru_langc提供了非常流畅的编译管理体验。你可以快速理解并编辑配置文件，而不是在配置文件的海洋里晕头转向。另外，makru_langc还支持高自由度的自定义，你甚至可以利用它提供的工具编写自己的编译逻辑。</p>
+<p>这个文章系列将会介绍一个用makru_langc来管理编译的小演示项目scat，它接收标准输入然后输出到标准输出。为了演示makru_langc的功能，scat会有一个子项目叫libcopy。这个子项目里只有一个函数：从第一个File输入，输出到第二个File。</p></div>
               
   <div>
   
