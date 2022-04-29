@@ -5,25 +5,41 @@
         <link>https://rubicon.lightstands.xyz</link>
         <description></description>
         <language>zh-cn,en,default</language>
-        <pubDate>Thu, 31 Mar 2022 08:07:45 +0000</pubDate>
-        <lastBuildDate>Thu, 31 Mar 2022 08:07:45 +0000</lastBuildDate>
+        <pubDate>Fri, 29 Apr 2022 13:40:24 +0000</pubDate>
+        <lastBuildDate>Fri, 29 Apr 2022 13:40:24 +0000</lastBuildDate>
         <category>Hexo</category>
         <category>logbook</category>
         <category>博客功能更新</category>
         <category>文摘</category>
         <category>社会科学</category>
         <category>RSS</category>
+        <category>诗集</category>
         <category>Makru</category>
         <category>C</category>
         <category>系列文章</category>
         <category>Kache Development</category>
         <category>Kache</category>
         <category>网络</category>
-        <category>诗集</category>
         <category>Linux记</category>
         <category>生命很短</category>
         <category>高性能I/O</category>
         <category>年终总结</category>
+        <item>
+            <guid isPermalink="true">https://rubicon.lightstands.xyz/2022/04/29/lepoem/</guid>
+            <title>偷乐集</title>
+            <link>https://rubicon.lightstands.xyz/2022/04/29/lepoem/</link>
+            <category>诗集</category>
+            <pubDate>Fri, 29 Apr 2022 13:40:24 +0000</pubDate>
+            <description><![CDATA[ &lt;blockquote&gt;
+&lt;p&gt;2022年第一季度写的两首小诗：《梅花》和《无题》。生活在不确定中让人疲累，没有紧急出口。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
+
+&lt;h2 id=&#34;梅花&#34;&gt;&lt;a href=&#34;#梅花&#34; class=&#34;headerlink&#34; title=&#34;梅花&#34;&gt;&lt;/a&gt;梅花&lt;/h2&gt;&lt;p&gt;寒冬狠狠闭上梅花的眼&lt;br&gt;花瓣落成雪花&lt;br&gt;和哑巴&lt;/p&gt;
+&lt;p&gt;沉默的人尽力喧闹&lt;br&gt;喧闹的人说不出话&lt;br&gt;落雨走向起点&lt;br&gt;泪珠串起结局&lt;br&gt;还剩多少&lt;/p&gt;
+&lt;h2 id=&#34;无题&#34;&gt;&lt;a href=&#34;#无题&#34; class=&#34;headerlink&#34; title=&#34;无题&#34;&gt;&lt;/a&gt;无题&lt;/h2&gt;&lt;p&gt;在时钟的尽头&lt;br&gt;跳着蹩脚的舞蹈&lt;br&gt;经过沾满火焰的街道&lt;br&gt;老人在偷笑&lt;br&gt;多少干燥的徒劳&lt;br&gt;自在逍遥&lt;/p&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">https://rubicon.lightstands.xyz/2022/03/31/threads-and-processes/</guid>
             <title>进程、线程、协程</title>
@@ -212,9 +228,9 @@
 &lt;iframe src=&#34;https://store.steampowered.com/widget/412020/?t=《地铁：离乡》确实是非常不错的半开放世界线性流程FPS。&#34; frameborder=&#34;0&#34; width=&#34;100%&#34; height=&#34;190&#34;&gt;&lt;/iframe&gt;
 
 &lt;p&gt;搜刮到&lt;a href=&#34;https://github.com/HCLonely/hexo-tag-steamgame&#34;&gt;hexo-tag-steamgames&lt;/a&gt;可以实现这个。&lt;/p&gt;
-&lt;h2 id=&#34;引用Wikipedia条目&#34;&gt;&lt;a href=&#34;#引用Wikipedia条目&#34; class=&#34;headerlink&#34; title=&#34;引用Wikipedia条目&#34;&gt;&lt;/a&gt;引用Wikipedia条目&lt;/h2&gt;&lt;blockquote id=&#39;wikipedia-12991&#39;&gt;&lt;script&gt;
+&lt;h2 id=&#34;引用Wikipedia条目&#34;&gt;&lt;a href=&#34;#引用Wikipedia条目&#34; class=&#34;headerlink&#34; title=&#34;引用Wikipedia条目&#34;&gt;&lt;/a&gt;引用Wikipedia条目&lt;/h2&gt;&lt;blockquote id=&#39;wikipedia-68021&#39;&gt;&lt;script&gt;
       window.addEventListener(&#39;load&#39;, function() {
-        var element = document.getElementById(&#39;wikipedia-12991&#39;);
+        var element = document.getElementById(&#39;wikipedia-68021&#39;);
         var req = new XMLHttpRequest();
         req.addEventListener(&#34;load&#34;, function() {
           var result = this.response;
