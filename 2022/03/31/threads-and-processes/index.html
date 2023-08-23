@@ -32,7 +32,7 @@
     
     <link rel="stylesheet" href="/materialize/css/materialize.css"/>
     
-    <meta name="generator" content="Hexo 6.1.0"></head>
+    <meta name="generator" content="Hexo 6.3.0"></head>
 
     <body>
       <ul id="nav-mobile" class="sidenav">
@@ -156,7 +156,7 @@
 <p>简单地说，这些实现会维护一个线程池——线程的数量通常根据CPU的核心数确定——来运行用户空间线程。但是需要注意，虽然现在用户空间线程可以并行运行，但它们还是协同式线程：只有在显式或隐式让出时才挂起。如果你有一个用户空间线程一直活跃，它不会挂起并且一直占用你线程池的一个线程。许多实现提供了手动让出的方法，你可以使用这些方法显式让出。</p>
 <p>特别值得注意的是自旋锁——自旋锁不会让你的线程休息，你必须要确保自旋锁不会长时间卡在那。但是你可以用别的锁，而且这些实现一般都会提供合适的锁，开销会比自旋锁略微大一些。</p>
 <p>因为现在你的线程可以并行运行了，你还可以考虑更多地使用基于消息传递的并发模型，比如说Actor模型：</p>
-<blockquote>The actor model in computer science is a mathematical model of concurrent computation that treats actor as the universal primitive of concurrent computation. In response to a message it receives, an actor can: make local decisions, create more actors, send more messages, and determine how to respond to the next message received. Actors may modify their own private state, but can only affect each other indirectly through messaging.<p><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Actor_model">Wikipedia:Actor_model</a></p></blockquote>
+<blockquote>The actor model in computer science is a mathematical model of concurrent computation that treats an actor as the basic building block of concurrent computation. In response to a message it receives, an actor can: make local decisions, create more actors, send more messages, and determine how to respond to the next message received. Actors may modify their own private state, but can only affect each other indirectly through messaging.<p><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Actor_model">Wikipedia:Actor_model</a></p></blockquote>
 
 <h2 id="扩展阅读"><a href="#扩展阅读" class="headerlink" title="扩展阅读"></a>扩展阅读</h2><ul>
 <li><a target="_blank" rel="noopener" href="https://www.cs.rochester.edu/~scott/papers/1996_PODC_queues.pdf">Simple, Fast, and Practical Non-Blocking and Blocking Concurrent Queue Algorithms. Michael &amp; Scott (1996)</a></li>

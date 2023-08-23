@@ -19,6 +19,7 @@
     <category term="网络" />
     <category term="Linux记" />
     <category term="生命很短" />
+    <category term="LightStands" />
     <category term="高性能I/O" />
     <category term="年终总结" />
     <entry>
@@ -32,7 +33,7 @@
 &lt;p&gt;makru_langc还自带直接从本地pkgconfig查询第三方库的功能，最后一篇文章会覆盖到这个特性，并以此说明如何为makru_langc编写自己的库查询逻辑。&lt;/p&gt;
 &lt;h2 id=&#34;环境说明&#34;&gt;&lt;a href=&#34;#环境说明&#34; class=&#34;headerlink&#34; title=&#34;环境说明&#34;&gt;&lt;/a&gt;环境说明&lt;/h2&gt;&lt;p&gt;文章中的开发环境是运行于Linux 5.9.15 x86_64之上的Fedora 33，Python 3.9以及Clang 11.0。Makru的版本是v0.1.0（最新beta版本），makru_langc的版本是尚未发布的r1（你可以直接检出master分支）。&lt;/p&gt;
 &lt;h2 id=&#34;目录&#34;&gt;&lt;a href=&#34;#目录&#34; class=&#34;headerlink&#34; title=&#34;目录&#34;&gt;&lt;/a&gt;目录&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;/2021/01/04/makru-tutor-2/&#34; title=&#34;配置Makru和makru_langc&#34;&gt;配置Makru和makru_langc&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/2021/01/04/makru-tutor-2/&#34; title=&#34;使用Makru和makru_langc管理现代C项目编译： 配置Makru和makru_langc&#34;&gt;配置Makru和makru_langc&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;为可执行文件项目编写配置文件&lt;/li&gt;
 &lt;li&gt;为库项目编写配置文件&lt;/li&gt;
 &lt;li&gt;使用Pkgconfig Dependency Resolver引入第三方库&lt;/li&gt;

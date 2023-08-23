@@ -19,6 +19,7 @@
     <category term="网络" />
     <category term="Linux记" />
     <category term="生命很短" />
+    <category term="LightStands" />
     <category term="高性能I/O" />
     <category term="年终总结" />
     <entry>
@@ -67,7 +68,7 @@
 &lt;figure class=&#34;highlight cmake&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sudo dnf &lt;span class=&#34;keyword&#34;&gt;install&lt;/span&gt; pamtester&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
 &lt;p&gt;在这篇文章的例子里只需要（用要验证的用户的用户名代替&lt;code&gt;&amp;lt;用户名&amp;gt;&lt;/code&gt;）&lt;/p&gt;
-&lt;figure class=&#34;highlight bnf&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;pamtester sudo &lt;span class=&#34;attribute&#34;&gt;&amp;lt;用户名&amp;gt;&lt;/span&gt; authenticate&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&#34;highlight xml&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;pamtester sudo &lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;用户名&lt;/span&gt;&amp;gt;&lt;/span&gt; authenticate&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
 &lt;p&gt;就可以触发 PAM 的验证了。&lt;/p&gt;
 </content>

@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>Rubicon&#39;s Rubicon • Posts by &#34;lightstands&#34; tag</title>
+        <link>https://rubicon.lightstands.xyz</link>
+        <description></description>
+        <language>zh-cn,en,default</language>
+        <pubDate>Wed, 23 Aug 2023 19:29:21 +0000</pubDate>
+        <lastBuildDate>Wed, 23 Aug 2023 19:29:21 +0000</lastBuildDate>
+        <category>Hexo</category>
+        <category>logbook</category>
+        <category>博客功能更新</category>
+        <category>文摘</category>
+        <category>社会科学</category>
+        <category>RSS</category>
+        <category>诗集</category>
+        <category>Makru</category>
+        <category>C</category>
+        <category>系列文章</category>
+        <category>Kache Development</category>
+        <category>Kache</category>
+        <category>网络</category>
+        <category>Linux记</category>
+        <category>生命很短</category>
+        <category>LightStands</category>
+        <category>高性能I/O</category>
+        <category>年终总结</category>
+        <item>
+            <guid isPermalink="true">https://rubicon.lightstands.xyz/2023/08/23/the-first-year-of-lightstands/</guid>
+            <title>LightStands的第一年</title>
+            <link>https://rubicon.lightstands.xyz/2023/08/23/the-first-year-of-lightstands/</link>
+            <category>LightStands</category>
+            <pubDate>Wed, 23 Aug 2023 19:29:21 +0000</pubDate>
+            <description><![CDATA[ &lt;p&gt;现在的LightStands软件的第一个Commit来自2022年7月31日。不过，LightStands的想法和开发其实开始得很早，最早的版本早在2017年就开始开发了。详细的时间我并不记得，我只知道在2017年8月8日我在Git上提交了web.dart的&lt;a href=&#34;https://github.com/thislight/webart/commit/dc37ef4a44ea52d7c8515528fd68ae46ad901b62&#34;&gt;第一个commit&lt;/a&gt;——它是LightStands第一个版本的基础。但是，在写了几千行代码之后，这个LightStands软件就被废弃了。&lt;/p&gt;
+&lt;p&gt;这篇文章是我过去几年里开发LightStands软件的经历总结。&lt;/p&gt;
+&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
+
+&lt;h2 id=&#34;坚实的基础&#34;&gt;&lt;a href=&#34;#坚实的基础&#34; class=&#34;headerlink&#34; title=&#34;坚实的基础&#34;&gt;&lt;/a&gt;坚实的基础&lt;/h2&gt;&lt;p&gt;从2017年到2022年，我对LightStands软件的技术栈就有很多想像。最开始的版本使用了Dart语言编写，但是很快就废弃了，原因稍微有点复杂。&lt;/p&gt;
+&lt;p&gt;原本Dart的实现是它的一大卖点：Dart的实现可以在两个模式下运行程序，一个叫做检查模式（Checked Mode），一个是生产模式（Production Mode）。检查模式会在程序运行时进行额外的检查（包括一些类型检查），而生产模式不会。我猜这两个模式产生的原因是这样的：Dart的类型系统支持动态类型，但是检查动态类型引入了条件判断，条件判断对性能的影响非常大。&lt;/p&gt;
+&lt;p&gt;他们希望你可以在以生产模式运行程序，在检查模式中测试程序，这样你就拥有了the best of two worlds。通过两种模式的区别，Dart在提供动态类型的同时达到了比较高的性能。我没有做过比较正式的测试，但是生产模式比当时的CPython要快得多。&lt;/p&gt;
+&lt;p&gt;事情在Dart 2的时候就起了变化：Dart 2开始转型为Flutter的专用语言。Dart 2移除了生产模式和检查模式的区别，取而代之的是单独的”强模式“（Strong Mode）。&lt;/p&gt;
+&lt;p&gt;这只是一个好听的营销术语。我用web.dart写了一个简单的HTTP服务示例进行了大致测试，发现Dart 2.0强模式的性能与Dart 1.24.3的检查模式没有太大区别，这样的性能没有太大的亮点。并且，新的强模式对原本自动使用动态类型的变量使用了类型推断，一些情况下推断出的类型并不符合直觉，还导致Dart 2失去了向前兼容。&lt;/p&gt;
+&lt;p&gt;还没完呢。为了强行推广Dart 2，Pub（Dart的包管理器和包仓库）对不支持Dart 2的库降权，被降权的库就会直接放在搜索结果末尾。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Google什么时候砍掉一个产品？现在或者下一秒。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;这件事给我很深刻的教训：技术栈的基础一定要可靠，最少要确定它的维护团队不会强行推动一个尚未完成的修改。对于编程语言这件事，后来我曾考虑过Lua（还为此写了&lt;a href=&#34;https://gitlab.com/thislight/hussar&#34;&gt;hussar&lt;/a&gt;），最后在去年开始新开发时还是选择了Python。&lt;/p&gt;
+&lt;h2 id=&#34;减少可替换部件&#34;&gt;&lt;a href=&#34;#减少可替换部件&#34; class=&#34;headerlink&#34; title=&#34;减少可替换部件&#34;&gt;&lt;/a&gt;减少可替换部件&lt;/h2&gt;&lt;p&gt;减少Moving Parts是我在开发初期的一个大胆决定。目前LightStands有三个组件：httpgated、mangerd、cleanupd，和一个最终依赖melon。并且：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;线上服务也使用SQLite3作为DBMS&lt;/li&gt;
+&lt;li&gt;所有的组件都写在同一个仓库，只是暴露不同的进入点（entrypoint）&lt;/li&gt;
+&lt;li&gt;运行服务只需要3个进程（分别是：HTTP API服务、拉取RSS、垃圾收集）。最开始，进程之间不需要交换信息，都是直接操作数据库&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这极大地简化了开发和部署。配合容器，手动部署甚至只需要5分钟就可以完成。开发的时候可以直接运行程序、使用DB Browser for SQLite直接查看数据库。而且目前来看，SQLite3并没有给性能带来太大问题。&lt;/p&gt;
+&lt;p&gt;Melon是一个ORM框架。最开始我将它和LightStands其它组件放在一起，这样迭代会更简单。但它是一个高内聚的框架，和LightStands其实没什么关系，这时我就想将它从LightStands中独立出来。我当时就意识到我们缺少一个私有的软件包仓库：如果最开始就有一个私有的软件包仓库，不仅可以用来整理模块，还可以简化远程服务器上的部署。我打算在今年完成这件事。&lt;/p&gt;
+&lt;h2 id=&#34;单页应用不是唯一选项&#34;&gt;&lt;a href=&#34;#单页应用不是唯一选项&#34; class=&#34;headerlink&#34; title=&#34;单页应用不是唯一选项&#34;&gt;&lt;/a&gt;单页应用不是唯一选项&lt;/h2&gt;&lt;p&gt;最开始我是想要把LightStands的登录和注册做成单页应用，在客户端上完成验证、创建访问密钥、授权的工作。但是这样做效果很一般：单页应用的无缓存访问很慢。登录和注册只有寥寥几个页面，完全无法利用单页应用渐进式下载的优势，反而被JS拖累延长了首次内容显示耗时。而且，这些工作本来就是一次性在服务器上完成更快，将他们分为几个HTTP请求确实进一步拖慢了速度。&lt;/p&gt;
+&lt;p&gt;我正在编写一个JavaScript库，可以简化多页应用的DOM操作。希望今年能应用在新的LightStands用户面板上。&lt;/p&gt;
+&lt;h2 id=&#34;下一站&#34;&gt;&lt;a href=&#34;#下一站&#34; class=&#34;headerlink&#34; title=&#34;下一站&#34;&gt;&lt;/a&gt;下一站&lt;/h2&gt;&lt;p&gt;LightStands是我新想法的试验田，应用了许多在很多人看来都很小众的想法。不过，激进自有其坏处：LightStands的开发相对来说很缓慢，为一个小众架构编写能够使用的库是一个巨大的挑战。编写实现这些新想法的代码需要消耗许多时间，例如LightStands使用的ORM框架melon，代码五千余行。&lt;/p&gt;
+&lt;p&gt;LightStands正在将旧有基于feedparser的feedloaderd迁移到全新的mangerd，mangerd不仅能够从源拉取，还支持接受推送，为ActivityPub支持做足了准备。不过在此之前，我们还面临一个重要挑战：将旧的数据结构迁移到新的数据结构。&lt;/p&gt;
+&lt;p&gt;新的一年，LightStands在技术上的路线图大概如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;将API迁移到新的数据结构&lt;/li&gt;
+&lt;li&gt;支持更新通知&lt;/li&gt;
+&lt;li&gt;支持ActivityPub&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;在新的一年继续“添砖加瓦”，干杯！&lt;/p&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

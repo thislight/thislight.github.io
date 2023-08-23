@@ -22,6 +22,7 @@
         <category>网络</category>
         <category>Linux记</category>
         <category>生命很短</category>
+        <category>LightStands</category>
         <category>高性能I/O</category>
         <category>年终总结</category>
         <item>
@@ -43,25 +44,7 @@
 &lt;iframe src=&#34;https://store.steampowered.com/widget/412020/?t=《地铁：离乡》确实是非常不错的半开放世界线性流程FPS。&#34; frameborder=&#34;0&#34; width=&#34;100%&#34; height=&#34;190&#34;&gt;&lt;/iframe&gt;
 
 &lt;p&gt;搜刮到&lt;a href=&#34;https://github.com/HCLonely/hexo-tag-steamgame&#34;&gt;hexo-tag-steamgames&lt;/a&gt;可以实现这个。&lt;/p&gt;
-&lt;h2 id=&#34;引用Wikipedia条目&#34;&gt;&lt;a href=&#34;#引用Wikipedia条目&#34; class=&#34;headerlink&#34; title=&#34;引用Wikipedia条目&#34;&gt;&lt;/a&gt;引用Wikipedia条目&lt;/h2&gt;&lt;blockquote id=&#39;wikipedia-71465&#39;&gt;&lt;script&gt;
-      window.addEventListener(&#39;load&#39;, function() {
-        var element = document.getElementById(&#39;wikipedia-71465&#39;);
-        var req = new XMLHttpRequest();
-        req.addEventListener(&#34;load&#34;, function() {
-          var result = this.response;
-          const extract = result.extract;
-          element.prepend(extract);
-        });
-        req.addEventListener(&#34;error&#34;, function() {
-          element.prepend(&#39;Failed to fetch wikipedia data for &#34;Wikipedia&#34;.&#39;);
-        });
-        req.open(&#39;GET&#39;, &#39;https://zh.wikipedia.org/api/rest_v1/page/summary/Wikipedia?redirect=false&#39;);
-        req.responseType = &#39;json&#39;;
-        req.setRequestHeader(&#39;accept&#39;, &#39;application/json; charset=utf-8; profile=&#34;https://www.mediawiki.org/wiki/Specs/Summary/1.4.2&#34;&#39;);
-        req.setRequestHeader(&#39;api-user-agent&#39;, &#39;Hexo Wikipedia Tag (from https://rubicon.lightstands.xyz)&#39;);
-        req.send();
-      });
-    &lt;/script&gt;&lt;p&gt;&lt;a href=&#34;https://zh.wikipedia.org/wiki/Wikipedia&#34;&gt;Wikipedia:Wikipedia&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h2 id=&#34;引用Wikipedia条目&#34;&gt;&lt;a href=&#34;#引用Wikipedia条目&#34; class=&#34;headerlink&#34; title=&#34;引用Wikipedia条目&#34;&gt;&lt;/a&gt;引用Wikipedia条目&lt;/h2&gt;&lt;blockquote&gt;undefined&lt;p&gt;&lt;a href=&#34;https://zh.wikipedia.org/wiki/Wikipedia&#34;&gt;Wikipedia:Wikipedia&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;
 
 &lt;p&gt;原来我是想用&lt;a href=&#34;https://github.com/tuanna-hsp/hexo-tag-wikipedia&#34;&gt;hexo-tag-wikipedia&lt;/a&gt;。但是：&lt;/p&gt;
 &lt;ol&gt;
