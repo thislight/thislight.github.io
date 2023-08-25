@@ -5,8 +5,8 @@
         <link>https://rubicon.lightstands.xyz</link>
         <description></description>
         <language>zh-cn,en,default</language>
-        <pubDate>Wed, 23 Aug 2023 19:29:21 +0000</pubDate>
-        <lastBuildDate>Wed, 23 Aug 2023 19:29:21 +0000</lastBuildDate>
+        <pubDate>Fri, 25 Aug 2023 20:52:31 +0000</pubDate>
+        <lastBuildDate>Fri, 25 Aug 2023 20:52:31 +0000</lastBuildDate>
         <category>Hexo</category>
         <category>logbook</category>
         <category>博客功能更新</category>
@@ -25,6 +25,56 @@
         <category>LightStands</category>
         <category>高性能I/O</category>
         <category>年终总结</category>
+        <item>
+            <guid isPermalink="true">https://rubicon.lightstands.xyz/2023/08/25/fukushima-nuclear-qa/</guid>
+            <title>福岛第一核电站污水处理对策问与答</title>
+            <link>https://rubicon.lightstands.xyz/2023/08/25/fukushima-nuclear-qa/</link>
+            <pubDate>Fri, 25 Aug 2023 20:52:31 +0000</pubDate>
+            <description><![CDATA[ &lt;p&gt;作者并非该领域专业人士，这篇文章收集并整理了部分问题和回应，仅作为补充。&lt;/p&gt;
+&lt;p&gt;了解更多：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.iaea.org/zh/zhu-ti/xiang-ying/fu-dao-di-yi-he-dian-zhan-chu-li-shui-pai-fang/chang-jian-wen-ti&#34;&gt;常见问题 - 福岛第一核电站处理水排放 - 国际原子能机构&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.tepco.co.jp/zh-cn/decommission/progress/watertreatment/faq/index-cn.html&#34;&gt;问与答 - 处理水门户网站 - 东京电力&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://tworis.aec.gov.tw/JapanAndSupervision&#34;&gt;日本作业与国际监督 - 放射性物质海域扩散海洋资讯平台 - 行政院原子能委员会&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
+
+&lt;h2 id=&#34;关于IAEA&#34;&gt;&lt;a href=&#34;#关于IAEA&#34; class=&#34;headerlink&#34; title=&#34;关于IAEA&#34;&gt;&lt;/a&gt;关于IAEA&lt;/h2&gt;&lt;h3 id=&#34;IAEA是一家什么样的机构？&#34;&gt;&lt;a href=&#34;#IAEA是一家什么样的机构？&#34; class=&#34;headerlink&#34; title=&#34;IAEA是一家什么样的机构？&#34;&gt;&lt;/a&gt;IAEA是一家什么样的机构？&lt;/h3&gt;&lt;p&gt;IAEA是International Atomic Energy Agency的缩写，可叫作“国际原子能机构“。IAEA是一个独立政府间国际组织，作为政府间的科学技术协作论坛，致力于和平发展核技术和核能源。IAEA各成员国协商制定&lt;a href=&#34;https://www.iaea.org/zh/shu-ju-ku/an-quan-biao-zhun&#34;&gt;原子能机构“安全标准”&lt;/a&gt;，并推荐各个成员国参照该标准制定法规。&lt;/p&gt;
+&lt;h3 id=&#34;为什么IAEA不审查福岛核电站污水处理对策的合法性和正当性？&#34;&gt;&lt;a href=&#34;#为什么IAEA不审查福岛核电站污水处理对策的合法性和正当性？&#34; class=&#34;headerlink&#34; title=&#34;为什么IAEA不审查福岛核电站污水处理对策的合法性和正当性？&#34;&gt;&lt;/a&gt;为什么IAEA不审查福岛核电站污水处理对策的合法性和正当性？&lt;/h3&gt;&lt;p&gt;IAEA的主要目的是推动核技术的国际间协作。它能够审查污水处理对策是否符合安全标准，但无法确认污水处理处理对策是否合法或正当。&lt;/p&gt;
+&lt;p&gt;IAEA的特别工作组已经按照&lt;a href=&#34;https://www.iaea.org/zh/shu-ju-ku/an-quan-biao-zhun&#34;&gt;原子能机构“安全标准”&lt;/a&gt;审查日本政府和东京电力公司的排放计划和相关活动，并将独立进行监测，确证日本政府和东京电力公司公布的数据。&lt;/p&gt;
+&lt;p&gt;IAEA的审查结果对日本政府没有法律约束力，但提高了处理对策的总体透明度，有助于国际社会监督污水处理过程。&lt;/p&gt;
+&lt;h2 id=&#34;关于污水处理对策&#34;&gt;&lt;a href=&#34;#关于污水处理对策&#34; class=&#34;headerlink&#34; title=&#34;关于污水处理对策&#34;&gt;&lt;/a&gt;关于污水处理对策&lt;/h2&gt;&lt;h3 id=&#34;福岛核电站直接将稀释的核污水排放到海洋中！&#34;&gt;&lt;a href=&#34;#福岛核电站直接将稀释的核污水排放到海洋中！&#34; class=&#34;headerlink&#34; title=&#34;福岛核电站直接将稀释的核污水排放到海洋中！&#34;&gt;&lt;/a&gt;福岛核电站直接将稀释的核污水排放到海洋中！&lt;/h3&gt;&lt;p&gt;按照排放计划，核污水不会排放到海洋中，排放到海洋中的是稀释后的”ALPS处理水“。污水经过多道工序处理才能得到ALPS处理水，除氚以外的物质都符合日本国家标准。&lt;/p&gt;
+&lt;p&gt;ALPS处理水在排放之前，还会用大量海水进行稀释，确保氚的浓度符合标准：排放液体中氚浓度低于1500Bq/L，远低于世界卫生组织饮用水标准（10000Bq/L）。&lt;/p&gt;
+&lt;p&gt;IAEA根据其全面评估得出结论，东京电力公司目前计划的ALPS处理水的排放对人们和环境的放射性影响可以忽略不计。&lt;/p&gt;
+&lt;h3 id=&#34;为什么日本相关机构在排放处理水之前不与周边国家达成一致？&#34;&gt;&lt;a href=&#34;#为什么日本相关机构在排放处理水之前不与周边国家达成一致？&#34; class=&#34;headerlink&#34; title=&#34;为什么日本相关机构在排放处理水之前不与周边国家达成一致？&#34;&gt;&lt;/a&gt;为什么日本相关机构在排放处理水之前不与周边国家达成一致？&lt;/h3&gt;&lt;p&gt;日本相关机构认为：周边其它国家在排放核电站废水时并不需要征得其它国家的同意。污水处理对策排放与废水相似的稀释处理水，所以也不需要与周边国家达成一致。&lt;/p&gt;
+&lt;p&gt;相关计划在2021年时就已经向社会宣布并邀请IAEA进行审查，包括韩国在内的多国政府已经表示同意该计划，但要求日本相关机构保持信息公开透明。&lt;/p&gt;
+&lt;h3 id=&#34;日本相关机构是否接受第三方监督？&#34;&gt;&lt;a href=&#34;#日本相关机构是否接受第三方监督？&#34; class=&#34;headerlink&#34; title=&#34;日本相关机构是否接受第三方监督？&#34;&gt;&lt;/a&gt;日本相关机构是否接受第三方监督？&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.iaea.org/zh/zhu-ti/xiang-ying/fu-dao-di-yi-he-dian-zhan-chu-li-shui-pai-fang/chang-jian-wen-ti&#34;&gt;IAEA的特别工作组（包含来自中国和韩国等国家的专家）会审查污水处理对策及其实施情况、验证日本相关机构的数据&lt;/a&gt;；&lt;/li&gt;
+&lt;li&gt;除了东京电力公司的海洋监测点外，&lt;a href=&#34;https://www.monitororbs.jp/index_en.html&#34;&gt;日本环境署、核规制委员会等机构也会在相应位置进行海洋监测&lt;/a&gt;；&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://fukushima.jaea.go.jp/okuma/alps/index.html&#34;&gt;东京电力公司邀请了日本原子能研究开发机构进行第三方分析&lt;/a&gt;；&lt;/li&gt;
+&lt;li&gt;东京电力公司设计并执行&lt;a href=&#34;https://www.tepco.co.jp/zh-cn/decommission/progress/watertreatment/breedingtest/index-cn.html&#34;&gt;海洋生物养殖实验，供公众了解排放水的情况&lt;/a&gt;；&lt;/li&gt;
+&lt;li&gt;韩国等国家的当地机构也会在当地进行监测。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;为何日本相关机构急着排放处理水？&#34;&gt;&lt;a href=&#34;#为何日本相关机构急着排放处理水？&#34; class=&#34;headerlink&#34; title=&#34;为何日本相关机构急着排放处理水？&#34;&gt;&lt;/a&gt;为何日本相关机构急着排放处理水？&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;存储容量即将用完，几乎不可能扩建；&lt;/li&gt;
+&lt;li&gt;日本政府和东京电力公司需要推动废弃反应堆的进程；&lt;/li&gt;
+&lt;li&gt;有因为地震或海啸导致液体泄露的风险。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;相关计划在2013年时就已经开始讨论并在2021年公布。选择海洋排放有以下原因：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;海洋排放比较成熟，各地核电站都日常排放符合安全剂量的废水；&lt;/li&gt;
+&lt;li&gt;海洋排放对于环境的影响比较容易监测，可以通过对水质和生物进行定点测试判别。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;关于核污染对策&#34;&gt;&lt;a href=&#34;#关于核污染对策&#34; class=&#34;headerlink&#34; title=&#34;关于核污染对策&#34;&gt;&lt;/a&gt;关于核污染对策&lt;/h2&gt;&lt;h3 id=&#34;我是否该屯盐？&#34;&gt;&lt;a href=&#34;#我是否该屯盐？&#34; class=&#34;headerlink&#34; title=&#34;我是否该屯盐？&#34;&gt;&lt;/a&gt;我是否该屯盐？&lt;/h3&gt;&lt;p&gt;没有必要。福岛核电站的污水处理对策公开透明，根据目前的科学证据来看，不会损害你的健康。如果实在担心，也可以购买些许，但请务必量力而行。&lt;/p&gt;
+&lt;p&gt;需要特别提醒的是，碘盐没有碘片的效果，请勿使用碘盐代替碘片，也不要过度食用碘盐。&lt;/p&gt;
+&lt;h3 id=&#34;碘片可以防辐射吗？&#34;&gt;&lt;a href=&#34;#碘片可以防辐射吗？&#34; class=&#34;headerlink&#34; title=&#34;碘片可以防辐射吗？&#34;&gt;&lt;/a&gt;碘片可以防辐射吗？&lt;/h3&gt;&lt;p&gt;目前来说，没有特别轻松就可以防止辐射的手段。碘片通常指碘化钾片剂，它不能防止辐射对你造成伤害。它只能避免碘的放射性同位素被你的身体吸收，从而减少体内放射性物质对你的伤害。污水处理对策中，排放的处理水符合日本国家标准，碘同位素的含量很低。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;碘片不是一般性的预防措施，勿在事件未发生时就使用碘片；&lt;/li&gt;
+&lt;li&gt;除非长期暴露在污染下，不应长期服用碘片。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如果你因为担心福岛核电站污水处理对策而已经购买碘片，请勿因此服用碘片。从目前的科学证据看，福岛核电站的污水处理对策不会损害健康。&lt;/p&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">https://rubicon.lightstands.xyz/2023/08/23/the-first-year-of-lightstands/</guid>
             <title>LightStands的第一年</title>
