@@ -3,10 +3,13 @@
     <id>https://rubicon.lightstands.xyz</id>
     <title>Rubicon&#39;s Rubicon</title>
     <link href="https://rubicon.lightstands.xyz" />
-    <updated>2023-08-25T20:52:31.000Z</updated>
+    <updated>2023-12-09T20:38:24.000Z</updated>
     <category term="Hexo" />
     <category term="logbook" />
     <category term="博客功能更新" />
+    <category term="Flutter" />
+    <category term="Dart" />
+    <category term="前端开发" />
     <category term="文摘" />
     <category term="社会科学" />
     <category term="RSS" />
@@ -22,6 +25,40 @@
     <category term="LightStands" />
     <category term="高性能I/O" />
     <category term="年终总结" />
+    <entry>
+        <id>https://rubicon.lightstands.xyz/2023/12/09/Signals-on-Flutter/</id>
+        <title>Flutter, Dart和Signal范式</title>
+        <link rel="alternate" href="https://rubicon.lightstands.xyz/2023/12/09/Signals-on-Flutter/"/>
+        <content type="html">&lt;p&gt;最近看到很多在Flutter上实现Signal范式的项目，其实我自己也试了一下。感想是：Dart缺少太多语法特性了……真正的Signal范式需要很多胶水代码，在JS上这些胶水代码都是用代码生成器生成的，但是Dart和Flutter让这个生成器不是那么的好写，或者没法方便的用自带的特性做类似的功能。&lt;/p&gt;
+&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
+
+&lt;p&gt;比如说最关键的自动依赖跟踪，这是实现这个Signals的项目都有一大堆胶水代码的关键原因。举个JSX的例子：&lt;/p&gt;
+&lt;figure class=&#34;highlight tsx&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&amp;lt;&lt;span class=&#34;title class_&#34;&gt;Hello&lt;/span&gt; name=&amp;#123;&lt;span class=&#34;title function_&#34;&gt;isWorld&lt;/span&gt;() ? &lt;span class=&#34;string&#34;&gt;&amp;quot;world&amp;quot;&lt;/span&gt; : name&amp;#125;/&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+
+&lt;p&gt;会被转译成类似下面的JS代码。&lt;/p&gt;
+&lt;figure class=&#34;highlight js&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;title function_&#34;&gt;createComponent&lt;/span&gt;(&lt;span class=&#34;title class_&#34;&gt;Hello&lt;/span&gt;, &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;get&lt;/span&gt; &lt;span class=&#34;title function_&#34;&gt;name&lt;/span&gt;() &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;keyword&#34;&gt;return&lt;/span&gt; (&lt;span class=&#34;title function_&#34;&gt;isWorld&lt;/span&gt;() ? &lt;span class=&#34;string&#34;&gt;&amp;quot;world&amp;quot;&lt;/span&gt;: name);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;这样才能做到两个功能：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;lazy evaluation，只有从props里面获取name时才会evaluate相应表达式；&lt;/li&gt;
+&lt;li&gt;自动依赖跟踪，通过模拟一个dynamic-scope variable，lazy evaluation可以让signal在被访问时获得这个变量的值来跟踪依赖。这个是最简单而且计算最少的实现方法（时间复杂度可以做到常数级）。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;但是在Dart和Flutter Widget里面，你很难处理成这样。&lt;/p&gt;
+&lt;p&gt;如果你通过InheritWidget这种来做（依赖跟踪），它需要在Element树向上查找，这个性能损失太大了。Dart也没有好用的proxy范式，所以很难简单的实现lazy evaluation。如果你的参数收Signal对象，那也是胶水代码的重要来源。&lt;/p&gt;
+&lt;p&gt;Getx虽然很“脏”，但是它确实充分发展了Dart和Flutter提供的东西。&lt;/p&gt;
+&lt;p&gt;如果要在Flutter上实现Signal范式，我估计有几个是必须的：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;计算类型&lt;/li&gt;
+&lt;li&gt;inline object或者inline class&lt;/li&gt;
+&lt;li&gt;不再围绕Widget设计API（Signal系统可以提供的粒度其实比现在的Widget更小，它完全可以直接控制Element）&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+        <category term="Flutter" />
+        <category term="Dart" />
+        <category term="前端开发" />
+        <updated>2023-12-09T20:38:24.000Z</updated>
+    </entry>
     <entry>
         <id>https://rubicon.lightstands.xyz/2023/08/25/fukushima-nuclear-qa/</id>
         <title>福岛第一核电站污水处理对策问与答</title>
