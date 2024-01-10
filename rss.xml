@@ -4,9 +4,9 @@
         <title>Rubicon&#39;s Rubicon</title>
         <link>https://rubicon.lightstands.xyz</link>
         <description></description>
-        <language>zh-cn,en,default</language>
-        <pubDate>Sat, 09 Dec 2023 20:38:24 +0000</pubDate>
-        <lastBuildDate>Sat, 09 Dec 2023 20:38:24 +0000</lastBuildDate>
+        <language>zh-Hans</language>
+        <pubDate>Sat, 09 Dec 2023 12:38:24 +0000</pubDate>
+        <lastBuildDate>Sat, 09 Dec 2023 12:38:24 +0000</lastBuildDate>
         <category>Hexo</category>
         <category>logbook</category>
         <category>博客功能更新</category>
@@ -35,7 +35,7 @@
             <category>Flutter</category>
             <category>Dart</category>
             <category>前端开发</category>
-            <pubDate>Sat, 09 Dec 2023 20:38:24 +0000</pubDate>
+            <pubDate>Sat, 09 Dec 2023 12:38:24 +0000</pubDate>
             <description><![CDATA[ &lt;p&gt;最近看到很多在Flutter上实现Signals范式的项目，其实我自己也试了一下。感想是：Dart缺少太多语法特性了……真正的Signals范式需要很多胶水代码，在JS上这些胶水代码都是用代码生成器生成的，但是Dart和Flutter让这个生成器不是那么的好写，或者没法方便的用自带的特性做类似的功能。&lt;/p&gt;
 &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
 
@@ -69,7 +69,7 @@
             <guid isPermalink="true">https://rubicon.lightstands.xyz/2023/08/25/fukushima-nuclear-qa/</guid>
             <title>福岛第一核电站污水处理对策问与答</title>
             <link>https://rubicon.lightstands.xyz/2023/08/25/fukushima-nuclear-qa/</link>
-            <pubDate>Fri, 25 Aug 2023 20:52:31 +0000</pubDate>
+            <pubDate>Fri, 25 Aug 2023 12:52:31 +0000</pubDate>
             <description><![CDATA[ &lt;p&gt;作者并非该领域专业人士，这篇文章收集并整理了部分问题和回应，仅作为补充。&lt;/p&gt;
 &lt;p&gt;了解更多：&lt;/p&gt;
 &lt;ul&gt;
@@ -120,7 +120,7 @@
             <title>LightStands的第一年</title>
             <link>https://rubicon.lightstands.xyz/2023/08/23/the-first-year-of-lightstands/</link>
             <category>LightStands</category>
-            <pubDate>Wed, 23 Aug 2023 19:29:21 +0000</pubDate>
+            <pubDate>Wed, 23 Aug 2023 11:29:21 +0000</pubDate>
             <description><![CDATA[ &lt;p&gt;现在的LightStands软件的第一个Commit来自2022年7月31日。不过，LightStands的想法和开发其实开始得很早，最早的版本早在2017年就开始开发了。详细的时间我并不记得，我只知道在2017年8月8日我在Git上提交了web.dart的&lt;a href=&#34;https://github.com/thislight/webart/commit/dc37ef4a44ea52d7c8515528fd68ae46ad901b62&#34;&gt;第一个commit&lt;/a&gt;——它是LightStands第一个版本的基础。但是，在写了几千行代码之后，这个LightStands软件就被废弃了。&lt;/p&gt;
 &lt;p&gt;这篇文章是我过去几年里开发LightStands软件的经历总结。&lt;/p&gt;
 &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
@@ -161,7 +161,7 @@
             <title>偷乐集</title>
             <link>https://rubicon.lightstands.xyz/2022/04/29/lepoem/</link>
             <category>诗集</category>
-            <pubDate>Fri, 29 Apr 2022 13:40:24 +0000</pubDate>
+            <pubDate>Fri, 29 Apr 2022 05:40:24 +0000</pubDate>
             <description><![CDATA[ &lt;blockquote&gt;
 &lt;p&gt;2022年第一季度写的两首小诗：《梅花》和《无题》。生活在不确定中让人疲累，没有紧急出口。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -177,7 +177,7 @@
             <title>进程、线程、协程</title>
             <link>https://rubicon.lightstands.xyz/2022/03/31/threads-and-processes/</link>
             <category>高性能I/O</category>
-            <pubDate>Thu, 31 Mar 2022 08:07:45 +0000</pubDate>
+            <pubDate>Thu, 31 Mar 2022 00:07:45 +0000</pubDate>
             <description><![CDATA[ &lt;p&gt;程序运行时，最重要的便是Program Counter（PC）和Stack。Program Counter（程序计数器）记录程序运行的位置，Stack（栈）保存当前的数据。&lt;/p&gt;
 &lt;figure class=&#34;highlight gherkin&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;+-------+ |&lt;span class=&#34;string&#34;&gt;Stack Address&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;&lt;/span&gt;|&lt;span class=&#34;string&#34;&gt;  v1   &lt;/span&gt;|&lt;span class=&#34;string&#34;&gt; &lt;/span&gt;|&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;+-------+ |&lt;span class=&#34;string&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;&lt;/span&gt;|&lt;span class=&#34;string&#34;&gt;  v2   &lt;/span&gt;|&lt;span class=&#34;string&#34;&gt; &lt;/span&gt;|&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;+-------+ |&lt;span class=&#34;string&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;&lt;/span&gt;|&lt;span class=&#34;string&#34;&gt;  v3   &lt;/span&gt;|&lt;span class=&#34;string&#34;&gt; &lt;/span&gt;|&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;+-------+ |&lt;span class=&#34;string&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;&lt;/span&gt;|&lt;span class=&#34;string&#34;&gt;  v4   &lt;/span&gt;|&lt;span class=&#34;string&#34;&gt; &lt;/span&gt;|&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;+-------+ v &lt;span class=&#34;variable&#34;&gt;&amp;lt;-- top&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;variable&#34;&gt;Stack 示意图&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
@@ -266,7 +266,7 @@
             <link>https://rubicon.lightstands.xyz/2022/02/12/The-objective-truth-of-the-humanities-and-social-sciences/</link>
             <category>文摘</category>
             <category>社会科学</category>
-            <pubDate>Sat, 12 Feb 2022 21:00:03 +0000</pubDate>
+            <pubDate>Sat, 12 Feb 2022 13:00:03 +0000</pubDate>
             <description><![CDATA[ &lt;blockquote&gt;
 &lt;p&gt;本文摘录自潘绥铭为《中国人的男男性行为 性与自我认同状态调查》（2005）所作序言《自己领悟自己的路》，原小标题为“3.能不能自己研究自己？”。我认为，这篇序言中的一些观点不仅适用于关于MSM的研究，也适用于我们对待科学事物的态度。其中提到的一些现象，到今天也仍然盘踞在我们的社会之中。选节提出了一个我很赞同的观点：“人文科学中没有‘客观’”，其中的“MSM”是Man who have sex with man（有男男性行为的男人）的缩写。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -288,11 +288,11 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://rubicon.lightstands.xyz/2022/01/18/yearly-report-2021/</guid>
+            <guid isPermalink="true">https://rubicon.lightstands.xyz/2022/01/17/yearly-report-2021/</guid>
             <title>2021年终总结：书、游戏和Kache的进展</title>
-            <link>https://rubicon.lightstands.xyz/2022/01/18/yearly-report-2021/</link>
+            <link>https://rubicon.lightstands.xyz/2022/01/17/yearly-report-2021/</link>
             <category>年终总结</category>
-            <pubDate>Tue, 18 Jan 2022 00:00:00 +0000</pubDate>
+            <pubDate>Mon, 17 Jan 2022 16:00:00 +0000</pubDate>
             <description><![CDATA[ &lt;p&gt;又过了一年。受到Mastodon时间线上的博主们启发，我想写一篇博文总结一下一年来做的事情。但是我发现我不知道该怎么组织起这样一篇博文。想了想，决定以今年看过的书、玩过的游戏和一些项目为脉络，聊聊今年的感想。减少尴尬，先以小作文经典开头问声好。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;人的脆弱和坚强都超乎自己的想象。有时，我们可能脆弱得一句话就泪流满面；有时，也发现自己咬着牙走了很长的路。 —— 莫泊桑《一生》&lt;/p&gt;
@@ -334,7 +334,7 @@
 &lt;p&gt;《地铁》系列与《辐射》一样，使用后末世启示录作为背景，但少几分黑色幽默，多几分认真。作为《地铁》系列游戏的第三部，《地铁：离乡》在系统和玩法上已经非常成熟，唯一改变的是从过去的封闭场景线性流程变为沙盒式世界半开放流程。我个人很喜欢这种改变，特别是这种改变也意味剧情背景的改变——从地铁隧道里走出来，走出莫斯科，火车行驶于俄罗斯大地，寻找宜居之地。大概《离乡（Exodus）》的副标题就是来自于类似的犹大神话。&lt;/p&gt;
 &lt;h2 id=&#34;Kache和Rope的进展&#34;&gt;&lt;a href=&#34;#Kache和Rope的进展&#34; class=&#34;headerlink&#34; title=&#34;Kache和Rope的进展&#34;&gt;&lt;/a&gt;Kache和Rope的进展&lt;/h2&gt;&lt;p&gt;过去一年我重新设计了4次Kache，终于在去年下半年正式开始实现。其网络层Rope的设计也曾改过几次，最终放弃使用ZeroMQ/libnng和Zig。前者是因为缺少对加密和UDP的支持，虽然libnng支持自定义Transport，但是我们本来大多数时候都要绕过它们定义的协议，使用专门点对点的socket来实现我们自己的链路管理。我们要取的只是它们基于消息的传输协议和跨平台的网络I/O，自定义transport显然完全丢弃了这两点。后者是因为作为一门语言，它每个版本间的改动仍然太多、太大，语言复杂使得编译器bug很多、修得慢，作为写一个要用的东西的语言不合适。最后我为Rope选择了Rust，正好Cloudflare正在维护一个Wireguard实现叫boringtun。&lt;/p&gt;
 &lt;p&gt;Rope在Wireguard之上运行Rope Protocol而不是Internet Protocol，RP是一个基于消息的协议，并且可以带有控制消息。相对于直接使用Internet Protocol再在它上弄一个额外的协议，我更倾向于使用一个集成的协议。&lt;/p&gt;
-&lt;h2 id=&#34;新项目：Mooncake&#34;&gt;&lt;a href=&#34;#新项目：Mooncake&#34; class=&#34;headerlink&#34; title=&#34;新项目：Mooncake&#34;&gt;&lt;/a&gt;新项目：Mooncake&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;/2022/01/18/yearly-report-2021/mooncake_logo.png&#34; alt=&#34;Mooncake Logo&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;新项目：Mooncake&#34;&gt;&lt;a href=&#34;#新项目：Mooncake&#34; class=&#34;headerlink&#34; title=&#34;新项目：Mooncake&#34;&gt;&lt;/a&gt;新项目：Mooncake&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;/2022/01/17/yearly-report-2021/mooncake_logo.png&#34; alt=&#34;Mooncake Logo&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Go通过值类型和Escape Analysis显著降低了标记-清除系GC算法对高并发I/O的影响。Mooncake最初的主旨就是为Lisp引入值类型和Escape Analysis，降低GC对I/O的影响。个人认为CLOS这种在Lisp的括号里面实现起来太憋屈，所以我觉得Mooncake的类型系统类似Haskell和Rust会更好。&lt;/p&gt;
 &lt;figure class=&#34;highlight lisp&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;(&lt;span class=&#34;name&#34;&gt;in-package&lt;/span&gt; &lt;span class=&#34;symbol&#34;&gt;:my-hello-server&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;(@import &lt;span class=&#34;symbol&#34;&gt;:std/http&lt;/span&gt; h)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;(&lt;span class=&#34;name&#34;&gt;dconst&lt;/span&gt; math (@import &lt;span class=&#34;symbol&#34;&gt;:std/math&lt;/span&gt;))&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;(&lt;span class=&#34;name&#34;&gt;dfn&lt;/span&gt; (&lt;span class=&#34;name&#34;&gt;handler&lt;/span&gt; (&lt;span class=&#34;name&#34;&gt;*&lt;/span&gt; h:&lt;span class=&#34;symbol&#34;&gt;:Request&lt;/span&gt;) h:&lt;span class=&#34;symbol&#34;&gt;:Response&lt;/span&gt;) (&lt;span class=&#34;name&#34;&gt;_request&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    (&lt;span class=&#34;name&#34;&gt;if&lt;/span&gt; (&lt;span class=&#34;name&#34;&gt;&amp;gt;&lt;/span&gt; (&lt;span class=&#34;name&#34;&gt;math&lt;/span&gt;:&lt;span class=&#34;symbol&#34;&gt;:random&lt;/span&gt;) &lt;span class=&#34;number&#34;&gt;0.5&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        (&lt;span class=&#34;name&#34;&gt;h&lt;/span&gt;:&lt;span class=&#34;symbol&#34;&gt;:respond&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&amp;quot;Hello, World&amp;quot;&lt;/span&gt;) &lt;span class=&#34;comment&#34;&gt;;; Actually call ((std/http::ResponseSource String)::respond std/core::String std/http::Response)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        (&lt;span class=&#34;name&#34;&gt;h&lt;/span&gt;:&lt;span class=&#34;symbol&#34;&gt;:respond&lt;/span&gt; (&lt;span class=&#34;name&#34;&gt;h&lt;/span&gt;:&lt;span class=&#34;symbol&#34;&gt;:error&lt;/span&gt; &lt;span class=&#34;number&#34;&gt;400&lt;/span&gt; Bad Request&lt;span class=&#34;string&#34;&gt;&amp;quot;))))&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;(http::quick-serve 8080 handler)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;;; (http::quick-serve 8080 (\ (_request) (h::respond &amp;quot;&lt;/span&gt;Hello, Word&lt;span class=&#34;string&#34;&gt;&amp;quot;)))&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
@@ -348,7 +348,7 @@
             <category>Hexo</category>
             <category>logbook</category>
             <category>博客功能更新</category>
-            <pubDate>Thu, 30 Dec 2021 21:26:06 +0000</pubDate>
+            <pubDate>Thu, 30 Dec 2021 13:26:06 +0000</pubDate>
             <description><![CDATA[ &lt;p&gt;我对博客功能的要求是拒绝花里胡哨，一切为阅读服务。现在是2021年年底，正好我要为我对年终总结的一些设想给博客更新一些功能：快速引用素材、Steam游戏卡片、引用Wikipedia条目。&lt;/p&gt;
 &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
 
@@ -380,7 +380,7 @@
             <category>Kache Development</category>
             <category>Kache</category>
             <category>网络</category>
-            <pubDate>Tue, 02 Nov 2021 16:00:00 +0000</pubDate>
+            <pubDate>Tue, 02 Nov 2021 08:00:00 +0000</pubDate>
             <description><![CDATA[ &lt;p&gt;观测你的猫的生死可不是件易事。&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;当太阳明晃晃地照在可爱的Mudy身上时，它身上蓬松的毛反射了光线。光线经过许多介质进入你的眼中。哪怕不研究我们的身体如何处理这些莫名奇妙的光线，光从皮毛到你眼前的过程也需要时间。只不过这个时间太短：当你（在真空中）距离Mudy 299792458米时，这个时间是1秒。换句话说，当你在南极时，你看到北极的Mudy至少是0.05秒前的Mudy；当你在中国时，你看到北美的Mudy至少是0.1秒前的Mudy。&lt;/p&gt;
 &lt;img src=&#34;/img/measure-peer-reachability/you-mudy-sun.png&#34; class=&#34;&#34;&gt;
 
@@ -418,7 +418,7 @@
             <category>Hexo</category>
             <category>博客功能更新</category>
             <category>RSS</category>
-            <pubDate>Wed, 13 Oct 2021 18:36:53 +0000</pubDate>
+            <pubDate>Wed, 13 Oct 2021 10:36:53 +0000</pubDate>
             <description><![CDATA[ &lt;blockquote&gt;
 &lt;p&gt;RSS（英文全称：RDF Site Summary 或 Really Simple Syndication[2]），中文译作簡易資訊聚合[3]，也称聚合内容[4]，是一種消息來源格式規範，用以聚合多個網站更新的內容並自動通知網站訂閱者。使用 RSS 後，網站訂閱者便無需再手動查看網站是否有新的內容，同時 RSS 可將多個網站更新的內容進行整合，以摘要的形式呈現，有助於訂閱者快速獲取重要信息，並選擇性地點閱查看。 ———— &lt;a href=&#34;https://zh.wikipedia.org/wiki/RSS&#34;&gt;RSS - Wikipedia&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -440,7 +440,7 @@
             <title>随想集（2020 &amp; 2021）</title>
             <link>https://rubicon.lightstands.xyz/2021/10/13/poem-2020-2021/</link>
             <category>诗集</category>
-            <pubDate>Wed, 13 Oct 2021 15:18:33 +0000</pubDate>
+            <pubDate>Wed, 13 Oct 2021 07:18:33 +0000</pubDate>
             <description><![CDATA[ &lt;blockquote&gt;
 &lt;p&gt;谨以此集纪念我自己的“20年代初”。拙作几篇，仅作备查。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -462,7 +462,7 @@
             <title>无言集（2019）</title>
             <link>https://rubicon.lightstands.xyz/2021/10/13/poem-2019/</link>
             <category>诗集</category>
-            <pubDate>Wed, 13 Oct 2021 11:22:59 +0000</pubDate>
+            <pubDate>Wed, 13 Oct 2021 03:22:59 +0000</pubDate>
             <description><![CDATA[ &lt;blockquote&gt;
 &lt;p&gt;几篇拙作，仅以备用。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -488,7 +488,7 @@
             <category>logbook</category>
             <category>Linux记</category>
             <category>生命很短</category>
-            <pubDate>Sat, 10 Jul 2021 22:34:29 +0000</pubDate>
+            <pubDate>Sat, 10 Jul 2021 14:34:29 +0000</pubDate>
             <description><![CDATA[ &lt;p&gt;今天晚上折腾了一个小时，终于把 Howdy 折腾出来了，写篇博文作笔记以备查。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/boltgolt/howdy&#34;&gt;Howdy&lt;/a&gt; 是一个为 Linux 提供 Windows Hello 风格验证的软件，它作为一个 PAM 模块为其它软件提供人脸验证服务。不像 Windows Hello 需要认证过的IR摄像头， Howdy 基本上只要是个摄像头都可以使用。当然，如果没有 IR ，低光环境下的识别率就很拼摄像头的素质了。&lt;/p&gt;
 &lt;p&gt;这篇博文主要内容是给 sudo 弄 Howdy：sudo 老是让人输密码着实令人烦躁，但是我又不想取消所有认证，正好 Howdy 的需求很低（只需要一个摄像头）。&lt;/p&gt;
@@ -542,7 +542,7 @@
             <link>https://rubicon.lightstands.xyz/2021/01/04/makru-tutor-2/</link>
             <category>Makru</category>
             <category>C</category>
-            <pubDate>Mon, 04 Jan 2021 18:49:20 +0000</pubDate>
+            <pubDate>Mon, 04 Jan 2021 10:49:20 +0000</pubDate>
             <description><![CDATA[ &lt;p&gt;在这一篇文章中，我会介绍makru_langc的安装。和普通的编译工具不同，makru_langc是作为Makru的一个插件安装的，而Makru的插件只能安装到项目上随项目源代码附带。这会带来一些不方便，但是能够保证每一个项目都能选择最适合的插件和插件版本而无需担心兼容成本。其实类似的方法在make和cmake的项目中也能经常看见，很多项目都会带有一些脚本或者预定义宏来帮助编译，只是Makru将它变成强制行为了。&lt;/p&gt;
 &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
 
@@ -600,7 +600,7 @@
             <category>Makru</category>
             <category>C</category>
             <category>系列文章</category>
-            <pubDate>Sat, 26 Dec 2020 21:21:13 +0000</pubDate>
+            <pubDate>Sat, 26 Dec 2020 13:21:13 +0000</pubDate>
             <description><![CDATA[ &lt;p&gt;&lt;a href=&#34;https://gitlab.com/jinwa/makru&#34;&gt;Makru&lt;/a&gt;是一个用Python编写的全新编译工具。它的目的不是提供更多的编译逻辑，而是提供一个统一的平台方便开发和引入新的编译逻辑。Makru和目前主流的make-like编译系统最大的不同点再于：它没有使用类似宏语法之类的东西为配置文件提供超高的灵活性，而是直接选择了很多现代包管理工具正在使用的结构化数据配置文件（Makru使用的是yaml）。&lt;a href=&#34;https://gitlab.com/jinwa/makru_langc&#34;&gt;makru_langc&lt;/a&gt;就是在它之上构建的C语言项目编译插件。&lt;br&gt;得益于这样的选择，makru_langc提供了非常流畅的编译管理体验。你可以快速理解并编辑配置文件，而不是在配置文件的海洋里晕头转向。另外，makru_langc还支持高自由度的自定义，你甚至可以利用它提供的工具编写自己的编译逻辑。&lt;/p&gt;
 &lt;p&gt;这个文章系列将会介绍一个用makru_langc来管理编译的小演示项目scat，它接收标准输入然后输出到标准输出。为了演示makru_langc的功能，scat会有一个子项目叫libcopy。这个子项目里只有一个函数：从第一个File输入，输出到第二个File。&lt;/p&gt;
 &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
@@ -619,10 +619,10 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://rubicon.lightstands.xyz/2020/12/26/hello-world/</guid>
+            <guid isPermalink="true">https://rubicon.lightstands.xyz/2020/12/25/hello-world/</guid>
             <title>早上好,欢迎来到世界!</title>
-            <link>https://rubicon.lightstands.xyz/2020/12/26/hello-world/</link>
-            <pubDate>Sat, 26 Dec 2020 00:00:00 +0000</pubDate>
+            <link>https://rubicon.lightstands.xyz/2020/12/25/hello-world/</link>
+            <pubDate>Fri, 25 Dec 2020 16:00:00 +0000</pubDate>
             <description><![CDATA[ &lt;p&gt;新博客的第一篇博文，介绍一下博客文字的使用协议：&lt;/p&gt;
 &lt;p&gt;如无特别规定，博客中作者的文字、图片等非代码资源使用 &lt;a href=&#34;https://creativecommons.org/licenses/by-nc-nd/4.0/&#34;&gt;创作共享 保留权利-非商业性使用-禁止二次演绎(CC BY-NC-ND) 4.0&lt;/a&gt; 协议共享。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;http://creativecommons.org/licenses/by-nc-nd/4.0/&#34;&gt;&lt;img src=&#34;https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png&#34; alt=&#34;CC BY-NC-ND Logo&#34;&gt;&lt;/a&gt;&lt;/p&gt;

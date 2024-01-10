@@ -4,9 +4,9 @@
         <title>Rubicon&#39;s Rubicon • Posts by &#34;hexo&#34; tag</title>
         <link>https://rubicon.lightstands.xyz</link>
         <description></description>
-        <language>zh-cn,en,default</language>
-        <pubDate>Thu, 30 Dec 2021 21:26:06 +0000</pubDate>
-        <lastBuildDate>Thu, 30 Dec 2021 21:26:06 +0000</lastBuildDate>
+        <language>zh-Hans</language>
+        <pubDate>Thu, 30 Dec 2021 13:26:06 +0000</pubDate>
+        <lastBuildDate>Thu, 30 Dec 2021 13:26:06 +0000</lastBuildDate>
         <category>Hexo</category>
         <category>logbook</category>
         <category>博客功能更新</category>
@@ -35,7 +35,7 @@
             <category>Hexo</category>
             <category>logbook</category>
             <category>博客功能更新</category>
-            <pubDate>Thu, 30 Dec 2021 21:26:06 +0000</pubDate>
+            <pubDate>Thu, 30 Dec 2021 13:26:06 +0000</pubDate>
             <description><![CDATA[ &lt;p&gt;我对博客功能的要求是拒绝花里胡哨，一切为阅读服务。现在是2021年年底，正好我要为我对年终总结的一些设想给博客更新一些功能：快速引用素材、Steam游戏卡片、引用Wikipedia条目。&lt;/p&gt;
 &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
 
@@ -67,7 +67,7 @@
             <category>Hexo</category>
             <category>博客功能更新</category>
             <category>RSS</category>
-            <pubDate>Wed, 13 Oct 2021 18:36:53 +0000</pubDate>
+            <pubDate>Wed, 13 Oct 2021 10:36:53 +0000</pubDate>
             <description><![CDATA[ &lt;blockquote&gt;
 &lt;p&gt;RSS（英文全称：RDF Site Summary 或 Really Simple Syndication[2]），中文译作簡易資訊聚合[3]，也称聚合内容[4]，是一種消息來源格式規範，用以聚合多個網站更新的內容並自動通知網站訂閱者。使用 RSS 後，網站訂閱者便無需再手動查看網站是否有新的內容，同時 RSS 可將多個網站更新的內容進行整合，以摘要的形式呈現，有助於訂閱者快速獲取重要信息，並選擇性地點閱查看。 ———— &lt;a href=&#34;https://zh.wikipedia.org/wiki/RSS&#34;&gt;RSS - Wikipedia&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;

@@ -4,9 +4,9 @@
         <title>Rubicon&#39;s Rubicon • Posts by &#34;年终总结&#34; tag</title>
         <link>https://rubicon.lightstands.xyz</link>
         <description></description>
-        <language>zh-cn,en,default</language>
-        <pubDate>Tue, 18 Jan 2022 00:00:00 +0000</pubDate>
-        <lastBuildDate>Tue, 18 Jan 2022 00:00:00 +0000</lastBuildDate>
+        <language>zh-Hans</language>
+        <pubDate>Mon, 17 Jan 2022 16:00:00 +0000</pubDate>
+        <lastBuildDate>Mon, 17 Jan 2022 16:00:00 +0000</lastBuildDate>
         <category>Hexo</category>
         <category>logbook</category>
         <category>博客功能更新</category>
@@ -29,11 +29,11 @@
         <category>高性能I/O</category>
         <category>年终总结</category>
         <item>
-            <guid isPermalink="true">https://rubicon.lightstands.xyz/2022/01/18/yearly-report-2021/</guid>
+            <guid isPermalink="true">https://rubicon.lightstands.xyz/2022/01/17/yearly-report-2021/</guid>
             <title>2021年终总结：书、游戏和Kache的进展</title>
-            <link>https://rubicon.lightstands.xyz/2022/01/18/yearly-report-2021/</link>
+            <link>https://rubicon.lightstands.xyz/2022/01/17/yearly-report-2021/</link>
             <category>年终总结</category>
-            <pubDate>Tue, 18 Jan 2022 00:00:00 +0000</pubDate>
+            <pubDate>Mon, 17 Jan 2022 16:00:00 +0000</pubDate>
             <description><![CDATA[ &lt;p&gt;又过了一年。受到Mastodon时间线上的博主们启发，我想写一篇博文总结一下一年来做的事情。但是我发现我不知道该怎么组织起这样一篇博文。想了想，决定以今年看过的书、玩过的游戏和一些项目为脉络，聊聊今年的感想。减少尴尬，先以小作文经典开头问声好。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;人的脆弱和坚强都超乎自己的想象。有时，我们可能脆弱得一句话就泪流满面；有时，也发现自己咬着牙走了很长的路。 —— 莫泊桑《一生》&lt;/p&gt;
@@ -75,7 +75,7 @@
 &lt;p&gt;《地铁》系列与《辐射》一样，使用后末世启示录作为背景，但少几分黑色幽默，多几分认真。作为《地铁》系列游戏的第三部，《地铁：离乡》在系统和玩法上已经非常成熟，唯一改变的是从过去的封闭场景线性流程变为沙盒式世界半开放流程。我个人很喜欢这种改变，特别是这种改变也意味剧情背景的改变——从地铁隧道里走出来，走出莫斯科，火车行驶于俄罗斯大地，寻找宜居之地。大概《离乡（Exodus）》的副标题就是来自于类似的犹大神话。&lt;/p&gt;
 &lt;h2 id=&#34;Kache和Rope的进展&#34;&gt;&lt;a href=&#34;#Kache和Rope的进展&#34; class=&#34;headerlink&#34; title=&#34;Kache和Rope的进展&#34;&gt;&lt;/a&gt;Kache和Rope的进展&lt;/h2&gt;&lt;p&gt;过去一年我重新设计了4次Kache，终于在去年下半年正式开始实现。其网络层Rope的设计也曾改过几次，最终放弃使用ZeroMQ/libnng和Zig。前者是因为缺少对加密和UDP的支持，虽然libnng支持自定义Transport，但是我们本来大多数时候都要绕过它们定义的协议，使用专门点对点的socket来实现我们自己的链路管理。我们要取的只是它们基于消息的传输协议和跨平台的网络I/O，自定义transport显然完全丢弃了这两点。后者是因为作为一门语言，它每个版本间的改动仍然太多、太大，语言复杂使得编译器bug很多、修得慢，作为写一个要用的东西的语言不合适。最后我为Rope选择了Rust，正好Cloudflare正在维护一个Wireguard实现叫boringtun。&lt;/p&gt;
 &lt;p&gt;Rope在Wireguard之上运行Rope Protocol而不是Internet Protocol，RP是一个基于消息的协议，并且可以带有控制消息。相对于直接使用Internet Protocol再在它上弄一个额外的协议，我更倾向于使用一个集成的协议。&lt;/p&gt;
-&lt;h2 id=&#34;新项目：Mooncake&#34;&gt;&lt;a href=&#34;#新项目：Mooncake&#34; class=&#34;headerlink&#34; title=&#34;新项目：Mooncake&#34;&gt;&lt;/a&gt;新项目：Mooncake&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;/2022/01/18/yearly-report-2021/mooncake_logo.png&#34; alt=&#34;Mooncake Logo&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;新项目：Mooncake&#34;&gt;&lt;a href=&#34;#新项目：Mooncake&#34; class=&#34;headerlink&#34; title=&#34;新项目：Mooncake&#34;&gt;&lt;/a&gt;新项目：Mooncake&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;/2022/01/17/yearly-report-2021/mooncake_logo.png&#34; alt=&#34;Mooncake Logo&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Go通过值类型和Escape Analysis显著降低了标记-清除系GC算法对高并发I/O的影响。Mooncake最初的主旨就是为Lisp引入值类型和Escape Analysis，降低GC对I/O的影响。个人认为CLOS这种在Lisp的括号里面实现起来太憋屈，所以我觉得Mooncake的类型系统类似Haskell和Rust会更好。&lt;/p&gt;
 &lt;figure class=&#34;highlight lisp&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;(&lt;span class=&#34;name&#34;&gt;in-package&lt;/span&gt; &lt;span class=&#34;symbol&#34;&gt;:my-hello-server&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;(@import &lt;span class=&#34;symbol&#34;&gt;:std/http&lt;/span&gt; h)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;(&lt;span class=&#34;name&#34;&gt;dconst&lt;/span&gt; math (@import &lt;span class=&#34;symbol&#34;&gt;:std/math&lt;/span&gt;))&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;(&lt;span class=&#34;name&#34;&gt;dfn&lt;/span&gt; (&lt;span class=&#34;name&#34;&gt;handler&lt;/span&gt; (&lt;span class=&#34;name&#34;&gt;*&lt;/span&gt; h:&lt;span class=&#34;symbol&#34;&gt;:Request&lt;/span&gt;) h:&lt;span class=&#34;symbol&#34;&gt;:Response&lt;/span&gt;) (&lt;span class=&#34;name&#34;&gt;_request&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    (&lt;span class=&#34;name&#34;&gt;if&lt;/span&gt; (&lt;span class=&#34;name&#34;&gt;&amp;gt;&lt;/span&gt; (&lt;span class=&#34;name&#34;&gt;math&lt;/span&gt;:&lt;span class=&#34;symbol&#34;&gt;:random&lt;/span&gt;) &lt;span class=&#34;number&#34;&gt;0.5&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        (&lt;span class=&#34;name&#34;&gt;h&lt;/span&gt;:&lt;span class=&#34;symbol&#34;&gt;:respond&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&amp;quot;Hello, World&amp;quot;&lt;/span&gt;) &lt;span class=&#34;comment&#34;&gt;;; Actually call ((std/http::ResponseSource String)::respond std/core::String std/http::Response)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        (&lt;span class=&#34;name&#34;&gt;h&lt;/span&gt;:&lt;span class=&#34;symbol&#34;&gt;:respond&lt;/span&gt; (&lt;span class=&#34;name&#34;&gt;h&lt;/span&gt;:&lt;span class=&#34;symbol&#34;&gt;:error&lt;/span&gt; &lt;span class=&#34;number&#34;&gt;400&lt;/span&gt; Bad Request&lt;span class=&#34;string&#34;&gt;&amp;quot;))))&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;(http::quick-serve 8080 handler)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;;; (http::quick-serve 8080 (\ (_request) (h::respond &amp;quot;&lt;/span&gt;Hello, Word&lt;span class=&#34;string&#34;&gt;&amp;quot;)))&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 

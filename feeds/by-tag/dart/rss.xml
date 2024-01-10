@@ -4,9 +4,9 @@
         <title>Rubicon&#39;s Rubicon • Posts by &#34;dart&#34; tag</title>
         <link>https://rubicon.lightstands.xyz</link>
         <description></description>
-        <language>zh-cn,en,default</language>
-        <pubDate>Sat, 09 Dec 2023 20:38:24 +0000</pubDate>
-        <lastBuildDate>Sat, 09 Dec 2023 20:38:24 +0000</lastBuildDate>
+        <language>zh-Hans</language>
+        <pubDate>Sat, 09 Dec 2023 12:38:24 +0000</pubDate>
+        <lastBuildDate>Sat, 09 Dec 2023 12:38:24 +0000</lastBuildDate>
         <category>Hexo</category>
         <category>logbook</category>
         <category>博客功能更新</category>
@@ -35,7 +35,7 @@
             <category>Flutter</category>
             <category>Dart</category>
             <category>前端开发</category>
-            <pubDate>Sat, 09 Dec 2023 20:38:24 +0000</pubDate>
+            <pubDate>Sat, 09 Dec 2023 12:38:24 +0000</pubDate>
             <description><![CDATA[ &lt;p&gt;最近看到很多在Flutter上实现Signals范式的项目，其实我自己也试了一下。感想是：Dart缺少太多语法特性了……真正的Signals范式需要很多胶水代码，在JS上这些胶水代码都是用代码生成器生成的，但是Dart和Flutter让这个生成器不是那么的好写，或者没法方便的用自带的特性做类似的功能。&lt;/p&gt;
 &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
 

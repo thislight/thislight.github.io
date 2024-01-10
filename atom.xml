@@ -3,7 +3,7 @@
     <id>https://rubicon.lightstands.xyz</id>
     <title>Rubicon&#39;s Rubicon</title>
     <link href="https://rubicon.lightstands.xyz" />
-    <updated>2023-12-09T20:38:24.000Z</updated>
+    <updated>2023-12-09T12:38:24.000Z</updated>
     <category term="Hexo" />
     <category term="logbook" />
     <category term="博客功能更新" />
@@ -60,7 +60,7 @@
         <category term="Flutter" />
         <category term="Dart" />
         <category term="前端开发" />
-        <updated>2023-12-09T20:38:24.000Z</updated>
+        <updated>2023-12-09T12:38:24.000Z</updated>
     </entry>
     <entry>
         <id>https://rubicon.lightstands.xyz/2023/08/25/fukushima-nuclear-qa/</id>
@@ -110,7 +110,7 @@
 &lt;/ul&gt;
 &lt;p&gt;如果你因为担心福岛核电站污水处理对策而已经购买碘片，请勿因此服用碘片。从目前的科学证据看，福岛核电站的污水处理对策不会损害健康。&lt;/p&gt;
 </content>
-        <updated>2023-08-25T20:52:31.000Z</updated>
+        <updated>2023-08-25T12:52:31.000Z</updated>
     </entry>
     <entry>
         <id>https://rubicon.lightstands.xyz/2023/08/23/the-first-year-of-lightstands/</id>
@@ -151,7 +151,7 @@
 &lt;p&gt;在新的一年继续“添砖加瓦”，干杯！&lt;/p&gt;
 </content>
         <category term="LightStands" />
-        <updated>2023-08-23T19:29:21.000Z</updated>
+        <updated>2023-08-23T11:29:21.000Z</updated>
     </entry>
     <entry>
         <id>https://rubicon.lightstands.xyz/2022/04/29/lepoem/</id>
@@ -167,7 +167,7 @@
 &lt;h2 id=&#34;无题&#34;&gt;&lt;a href=&#34;#无题&#34; class=&#34;headerlink&#34; title=&#34;无题&#34;&gt;&lt;/a&gt;无题&lt;/h2&gt;&lt;p&gt;在时钟的尽头&lt;br&gt;跳着蹩脚的舞蹈&lt;br&gt;经过沾满火焰的街道&lt;br&gt;老人在偷笑&lt;br&gt;多少干燥的徒劳&lt;br&gt;自在逍遥&lt;/p&gt;
 </content>
         <category term="诗集" />
-        <updated>2022-04-29T13:40:24.000Z</updated>
+        <updated>2022-04-29T05:40:24.000Z</updated>
     </entry>
     <entry>
         <id>https://rubicon.lightstands.xyz/2022/03/31/threads-and-processes/</id>
@@ -255,7 +255,7 @@
 &lt;/ul&gt;
 </content>
         <category term="高性能I/O" />
-        <updated>2022-03-31T08:07:45.000Z</updated>
+        <updated>2022-03-31T00:07:45.000Z</updated>
     </entry>
     <entry>
         <id>https://rubicon.lightstands.xyz/2022/02/12/The-objective-truth-of-the-humanities-and-social-sciences/</id>
@@ -282,12 +282,12 @@
 </content>
         <category term="文摘" />
         <category term="社会科学" />
-        <updated>2022-02-12T21:00:03.000Z</updated>
+        <updated>2022-02-12T13:00:03.000Z</updated>
     </entry>
     <entry>
-        <id>https://rubicon.lightstands.xyz/2022/01/18/yearly-report-2021/</id>
+        <id>https://rubicon.lightstands.xyz/2022/01/17/yearly-report-2021/</id>
         <title>2021年终总结：书、游戏和Kache的进展</title>
-        <link rel="alternate" href="https://rubicon.lightstands.xyz/2022/01/18/yearly-report-2021/"/>
+        <link rel="alternate" href="https://rubicon.lightstands.xyz/2022/01/17/yearly-report-2021/"/>
         <content type="html">&lt;p&gt;又过了一年。受到Mastodon时间线上的博主们启发，我想写一篇博文总结一下一年来做的事情。但是我发现我不知道该怎么组织起这样一篇博文。想了想，决定以今年看过的书、玩过的游戏和一些项目为脉络，聊聊今年的感想。减少尴尬，先以小作文经典开头问声好。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;人的脆弱和坚强都超乎自己的想象。有时，我们可能脆弱得一句话就泪流满面；有时，也发现自己咬着牙走了很长的路。 —— 莫泊桑《一生》&lt;/p&gt;
@@ -329,14 +329,14 @@
 &lt;p&gt;《地铁》系列与《辐射》一样，使用后末世启示录作为背景，但少几分黑色幽默，多几分认真。作为《地铁》系列游戏的第三部，《地铁：离乡》在系统和玩法上已经非常成熟，唯一改变的是从过去的封闭场景线性流程变为沙盒式世界半开放流程。我个人很喜欢这种改变，特别是这种改变也意味剧情背景的改变——从地铁隧道里走出来，走出莫斯科，火车行驶于俄罗斯大地，寻找宜居之地。大概《离乡（Exodus）》的副标题就是来自于类似的犹大神话。&lt;/p&gt;
 &lt;h2 id=&#34;Kache和Rope的进展&#34;&gt;&lt;a href=&#34;#Kache和Rope的进展&#34; class=&#34;headerlink&#34; title=&#34;Kache和Rope的进展&#34;&gt;&lt;/a&gt;Kache和Rope的进展&lt;/h2&gt;&lt;p&gt;过去一年我重新设计了4次Kache，终于在去年下半年正式开始实现。其网络层Rope的设计也曾改过几次，最终放弃使用ZeroMQ/libnng和Zig。前者是因为缺少对加密和UDP的支持，虽然libnng支持自定义Transport，但是我们本来大多数时候都要绕过它们定义的协议，使用专门点对点的socket来实现我们自己的链路管理。我们要取的只是它们基于消息的传输协议和跨平台的网络I/O，自定义transport显然完全丢弃了这两点。后者是因为作为一门语言，它每个版本间的改动仍然太多、太大，语言复杂使得编译器bug很多、修得慢，作为写一个要用的东西的语言不合适。最后我为Rope选择了Rust，正好Cloudflare正在维护一个Wireguard实现叫boringtun。&lt;/p&gt;
 &lt;p&gt;Rope在Wireguard之上运行Rope Protocol而不是Internet Protocol，RP是一个基于消息的协议，并且可以带有控制消息。相对于直接使用Internet Protocol再在它上弄一个额外的协议，我更倾向于使用一个集成的协议。&lt;/p&gt;
-&lt;h2 id=&#34;新项目：Mooncake&#34;&gt;&lt;a href=&#34;#新项目：Mooncake&#34; class=&#34;headerlink&#34; title=&#34;新项目：Mooncake&#34;&gt;&lt;/a&gt;新项目：Mooncake&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;/2022/01/18/yearly-report-2021/mooncake_logo.png&#34; alt=&#34;Mooncake Logo&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;新项目：Mooncake&#34;&gt;&lt;a href=&#34;#新项目：Mooncake&#34; class=&#34;headerlink&#34; title=&#34;新项目：Mooncake&#34;&gt;&lt;/a&gt;新项目：Mooncake&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;/2022/01/17/yearly-report-2021/mooncake_logo.png&#34; alt=&#34;Mooncake Logo&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Go通过值类型和Escape Analysis显著降低了标记-清除系GC算法对高并发I/O的影响。Mooncake最初的主旨就是为Lisp引入值类型和Escape Analysis，降低GC对I/O的影响。个人认为CLOS这种在Lisp的括号里面实现起来太憋屈，所以我觉得Mooncake的类型系统类似Haskell和Rust会更好。&lt;/p&gt;
 &lt;figure class=&#34;highlight lisp&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;(&lt;span class=&#34;name&#34;&gt;in-package&lt;/span&gt; &lt;span class=&#34;symbol&#34;&gt;:my-hello-server&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;(@import &lt;span class=&#34;symbol&#34;&gt;:std/http&lt;/span&gt; h)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;(&lt;span class=&#34;name&#34;&gt;dconst&lt;/span&gt; math (@import &lt;span class=&#34;symbol&#34;&gt;:std/math&lt;/span&gt;))&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;(&lt;span class=&#34;name&#34;&gt;dfn&lt;/span&gt; (&lt;span class=&#34;name&#34;&gt;handler&lt;/span&gt; (&lt;span class=&#34;name&#34;&gt;*&lt;/span&gt; h:&lt;span class=&#34;symbol&#34;&gt;:Request&lt;/span&gt;) h:&lt;span class=&#34;symbol&#34;&gt;:Response&lt;/span&gt;) (&lt;span class=&#34;name&#34;&gt;_request&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    (&lt;span class=&#34;name&#34;&gt;if&lt;/span&gt; (&lt;span class=&#34;name&#34;&gt;&amp;gt;&lt;/span&gt; (&lt;span class=&#34;name&#34;&gt;math&lt;/span&gt;:&lt;span class=&#34;symbol&#34;&gt;:random&lt;/span&gt;) &lt;span class=&#34;number&#34;&gt;0.5&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        (&lt;span class=&#34;name&#34;&gt;h&lt;/span&gt;:&lt;span class=&#34;symbol&#34;&gt;:respond&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&amp;quot;Hello, World&amp;quot;&lt;/span&gt;) &lt;span class=&#34;comment&#34;&gt;;; Actually call ((std/http::ResponseSource String)::respond std/core::String std/http::Response)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        (&lt;span class=&#34;name&#34;&gt;h&lt;/span&gt;:&lt;span class=&#34;symbol&#34;&gt;:respond&lt;/span&gt; (&lt;span class=&#34;name&#34;&gt;h&lt;/span&gt;:&lt;span class=&#34;symbol&#34;&gt;:error&lt;/span&gt; &lt;span class=&#34;number&#34;&gt;400&lt;/span&gt; Bad Request&lt;span class=&#34;string&#34;&gt;&amp;quot;))))&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;(http::quick-serve 8080 handler)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;;; (http::quick-serve 8080 (\ (_request) (h::respond &amp;quot;&lt;/span&gt;Hello, Word&lt;span class=&#34;string&#34;&gt;&amp;quot;)))&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
 &lt;p&gt;当然，这还只是画饼而已……现在还在写完括号解析器正在写LLVM binding的状态。&lt;/p&gt;
 </content>
         <category term="年终总结" />
-        <updated>2022-01-18T00:00:00.000Z</updated>
+        <updated>2022-01-17T16:00:00.000Z</updated>
     </entry>
     <entry>
         <id>https://rubicon.lightstands.xyz/2021/12/30/Blog-2021-Final-Update/</id>
@@ -368,7 +368,7 @@
         <category term="Hexo" />
         <category term="logbook" />
         <category term="博客功能更新" />
-        <updated>2021-12-30T21:26:06.000Z</updated>
+        <updated>2021-12-30T13:26:06.000Z</updated>
     </entry>
     <entry>
         <id>https://rubicon.lightstands.xyz/2021/11/02/measure-peer-reachability/</id>
@@ -406,7 +406,7 @@
         <category term="Kache Development" />
         <category term="Kache" />
         <category term="网络" />
-        <updated>2021-11-02T16:00:00.000Z</updated>
+        <updated>2021-11-02T08:00:00.000Z</updated>
     </entry>
     <entry>
         <id>https://rubicon.lightstands.xyz/2021/10/13/hexo-topic-feeds/</id>
@@ -430,7 +430,7 @@
         <category term="Hexo" />
         <category term="博客功能更新" />
         <category term="RSS" />
-        <updated>2021-10-13T18:36:53.000Z</updated>
+        <updated>2021-10-13T10:36:53.000Z</updated>
     </entry>
     <entry>
         <id>https://rubicon.lightstands.xyz/2021/10/13/poem-2020-2021/</id>
@@ -452,7 +452,7 @@
 &lt;h2 id=&#34;国（2021年9月）&#34;&gt;&lt;a href=&#34;#国（2021年9月）&#34; class=&#34;headerlink&#34; title=&#34;国（2021年9月）&#34;&gt;&lt;/a&gt;国（2021年9月）&lt;/h2&gt;&lt;p&gt;苍生难万载，灯火千年梦。曾有士人念天下，如今字里还。清风不识字？何故乱翻书。斜阳下，屋檐乱。热血终有恨，鬼怪在人间。&lt;/p&gt;
 </content>
         <category term="诗集" />
-        <updated>2021-10-13T15:18:33.000Z</updated>
+        <updated>2021-10-13T07:18:33.000Z</updated>
     </entry>
     <entry>
         <id>https://rubicon.lightstands.xyz/2021/10/13/poem-2019/</id>
@@ -476,7 +476,7 @@
 &lt;h2 id=&#34;节（2019年12月）&#34;&gt;&lt;a href=&#34;#节（2019年12月）&#34; class=&#34;headerlink&#34; title=&#34;节（2019年12月）&#34;&gt;&lt;/a&gt;节（2019年12月）&lt;/h2&gt;&lt;p&gt;爆竹声声慢，&lt;br&gt;烟火溢天边。&lt;br&gt;红桃念新语，&lt;br&gt;岁岁不复还。&lt;/p&gt;
 </content>
         <category term="诗集" />
-        <updated>2021-10-13T11:22:59.000Z</updated>
+        <updated>2021-10-13T03:22:59.000Z</updated>
     </entry>
     <entry>
         <id>https://rubicon.lightstands.xyz/2021/07/10/set-up-sudo-with-howdy-on-fedora-34-for-faical-authenticating/</id>
@@ -531,7 +531,7 @@
         <category term="logbook" />
         <category term="Linux记" />
         <category term="生命很短" />
-        <updated>2021-07-10T22:34:29.000Z</updated>
+        <updated>2021-07-10T14:34:29.000Z</updated>
     </entry>
     <entry>
         <id>https://rubicon.lightstands.xyz/2021/01/04/makru-tutor-2/</id>
@@ -588,7 +588,7 @@
 </content>
         <category term="Makru" />
         <category term="C" />
-        <updated>2021-01-04T18:49:20.000Z</updated>
+        <updated>2021-01-04T10:49:20.000Z</updated>
     </entry>
     <entry>
         <id>https://rubicon.lightstands.xyz/2020/12/26/makru-tutor-1/</id>
@@ -613,12 +613,12 @@
         <category term="Makru" />
         <category term="C" />
         <category term="系列文章" />
-        <updated>2020-12-26T21:21:13.000Z</updated>
+        <updated>2020-12-26T13:21:13.000Z</updated>
     </entry>
     <entry>
-        <id>https://rubicon.lightstands.xyz/2020/12/26/hello-world/</id>
+        <id>https://rubicon.lightstands.xyz/2020/12/25/hello-world/</id>
         <title>早上好,欢迎来到世界!</title>
-        <link rel="alternate" href="https://rubicon.lightstands.xyz/2020/12/26/hello-world/"/>
+        <link rel="alternate" href="https://rubicon.lightstands.xyz/2020/12/25/hello-world/"/>
         <content type="html">&lt;p&gt;新博客的第一篇博文，介绍一下博客文字的使用协议：&lt;/p&gt;
 &lt;p&gt;如无特别规定，博客中作者的文字、图片等非代码资源使用 &lt;a href=&#34;https://creativecommons.org/licenses/by-nc-nd/4.0/&#34;&gt;创作共享 保留权利-非商业性使用-禁止二次演绎(CC BY-NC-ND) 4.0&lt;/a&gt; 协议共享。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;http://creativecommons.org/licenses/by-nc-nd/4.0/&#34;&gt;&lt;img src=&#34;https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png&#34; alt=&#34;CC BY-NC-ND Logo&#34;&gt;&lt;/a&gt;&lt;/p&gt;
@@ -627,6 +627,6 @@
 &lt;p&gt;不属于作者的，文章中引用的资源（包括但不限于文字、代码、图片、商标）由各自所有者所有并按照授权协议执行。&lt;/p&gt;
 &lt;p&gt;欢迎通过 &lt;a href=&#34;mailto:a09d124g7@foo.bar&#34;&gt;a09d124g7@foo.bar&lt;/a&gt; （请将foo.bar替换为relay.firefox.com）联系我（文章问题或是聊天都可以，但是我会无视掉我认为在问无意义问题的邮件，包括问一些网上查一下就知道结果的问题）！由于使用了Firefox Relay，请将邮件大小控制在150KB以内。&lt;/p&gt;
 </content>
-        <updated>2020-12-26T00:00:00.000Z</updated>
+        <updated>2020-12-25T16:00:00.000Z</updated>
     </entry>
 </feed>

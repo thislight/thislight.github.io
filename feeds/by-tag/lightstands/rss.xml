@@ -4,9 +4,9 @@
         <title>Rubicon&#39;s Rubicon • Posts by &#34;lightstands&#34; tag</title>
         <link>https://rubicon.lightstands.xyz</link>
         <description></description>
-        <language>zh-cn,en,default</language>
-        <pubDate>Wed, 23 Aug 2023 19:29:21 +0000</pubDate>
-        <lastBuildDate>Wed, 23 Aug 2023 19:29:21 +0000</lastBuildDate>
+        <language>zh-Hans</language>
+        <pubDate>Wed, 23 Aug 2023 11:29:21 +0000</pubDate>
+        <lastBuildDate>Wed, 23 Aug 2023 11:29:21 +0000</lastBuildDate>
         <category>Hexo</category>
         <category>logbook</category>
         <category>博客功能更新</category>
@@ -33,7 +33,7 @@
             <title>LightStands的第一年</title>
             <link>https://rubicon.lightstands.xyz/2023/08/23/the-first-year-of-lightstands/</link>
             <category>LightStands</category>
-            <pubDate>Wed, 23 Aug 2023 19:29:21 +0000</pubDate>
+            <pubDate>Wed, 23 Aug 2023 11:29:21 +0000</pubDate>
             <description><![CDATA[ &lt;p&gt;现在的LightStands软件的第一个Commit来自2022年7月31日。不过，LightStands的想法和开发其实开始得很早，最早的版本早在2017年就开始开发了。详细的时间我并不记得，我只知道在2017年8月8日我在Git上提交了web.dart的&lt;a href=&#34;https://github.com/thislight/webart/commit/dc37ef4a44ea52d7c8515528fd68ae46ad901b62&#34;&gt;第一个commit&lt;/a&gt;——它是LightStands第一个版本的基础。但是，在写了几千行代码之后，这个LightStands软件就被废弃了。&lt;/p&gt;
 &lt;p&gt;这篇文章是我过去几年里开发LightStands软件的经历总结。&lt;/p&gt;
 &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;

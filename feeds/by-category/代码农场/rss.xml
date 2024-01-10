@@ -4,9 +4,9 @@
         <title>Rubicon&#39;s Rubicon • Posts by &#34;代码农场&#34; category</title>
         <link>https://rubicon.lightstands.xyz</link>
         <description></description>
-        <language>zh-cn,en,default</language>
-        <pubDate>Mon, 04 Jan 2021 18:49:20 +0000</pubDate>
-        <lastBuildDate>Mon, 04 Jan 2021 18:49:20 +0000</lastBuildDate>
+        <language>zh-Hans</language>
+        <pubDate>Mon, 04 Jan 2021 10:49:20 +0000</pubDate>
+        <lastBuildDate>Mon, 04 Jan 2021 10:49:20 +0000</lastBuildDate>
         <category>Hexo</category>
         <category>logbook</category>
         <category>博客功能更新</category>
@@ -34,7 +34,7 @@
             <link>https://rubicon.lightstands.xyz/2021/01/04/makru-tutor-2/</link>
             <category>Makru</category>
             <category>C</category>
-            <pubDate>Mon, 04 Jan 2021 18:49:20 +0000</pubDate>
+            <pubDate>Mon, 04 Jan 2021 10:49:20 +0000</pubDate>
             <description><![CDATA[ &lt;p&gt;在这一篇文章中，我会介绍makru_langc的安装。和普通的编译工具不同，makru_langc是作为Makru的一个插件安装的，而Makru的插件只能安装到项目上随项目源代码附带。这会带来一些不方便，但是能够保证每一个项目都能选择最适合的插件和插件版本而无需担心兼容成本。其实类似的方法在make和cmake的项目中也能经常看见，很多项目都会带有一些脚本或者预定义宏来帮助编译，只是Makru将它变成强制行为了。&lt;/p&gt;
 &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
 
@@ -92,7 +92,7 @@
             <category>Makru</category>
             <category>C</category>
             <category>系列文章</category>
-            <pubDate>Sat, 26 Dec 2020 21:21:13 +0000</pubDate>
+            <pubDate>Sat, 26 Dec 2020 13:21:13 +0000</pubDate>
             <description><![CDATA[ &lt;p&gt;&lt;a href=&#34;https://gitlab.com/jinwa/makru&#34;&gt;Makru&lt;/a&gt;是一个用Python编写的全新编译工具。它的目的不是提供更多的编译逻辑，而是提供一个统一的平台方便开发和引入新的编译逻辑。Makru和目前主流的make-like编译系统最大的不同点再于：它没有使用类似宏语法之类的东西为配置文件提供超高的灵活性，而是直接选择了很多现代包管理工具正在使用的结构化数据配置文件（Makru使用的是yaml）。&lt;a href=&#34;https://gitlab.com/jinwa/makru_langc&#34;&gt;makru_langc&lt;/a&gt;就是在它之上构建的C语言项目编译插件。&lt;br&gt;得益于这样的选择，makru_langc提供了非常流畅的编译管理体验。你可以快速理解并编辑配置文件，而不是在配置文件的海洋里晕头转向。另外，makru_langc还支持高自由度的自定义，你甚至可以利用它提供的工具编写自己的编译逻辑。&lt;/p&gt;
 &lt;p&gt;这个文章系列将会介绍一个用makru_langc来管理编译的小演示项目scat，它接收标准输入然后输出到标准输出。为了演示makru_langc的功能，scat会有一个子项目叫libcopy。这个子项目里只有一个函数：从第一个File输入，输出到第二个File。&lt;/p&gt;
 &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;

@@ -4,9 +4,9 @@
         <title>Rubicon&#39;s Rubicon • Posts by &#34;logbook&#34; tag</title>
         <link>https://rubicon.lightstands.xyz</link>
         <description></description>
-        <language>zh-cn,en,default</language>
-        <pubDate>Thu, 30 Dec 2021 21:26:06 +0000</pubDate>
-        <lastBuildDate>Thu, 30 Dec 2021 21:26:06 +0000</lastBuildDate>
+        <language>zh-Hans</language>
+        <pubDate>Thu, 30 Dec 2021 13:26:06 +0000</pubDate>
+        <lastBuildDate>Thu, 30 Dec 2021 13:26:06 +0000</lastBuildDate>
         <category>Hexo</category>
         <category>logbook</category>
         <category>博客功能更新</category>
@@ -35,7 +35,7 @@
             <category>Hexo</category>
             <category>logbook</category>
             <category>博客功能更新</category>
-            <pubDate>Thu, 30 Dec 2021 21:26:06 +0000</pubDate>
+            <pubDate>Thu, 30 Dec 2021 13:26:06 +0000</pubDate>
             <description><![CDATA[ &lt;p&gt;我对博客功能的要求是拒绝花里胡哨，一切为阅读服务。现在是2021年年底，正好我要为我对年终总结的一些设想给博客更新一些功能：快速引用素材、Steam游戏卡片、引用Wikipedia条目。&lt;/p&gt;
 &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
 
@@ -67,7 +67,7 @@
             <category>logbook</category>
             <category>Linux记</category>
             <category>生命很短</category>
-            <pubDate>Sat, 10 Jul 2021 22:34:29 +0000</pubDate>
+            <pubDate>Sat, 10 Jul 2021 14:34:29 +0000</pubDate>
             <description><![CDATA[ &lt;p&gt;今天晚上折腾了一个小时，终于把 Howdy 折腾出来了，写篇博文作笔记以备查。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/boltgolt/howdy&#34;&gt;Howdy&lt;/a&gt; 是一个为 Linux 提供 Windows Hello 风格验证的软件，它作为一个 PAM 模块为其它软件提供人脸验证服务。不像 Windows Hello 需要认证过的IR摄像头， Howdy 基本上只要是个摄像头都可以使用。当然，如果没有 IR ，低光环境下的识别率就很拼摄像头的素质了。&lt;/p&gt;
 &lt;p&gt;这篇博文主要内容是给 sudo 弄 Howdy：sudo 老是让人输密码着实令人烦躁，但是我又不想取消所有认证，正好 Howdy 的需求很低（只需要一个摄像头）。&lt;/p&gt;

@@ -4,9 +4,9 @@
         <title>Rubicon&#39;s Rubicon • Posts by &#34;系列文章&#34; tag</title>
         <link>https://rubicon.lightstands.xyz</link>
         <description></description>
-        <language>zh-cn,en,default</language>
-        <pubDate>Sat, 26 Dec 2020 21:21:13 +0000</pubDate>
-        <lastBuildDate>Sat, 26 Dec 2020 21:21:13 +0000</lastBuildDate>
+        <language>zh-Hans</language>
+        <pubDate>Sat, 26 Dec 2020 13:21:13 +0000</pubDate>
+        <lastBuildDate>Sat, 26 Dec 2020 13:21:13 +0000</lastBuildDate>
         <category>Hexo</category>
         <category>logbook</category>
         <category>博客功能更新</category>
@@ -35,7 +35,7 @@
             <category>Makru</category>
             <category>C</category>
             <category>系列文章</category>
-            <pubDate>Sat, 26 Dec 2020 21:21:13 +0000</pubDate>
+            <pubDate>Sat, 26 Dec 2020 13:21:13 +0000</pubDate>
             <description><![CDATA[ &lt;p&gt;&lt;a href=&#34;https://gitlab.com/jinwa/makru&#34;&gt;Makru&lt;/a&gt;是一个用Python编写的全新编译工具。它的目的不是提供更多的编译逻辑，而是提供一个统一的平台方便开发和引入新的编译逻辑。Makru和目前主流的make-like编译系统最大的不同点再于：它没有使用类似宏语法之类的东西为配置文件提供超高的灵活性，而是直接选择了很多现代包管理工具正在使用的结构化数据配置文件（Makru使用的是yaml）。&lt;a href=&#34;https://gitlab.com/jinwa/makru_langc&#34;&gt;makru_langc&lt;/a&gt;就是在它之上构建的C语言项目编译插件。&lt;br&gt;得益于这样的选择，makru_langc提供了非常流畅的编译管理体验。你可以快速理解并编辑配置文件，而不是在配置文件的海洋里晕头转向。另外，makru_langc还支持高自由度的自定义，你甚至可以利用它提供的工具编写自己的编译逻辑。&lt;/p&gt;
 &lt;p&gt;这个文章系列将会介绍一个用makru_langc来管理编译的小演示项目scat，它接收标准输入然后输出到标准输出。为了演示makru_langc的功能，scat会有一个子项目叫libcopy。这个子项目里只有一个函数：从第一个File输入，输出到第二个File。&lt;/p&gt;
 &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;

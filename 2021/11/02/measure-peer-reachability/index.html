@@ -1,100 +1,61 @@
+<!DOCTYPE html>
 
-
-
-
-
-
-
-
-
-
-<!doctype html>
-<html lang="zh-cn,en,default">
+<html lang="zh-Hans" prefix="og: https://ogp.me/ns#">
   <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/> <meta name="description" content="观测你的猫的生死可不是件易事。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在Rope中测量&quot;可达&quot;">
+<meta property="og:url" content="https://rubicon.lightstands.xyz/2021/11/02/measure-peer-reachability/index.html">
+<meta property="og:site_name" content="Rubicon&#39;s Rubicon">
+<meta property="og:description" content="观测你的猫的生死可不是件易事。">
+<meta property="og:locale">
+<meta property="og:image" content="https://rubicon.lightstands.xyz/img/measure-peer-reachability/you-mudy-sun.png">
+<meta property="og:image" content="https://rubicon.lightstands.xyz/img/measure-peer-reachability/you-mudy-sound.png">
+<meta property="og:image" content="https://rubicon.lightstands.xyz/img/measure-peer-reachability/multiple-transports-to-peer.png">
+<meta property="article:published_time" content="2021-11-02T08:00:00.000Z">
+<meta property="article:modified_time" content="2024-01-10T10:36:41.412Z">
+<meta property="article:author" content="Rubicon">
+<meta property="article:tag" content="Kache Development">
+<meta property="article:tag" content="Kache">
+<meta property="article:tag" content="网络">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://rubicon.lightstands.xyz/img/measure-peer-reachability/you-mudy-sun.png">
     <title>在Rope中测量"可达"</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="/page.css" rel="stylesheet"/>
+    <script type="module" src="/page.js"></script>
+  <meta name="generator" content="Hexo 6.3.0"></head>
+  <body>
     
+<div class="nav-wrapper">
+  <nav class="site">
+    <div>
+      <h6>在Rope中测量"可达"</h6>
+    </div>
+    <div>
       
+        <a href="/">所有文章</a>
       
-        <link rel="stylesheet" href="/css/cmd.css" media="print" onload="this.media='all'; this.onload=null;">
-        <noscript><link rel="stylesheet" href="/css/cmd.css"></noscript>
+        <a href="/archives">归档</a>
       
-        <link rel="stylesheet" href="/css/materialdesignicons.min.css" media="print" onload="this.media='all'; this.onload=null;">
-        <noscript><link rel="stylesheet" href="/css/materialdesignicons.min.css"></noscript>
-      
-        <link rel="stylesheet" href="/css/entry.css" media="print" onload="this.media='all'; this.onload=null;">
-        <noscript><link rel="stylesheet" href="/css/entry.css"></noscript>
-      
-        <link rel="stylesheet" href="/css/xcode.css" media="print" onload="this.media='all'; this.onload=null;">
-        <noscript><link rel="stylesheet" href="/css/xcode.css"></noscript>
-      
-    
-    <link rel="stylesheet" href="/materialize/css/materialize.css"/>
-    
-    <meta name="generator" content="Hexo 6.3.0"></head>
+    </div>
+  </nav>
+</div>
 
-    <body>
-      <ul id="nav-mobile" class="sidenav">
-        
-          <li>
-            <a href="/">Home</a>
-          </li>
-        
-          <li>
-            <a href="/archives">Archives</a>
-          </li>
-        
-      </ul>
-      <nav class="light-blue lighten-1" role="navigation">
-        <a href="#" data-target="nav-mobile" class="sidenav-trigger">
-          <div class="mdi mdi-menu"></div>
-        </a>
-        <div class="nav-wrapper">
-          <ul class="right hide-on-med-and-down">
-            
-              <li>
-                <a href="/">Home</a>
-              </li>
-            
-              <li>
-                <a href="/archives">Archives</a>
-              </li>
-            
-          </ul>
+    <div id="_layout">
+      <div></div>
+      <main class="content">
+        <h1>在Rope中测量"可达"</h1>
+        <div class="page-metadata">
+          <span>
+            <time data-time-format="iso" datetime="2021-11-02T08:00:00+00:00">2021-11-02T08:00:00+00:00</time>
+            创建</span>
+          <span>
+            <time data-time-format="iso" datetime="2024-01-10T10:36:41+00:00">2024-01-10T10:36:41+00:00</time>
+            更新</span>
+          
         </div>
-      </nav>
-
-      <main id="content" class="container xscontainer">
-        
-  <article id="post">
-    <div class="card">
-    <div class="card-content">
-      <span class="card-title">在Rope中测量"可达"</span>
-      <div class="row">
-        <div class="col" style="padding-left:0;"><span class="mdi mdi-account">Rubicon</span></div>
-        <div class="col"><span class="mdi mdi-clock">2021/11/2</span></div>
-      </div>
-      
-  <div>
-  
-    <a href="/tags/Kache-Development/"><div class="chip">
-      Kache Development
-    </div></a>
-  
-    <a href="/tags/Kache/"><div class="chip">
-      Kache
-    </div></a>
-  
-    <a href="/tags/%E7%BD%91%E7%BB%9C/"><div class="chip">
-      网络
-    </div></a>
-  
-  </div>
-
-      
-      <div class="entry">
-      <p>观测你的猫的生死可不是件易事。<span id="more"></span>当太阳明晃晃地照在可爱的Mudy身上时，它身上蓬松的毛反射了光线。光线经过许多介质进入你的眼中。哪怕不研究我们的身体如何处理这些莫名奇妙的光线，光从皮毛到你眼前的过程也需要时间。只不过这个时间太短：当你（在真空中）距离Mudy 299792458米时，这个时间是1秒。换句话说，当你在南极时，你看到北极的Mudy至少是0.05秒前的Mudy；当你在中国时，你看到北美的Mudy至少是0.1秒前的Mudy。</p>
+        <p>观测你的猫的生死可不是件易事。<span id="more"></span>当太阳明晃晃地照在可爱的Mudy身上时，它身上蓬松的毛反射了光线。光线经过许多介质进入你的眼中。哪怕不研究我们的身体如何处理这些莫名奇妙的光线，光从皮毛到你眼前的过程也需要时间。只不过这个时间太短：当你（在真空中）距离Mudy 299792458米时，这个时间是1秒。换句话说，当你在南极时，你看到北极的Mudy至少是0.05秒前的Mudy；当你在中国时，你看到北美的Mudy至少是0.1秒前的Mudy。</p>
 <img src="/img/measure-peer-reachability/you-mudy-sun.png" class="">
 
 <p>Rope是为分布式应用框架Kache设计的抽象网络层。作为一个分布式应用框架，网络是最必要也是最麻烦的事情。在分布式网络里，知道一个Peer是否活着和能否连接上是重中之重。但是，在网络上观测一个Peer就如观测北极的Mudy或数千光年外的恒星一样麻烦。因为：1)你的朋友总是很麻烦，哪怕他们本意并不是想给你捣乱；2)你没办法不花时间就知道他们的情况，哪怕你和他们的延时只有1ms，你知道的也只是他们1ms前的情况，更别说我们不可能持续去监控他们的状况。</p>
@@ -123,80 +84,9 @@
 <h3 id="理解”Reachable-but-not-exists”"><a href="#理解”Reachable-but-not-exists”" class="headerlink" title="理解”Reachable but not exists”"></a>理解”Reachable but not exists”</h3><p>在Reachability里我强调这两个维度是独立的。这样看起来会存在一种奇特的情况：Reachable but not exists（可达但不存在）。</p>
 <p>既然可达为何不存在呢？这里的不存在不是真的不存在，而是在网络上不存在。试试考虑下面的情景：目前网络上存在A和B，它们互相是认为对方Reachable and exists的。现在有一个新节点C要加入，他连接A并开始广播<code>_ticktock</code>事件让大家知道它的存在。在这时候A和C互相之间可达，但在A的视角看这个PhysicalAddress的lastFound仍然是初始值0，即这个PhysicalAddress还不存在（not exists）。现在A因为发现了新的PhysicalAddress就会广播一条<code>_wire.found</code>事件。然后B、C收到这个事件后就会更新它们的<code>lastFound</code>，然后分别将该消息转发给A、C和A、B。这时A就会收到它自己发出的这条消息，虽然这条消息不会被转发给别的Peer或应用，但是A仍然会用这条消息更新<code>lastFound</code>。这时在A处这个PhysicalAddress就会变成Reachable and exists（可达并存在）。</p>
 
-      </div>
-    </div>
-    </div>
-  </article>
-
-  <div id="paginator">
-    
-  </div>
-
       </main>
+      <div></div>
+    </div>
+  <!-- hexo injector body_end start --><!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "05f36e0cb3b74781a5755bd4224e252a"}'></script><!-- End Cloudflare Web Analytics --><!-- hexo injector body_end end --></body>
+</html>
 
-        <footer class="page-footer light-blue darken-4">
-          <div class="container">
-            <div class="row">
-              
-                <div class="col s12 m4">
-                  <h5 class="white-text">About Rubicon's Rubicon</h5>
-                  <p>这里是Rubicon's Rubicon。我在无界之点的偏安之地。</p>
-                </div>
-              
-              
-                <div class="col s6 m4">
-                  <h5 class="white-text">
-                    Links
-                  </h5>
-                  <ul>
-                    
-                      <li>
-                        <a class="grey-text text-lighten-3" target="_blank" rel="noopener" href="https://github.com/thislight">GitHub</a>
-                      </li>
-                    
-                      <li>
-                        <a class="grey-text text-lighten-3" target="_blank" rel="noopener" href="https://gitlab.com/thislight">GitLab</a>
-                      </li>
-                    
-                      <li>
-                        <a class="grey-text text-lighten-3" href="/atom.xml">Feed (Atom)</a>
-                      </li>
-                    
-                      <li>
-                        <a class="grey-text text-lighten-3" href="/rss.xml">Feed (RSS)</a>
-                      </li>
-                    
-                    
-                      <li>
-                        <a class="grey-text text-lighten-3" rel="me noopener" target="_blank" href="https://mastodon.social/@thislight">My Mastodon</a>
-                      </li>
-                    
-                  </ul>
-                </div>
-              
-              
-                <div class="col s6 m4">
-                  <p>This blog uses Classical Material Design theme.</p>
-                </div>
-              
-            </div>
-          </div>
-          <div class="footer-copyright">
-            <div class="container truncate">
-              © Copyright 2020-2022
-              Rubicon.
-              
-            </div>
-          </div>
-        </footer>
-        
-          
-          
-            <script src="/js/cmd.js"></script>
-          
-            <script src="/materialize/js/materialize.js"></script>
-          
-        
-        
-      <!-- hexo injector body_end start --><!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "05f36e0cb3b74781a5755bd4224e252a"}'></script><!-- End Cloudflare Web Analytics --><!-- hexo injector body_end end --></body>
-    </html>

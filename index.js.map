@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/index.ts"],
+  "sourcesContent": ["import { createRoot } from \"solid-js\";\nimport { renderLocalTimeOn } from \"./uxaddon/time.js\";\n\ncreateRoot(() => {\n  renderLocalTimeOn(document.querySelectorAll(\".post-item-title > time\"));\n});\n"],
+  "mappings": "+CAGAA,EAAW,IAAM,CACfC,EAAkB,SAAS,iBAAiB,yBAAyB,CAAC,CACxE,CAAC",
+  "names": ["createRoot", "renderLocalTimeOn"]
+}
