@@ -3,7 +3,7 @@
     <id>https://rubicon.lightstands.xyz</id>
     <title>Rubicon&#39;s Rubicon • Posts by &#34;hexo&#34; tag</title>
     <link href="https://rubicon.lightstands.xyz" />
-    <updated>2021-12-30T13:26:06.000Z</updated>
+    <updated>2024-01-11T11:36:34.000Z</updated>
     <category term="Hexo" />
     <category term="logbook" />
     <category term="博客功能更新" />
@@ -25,6 +25,88 @@
     <category term="LightStands" />
     <category term="高性能I/O" />
     <category term="年终总结" />
+    <entry>
+        <id>https://rubicon.lightstands.xyz/2024/01/11/New-Theme-for-Blog-at-the-start-of-2024/</id>
+        <title>新年新主题！博客新主题Buck介绍</title>
+        <link rel="alternate" href="https://rubicon.lightstands.xyz/2024/01/11/New-Theme-for-Blog-at-the-start-of-2024/"/>
+        <content type="html">&lt;p&gt;请允许我隆重介绍本博客的新主题——Buck！跟原先一样，这是一个老Material Design风格的主题。Buck从头开始设计，重写了所有样式和代码，加入了新的考量和原则。让我自豪地在这里为你介绍一下Buck带来的改进和变化。&lt;/p&gt;
+&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
+
+&lt;h2 id=&#34;平平淡淡不是真&#34;&gt;&lt;a href=&#34;#平平淡淡不是真&#34; class=&#34;headerlink&#34; title=&#34;平平淡淡不是真&#34;&gt;&lt;/a&gt;平平淡淡不是真&lt;/h2&gt;&lt;p&gt;如果你曾经访问过我的博客，你很可能会感觉本博客的设计非常素。低情商一点，可以说很无聊。旧的CMD（Classic Material Design）主题中，强调色几乎不存在，而且字体大小非常保守，元素又缺乏变化。在我的实际体验中，这样的问题使得不同元素之间缺乏对比，页面缺少“锚点”抓住眼球，显得很平淡。&lt;/p&gt;
+&lt;p&gt;有人说“平平淡淡”才是真，但是！在阅读长篇文章的时候，如果没有一些奇怪的东西打扰你的眼睛，很有可能你就会睡着了。说实话，我在看《编译原理》的时候就睡着过好几回，所以我想要偶尔有一些醒目的东西。当我将h1到h6元素映射到Material Desgin Typography的Display4到Title的时候，我发现效果意外的好：它就像直接拍到我的脸上。我的视线在Display4切换到主要文字的Body1时甚至需要重新对焦，但它又不会特别恼人。文章的展示意外地有了足够的层次感。&lt;/p&gt;
+&lt;p&gt;颜色也是一种对比。博客原本就有一个粉色的强调色，但是非常非常少用，因为我也不知道怎么放。这次我想到了一个好主意：将有超过一篇文章使用的标签用强调色标出。现在主页终于不再是蓝色、白色和黑色了。当然，主题色也做了一些调整：蓝色变深了，提高了与白色的对比度。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2024/01/11/New-Theme-for-Blog-at-the-start-of-2024/tags-new-ui.png&#34; alt=&#34;新的标签列表卡片&#34;&gt;&lt;/p&gt;
+&lt;p&gt;除此之外，当你将鼠标放到各种物件上时，都会有新的强调样式。在Buck中，我非常重视即时反馈，几乎每个物件都有自己的强调样式，包括代码块、块引用，甚至列表和表格。在文章中，各种物件的样式不再使用浏览器样式，而是使用接近Material Design的样式，看起来更漂亮了。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;物件&lt;/th&gt;
+&lt;th&gt;基本反馈&lt;/th&gt;
+&lt;th&gt;增强反馈&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;代码块&lt;/td&gt;
+&lt;td&gt;有&lt;/td&gt;
+&lt;td&gt;无&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;块引用&lt;/td&gt;
+&lt;td&gt;有&lt;/td&gt;
+&lt;td&gt;无&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;列表&lt;/td&gt;
+&lt;td&gt;有&lt;/td&gt;
+&lt;td&gt;无&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;表格&lt;/td&gt;
+&lt;td&gt;有&lt;/td&gt;
+&lt;td&gt;有&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;图片&lt;/td&gt;
+&lt;td&gt;无&lt;/td&gt;
+&lt;td&gt;无&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;标签 Chip&lt;/td&gt;
+&lt;td&gt;有&lt;/td&gt;
+&lt;td&gt;无&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;卡片&lt;/td&gt;
+&lt;td&gt;有&lt;/td&gt;
+&lt;td&gt;无&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;链接&lt;/td&gt;
+&lt;td&gt;有&lt;/td&gt;
+&lt;td&gt;无&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;p&gt;与此同时，Buck能更充分地利用屏幕空间，不再像CMD一样将页面主题的宽度限制得太小。首页的内容不再挤在中间显示，而文章也有更大的空间舒展文字。&lt;/p&gt;
+&lt;h2 id=&#34;渐进式增强网页&#34;&gt;&lt;a href=&#34;#渐进式增强网页&#34; class=&#34;headerlink&#34; title=&#34;渐进式增强网页&#34;&gt;&lt;/a&gt;渐进式增强网页&lt;/h2&gt;&lt;p&gt;Buck的JS、CSS以及其它资源现在使用esbuild打包。得益于打包工具的魔法，我能够轻易为Buck的网页进行“渐进式增强”。简单来说，“渐进式增强”就是在条件允许的时候提供相应的功能，在条件不允许的时候也有一个备用方案，而不是简单地告诉用户页面无法使用。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2024/01/11/New-Theme-for-Blog-at-the-start-of-2024/table-enhanced-react-showcase.png&#34; alt=&#34;表格的增强反馈：鼠标在某一列停留时，相应列的标题会亮起&#34;&gt;&lt;/p&gt;
+&lt;p&gt;当你在表格的某一列的一个单元格停留时，相应列的标题就会亮起，这个效果使用了JavaScript来实现。所以当你关闭JavaScript的时候，这个效果就会消失，但是页面仍然能够观看。&lt;/p&gt;
+&lt;p&gt;除此之外，还有数个地方使用了JavaScript增强效果。我还准备实现一个图片全屏显示工具，得益于全新的代码架构，这个目的比之前更容易完成&lt;code&gt;:)&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;可及性（Accessibility）&#34;&gt;&lt;a href=&#34;#可及性（Accessibility）&#34; class=&#34;headerlink&#34; title=&#34;可及性（Accessibility）&#34;&gt;&lt;/a&gt;可及性（Accessibility）&lt;/h2&gt;&lt;p&gt;相比CMD，Buck一定程度上优化了可及性。我有相当一部分精力放在了“减少触摸的二义性”上。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2024/01/11/New-Theme-for-Blog-at-the-start-of-2024/post-item-showcase.png&#34; alt=&#34;博客文章列表的一个项目，有两个地方被红圈圈了出来：标题和内容梗概中的一个链接&#34;&gt;&lt;/p&gt;
+&lt;p&gt;在原先的CMD中，文章列表中的一个项目是一个纸片，点击这个纸片就会进入文章页面。这听起来是很棒的主意。但是，如果用户注意到这个纸片中内容梗概也包含可操作内容的话，就会产生二义性，用户难以预测触摸的结果。因为使用手指触发触摸屏会在屏幕上产生一个椭圆形的触摸区域：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;物理上：用户确实无法确定实际上点击了哪个位置。&lt;/li&gt;
+&lt;li&gt;心理上：手指遮挡了触摸区域，增加了用户心理上的不确定。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;所以，在Buck中，进入文章的点击区域被限制在了标题处，避开内容梗概内的可操作内容；同时，可点击区域也有明显的标识。避免这样的二义性后，触摸的结果就更容易被用户预测到。在其它地方的可操作内容中，我也会采取了增加空白等方式，以求减小这种二义性的影响，我个人认为效果还可以。&lt;/p&gt;
+&lt;p&gt;除此之外，在键盘导航、颜色对比度、字体等方面，Buck相对CMD也有很多改进。&lt;/p&gt;
+&lt;h2 id=&#34;漫漫长路&#34;&gt;&lt;a href=&#34;#漫漫长路&#34; class=&#34;headerlink&#34; title=&#34;漫漫长路&#34;&gt;&lt;/a&gt;漫漫长路&lt;/h2&gt;&lt;p&gt;开始一个新项目，也有点像在打RPG：最开始零级出厂、慢慢升级，中间有可能提前结局。Buck断断续续地写了快一年，终于有了点底子，但是还是有很多问题需要修正。如果大家发现了bug，还请多多包涵。我是在Webkit、Gecko和Chromium三家引擎上测试的，bug我大多已经发现了，只是需要时间修。但是，真的，我博客没写几篇，博客自己的代码倒是写了不少XD&lt;/p&gt;
+&lt;p&gt;在2024年的开头能把它做出来，也许是好事开端的预兆？我是希望如此。&lt;/p&gt;
+</content>
+        <category term="Hexo" />
+        <category term="博客功能更新" />
+        <updated>2024-01-11T11:36:34.000Z</updated>
+    </entry>
     <entry>
         <id>https://rubicon.lightstands.xyz/2021/12/30/Blog-2021-Final-Update/</id>
         <title>博客2021年最终功能更新</title>
