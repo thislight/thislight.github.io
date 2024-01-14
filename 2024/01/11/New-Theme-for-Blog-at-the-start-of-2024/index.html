@@ -4,6 +4,7 @@
   <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="hexo-theme-buck:transform" content="post" />
     <title>新年新主题！博客新主题Buck介绍</title>
     <link href="/page.css" rel="stylesheet"/>
     <script type="module" src="/page.js"></script>
@@ -34,7 +35,7 @@
             <time data-time-format="iso" datetime="2024-01-11T11:36:34+00:00">2024-01-11T11:36:34+00:00</time>
             创建</span>
           <span>
-            <time data-time-format="iso" datetime="2024-01-14T08:32:37+00:00">2024-01-14T08:32:37+00:00</time>
+            <time data-time-format="iso" datetime="2024-01-14T13:14:46+00:00">2024-01-14T13:14:46+00:00</time>
             更新</span>
           
         </div>
@@ -46,15 +47,12 @@
 <p>颜色也是一种对比。博客原本就有一个粉色的强调色，但是非常非常少用，因为我也不知道怎么放。这次我想到了一个好主意：将有超过一篇文章使用的标签用强调色标出。现在主页终于不再是蓝色、白色和黑色了。当然，主题色也做了一些调整：蓝色变深了，提高了与白色的对比度。</p>
 <p><img src="/2024/01/11/New-Theme-for-Blog-at-the-start-of-2024/tags-new-ui.png" alt="新的标签列表卡片"></p>
 <p>除此之外，当你将鼠标放到各种物件上时，都会有新的强调样式。在Buck中，我非常重视即时反馈，几乎每个物件都有自己的强调样式，包括代码块、块引用，甚至列表和表格。在文章中，各种物件的样式不再使用浏览器样式，而是使用接近Material Design的样式，看起来更漂亮了。</p>
-<table>
-<thead>
-<tr>
+<div class="table-responsive" data-buck-baked="true"><table><thead><tr>
 <th>物件</th>
 <th>基本反馈</th>
 <th>增强反馈</th>
 </tr>
-</thead>
-<tbody><tr>
+</thead><tbody><tr>
 <td>代码块</td>
 <td>有</td>
 <td>无</td>
@@ -94,8 +92,7 @@
 <td>有</td>
 <td>无</td>
 </tr>
-</tbody></table>
-<p>与此同时，Buck能更充分地利用屏幕空间，不再像CMD一样将页面主题的宽度限制得太小。首页的内容不再挤在中间显示，而文章也有更大的空间舒展文字。</p>
+</tbody></table></div><p>与此同时，Buck能更充分地利用屏幕空间，不再像CMD一样将页面主题的宽度限制得太小。首页的内容不再挤在中间显示，而文章也有更大的空间舒展文字。</p>
 <h2 id="渐进式增强网页"><a href="#渐进式增强网页" class="headerlink" title="渐进式增强网页"></a>渐进式增强网页</h2><p>Buck的JS、CSS以及其它资源现在使用esbuild打包。得益于打包工具的魔法，我能够轻易为Buck的网页进行“渐进式增强”。简单来说，“渐进式增强”就是在条件允许的时候提供相应的功能，在条件不允许的时候也有一个备用方案，而不是简单地告诉用户页面无法使用。</p>
 <p><img src="/2024/01/11/New-Theme-for-Blog-at-the-start-of-2024/table-enhanced-react-showcase.png" alt="表格的增强反馈：鼠标在某一列停留时，相应列的标题会亮起"></p>
 <p>当你在表格的某一列的一个单元格停留时，相应列的标题就会亮起，这个效果使用了JavaScript来实现。所以当你关闭JavaScript的时候，这个效果就会消失，但是页面仍然能够观看。</p>

@@ -1,2 +1,2 @@
-import{a as e,d as t}from"./chunk-Q4ALCKUU.js";e(()=>{t(document.querySelectorAll(".post-item-title > time"))});
+import{a as e,b as t,c as r,d as o}from"./chunk-F7R3SBUH.js";e(()=>{t(document.querySelectorAll("[data-time-format]")),r(document.querySelectorAll(".content > table"),["table-responsive"]),o(document.querySelectorAll(".content > .table-responsive > table"))});
 //# sourceMappingURL=index.js.map

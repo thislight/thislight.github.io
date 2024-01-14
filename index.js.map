@@ -1,7 +1,7 @@
 {
   "version": 3,
   "sources": ["../src/index.ts"],
-  "sourcesContent": ["import { createRoot } from \"solid-js\";\nimport { renderLocalTimeOn } from \"./uxaddon/time.js\";\n\ncreateRoot(() => {\n  renderLocalTimeOn(document.querySelectorAll(\".post-item-title > time\"));\n});\n"],
-  "mappings": "+CAGAA,EAAW,IAAM,CACfC,EAAkB,SAAS,iBAAiB,yBAAyB,CAAC,CACxE,CAAC",
-  "names": ["createRoot", "renderLocalTimeOn"]
+  "sourcesContent": ["import { createRoot } from \"solid-js\";\nimport { renderLocalTimeOn } from \"./uxaddon/time.js\";\nimport { wrapElementsInClass } from \"./uxaddon/dom.js\";\nimport { renderAdvancedTablesOn } from \"./uxaddon/table.js\";\n\ncreateRoot(() => {\n  renderLocalTimeOn(document.querySelectorAll(\"[data-time-format]\"));\n  wrapElementsInClass(document.querySelectorAll(\".content > table\"), [\"table-responsive\"])\n  renderAdvancedTablesOn(document.querySelectorAll(\".content > .table-responsive > table\"))\n});\n"],
+  "mappings": "6DAKAA,EAAW,IAAM,CACfC,EAAkB,SAAS,iBAAiB,oBAAoB,CAAC,EACjEC,EAAoB,SAAS,iBAAiB,kBAAkB,EAAG,CAAC,kBAAkB,CAAC,EACvFC,EAAuB,SAAS,iBAAiB,sCAAsC,CAAC,CAC1F,CAAC",
+  "names": ["createRoot", "renderLocalTimeOn", "wrapElementsInClass", "renderAdvancedTablesOn"]
 }
